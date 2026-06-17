@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum Tribu Huayna 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+        :root {
+            --rojo: #8B0000;
+            --rojo-claro: #C41E3A;
+            --amarillo: #D4AF37;
+            --dorado: #FFD700;
+            --negro: #0A0A0A;
+            --azul: #1A1A1A;
+            --gradiente-principal: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
+            --gradiente-secundario: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            --gradiente-fondo: linear-gradient(180deg, #1A0000 0%, #0A0A0A 100%);
+            --sombra: 0 10px 30px rgba(139,0,0,0.4);
+            --sombra-hover: 0 15px 40px rgba(212, 175, 55, 0.5);
+            --color-badge-repe: #D4AF37;
+            --texto-principal: #F5F5F5;
+            --texto-btn: #FFD700;
+            --color-numero: #FFD700;
+        }
+
+        body.tema-amarillo {
+            --rojo: #8B0000;
+            --amarillo: #D4AF37;
+            --rojo-claro: #5C0000;
+            --azul: #0A0A0A;
+            --gradiente-principal: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            --gradiente-secundario: linear-gradient(135deg, #8B0000 0%, #5C0000 100%);
+            --gradiente-fondo: linear-gradient(180deg, #2A1A00 0%, #0A0A0A 100%);
+            --color-badge-repe: #8B0000;
+            --texto-principal: #FFFFFF;
+            --texto-btn: #0A0A0A;
+            --color-numero: #8B0000;
+        }
+        body.tema-amarillo header {
+            color: var(--negro);
+            text-shadow: none;
+        }
+        body.tema-amarillo header p {
+            color: var(--negro);
+            font-weight: 700;
+        }
+        body.tema-amarillo nav {
+            background: rgba(42, 26, 0, 0.95);
+            border-bottom: 2px solid var(--dorado);
+        }
+        body.tema-amarillo nav button {
+            color: #DDDDDD;
+        }
+        body.tema-amarillo nav button.activo {
+            color: var(--dorado);
+            font-weight: 900;
+        }
+        body.tema-amarillo nav button.activo::after {
+            background: var(--dorado);
+            box-shadow: 0 0 10px var(--dorado);
+        }
+        body.tema-amarillo.stats {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--dorado);
+            color: var(--texto-principal);
+        }
+        body.tema-amarillo.stats h3 {
+            color: var(--dorado);
+        }
+        body.tema-amarillo.btn {
+            color: var(--texto-btn);
+            font-weight: 900;
+            border-color: var(--negro);
+        }
+        body.tema-amarillo.btn-secundario {
+            color: var(--dorado);
+            border-color: var(--dorado);
+        }
+        body.tema-amarillo.btn:disabled {
+            background: #333;
+            color: #666;
+            border-color: #444;
+        }
+        body.tema-amarillo input,
+        body.tema-amarillo textarea {
+            background: rgba(0,0,0,0.7);
+            border-color: var(--dorado);
+            color: #FFF;
+        }
+        body.tema-amarillo.aviso {
+            color: #CCCCCC;
+        }
+        body.tema-amarillo.amigo-box,
+        body.tema-amarillo.box-oferta {
+            background: rgba(0,0,0,0.6);
+            border-color: var(--dorado);
+        }
+        body.tema-amarillo.amigo-box h4,
+        body.tema-amarillo.box-oferta h5 {
+            color: var(--dorado);
+        }
+        body.tema-amarillo.num-figu {
+            color: var(--color-numero);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8), 0 0 10px rgba(139,0,0,0.5);
+        }
+        body.tema-amarillo.figu.tenida.num-figu {
+            color: var(--color-numero);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 0 15px rgba(139,0,0,0.7);
+        }
+        body.tema-amarillo.figu-mini.num-figu {
+            color: var(--color-numero);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradiente-fondo);
+            color: var(--texto-principal);
+            min-height: 100vh;
+        }
+        #pantalla-inicio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        #pantalla-inicio.oculta {
+            opacity: 0;
+            transform: scale(1.1);
+            pointer-events: none;
+        }
+.logo-inicio {
+            width: 280px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://i.imgur.com/ZkLDHiq.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: 4px solid var(--dorado);
+            padding-bottom: 20px;
+        }
+.logo-inicio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+.tocar-inicio {
+            color: var(--dorado);
+            font-weight: 900;
+            font-size: 22px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: parpadeo 1.5s infinite;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 2px 10px rgba(0,0,0,1);
+            z-index: 2;
+            position: relative;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
+                border-color: var(--dorado);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 25px 80px rgba(139, 0, 0, 0.9);
+                border-color: var(--rojo-claro);
+            }
+        }
+        @keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        #app-contenido {
+            display: none;
+        }
+        #app-contenido.visible {
+            display: block;
+        }
+        header {
+            background: var(--gradiente-principal);
+            color: var(--dorado);
+            padding: 20px 15px 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(139,0,0,0.6);
+            border-bottom: 3px solid var(--dorado);
+        }
+        header h1 {
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            padding-right: 80px;
+        }
+        header p {
+            opacity: 0.95;
+            font-weight: 600;
+            margin-top: 5px;
+            font-size: 14px;
+            padding-right: 80px;
+            color: #FFF;
+        }
+        nav {
+            display: flex;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-bottom: 2px solid var(--rojo);
+        }
+        nav button {
+            flex: 1;
+            padding: 14px 10px;
+            border: none;
+            background: transparent;
+            font-weight: 700;
+            cursor: pointer;
+            color: #CCC;
+            min-width: 75px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav button.activo {
+            color: var(--dorado);
+        }
+        nav button.activo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: var(--gradiente-secundario);
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--dorado);
+        }
+.seccion { display: none; padding: 20px 15px; animation: fadeIn 0.4s ease; }
+.seccion.activa { display: block; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.grid-figuritas { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 12px; margin-top: 20px; }
+.figu {
+    aspect-ratio: 3/4;
+    border: 3px solid rgba(212,175,55,0.3);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #2a0000 0%, #1a1a1a 100%);
+    overflow: visible;
+}
+.figu.bloqueada {
+    filter: blur(8px) brightness(0.3);
+    cursor: default;
+    overflow: hidden;
+}
+.figu.tenida {
+    border: 3px solid var(--dorado);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), var(--sombra);
+    transform: scale(1.02);
+    overflow: visible;
+}
+.figu.tenida::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+    border-radius: 9px;
+    z-index: 0;
+}
+.figu:active {
+    transform: scale(0.95);
+}
+.figu.seleccionada {
+    border: 3px solid var(--dorado);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3), var(--sombra-hover);
+    transform: scale(1.05);
+}
+.num-figu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--color-numero);
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(212,175,55,0.6);
+}
+.figu.tenida.num-figu {
+    text-shadow: 0 3px 12px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
+    z-index: 2;
+}
+.figu.bloqueada.num-figu {
+    color: #666;
+    text-shadow: none;
+}
+.figu.repe {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--gradiente-secundario);
+    color: var(--negro);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    border: 3px solid var(--rojo);
+    z-index: 5;
+    pointer-events: none;
+}
+.btn {
+    background: var(--gradiente-principal);
+    color: var(--texto-btn);
+    border: 2px solid var(--dorado);
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 12px 0;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+.btn:disabled {
+    background: #333;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: #444;
+}
+.btn-secundario {
+    background: var(--gradiente-secundario);
+    color: var(--negro);
+    border-color: var(--rojo);
+}
+.stats {
+    background: rgba(26,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 15px 0;
+    text-align: center;
+    box-shadow: var(--sombra);
+    border: 2px solid rgba(212,175,55,0.3);
+}
+.stats h3 {
+    font-weight: 900;
+    color: var(--dorado);
+    margin-bottom: 8px;
+    font-size: 20px;
+    text-shadow: 0 0 10px rgba(212,175,55,0.5);
+}
+.paquete-resultado {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+.figu-mini {
+    width: 55px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    position: relative;
+    background: var(--gradiente-principal);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    animation: aparecerFigu 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    border: 2px solid var(--dorado);
+    background-size: cover;
+    background-position: center;
+}
+@keyframes aparecerFigu {
+    from { transform: scale(0.5) rotateY(90deg); opacity: 0; }
+    to { transform: scale(1) rotateY(0); opacity: 1; }
+}
+.figu-mini.num-figu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--color-numero);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+    z-index: 2;
+}
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 2px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: rgba(26,0,0,0.6);
+            color: #FFF;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--dorado);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+.codigo {
+    background: var(--negro);
+    color: var(--dorado);
+    padding: 18px;
+    border-radius: 12px;
+    font-family: monospace;
+    word-break: break-all;
+    margin: 12px 0;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.8);
+    border: 2px solid var(--rojo);
+}
+.monedas {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(10,10,10,0.95);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    color: var(--dorado);
+    font-size: 13px;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--dorado);
+}
+.admin-box {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(26, 0, 0, 0.8) 100%);
+    border: 2px solid var(--rojo-claro);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 25px 0;
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+.admin-box h4 {
+    color: var(--dorado);
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+.aviso { font-size: 12px; text-align: center; color: #999; margin-top: 8px; font-weight: 600; }
+.modal-zoom {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-zoom.activo { display: flex; }
+.figu-zoom {
+    width: 80vw;
+    max-width: 300px;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    box-shadow: 0 20px 60px rgba(212,175,55,0.5);
+}
+.figu-zoom.volteada {
+    transform: rotateY(180deg);
+}
+.figu-zoom-cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 4px solid var(--dorado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.figu-zoom-frente {
+    background-size: cover;
+    background-position: center;
+}
+.figu-zoom-atras {
+    background: var(--gradiente-principal);
+    transform: rotateY(180deg);
+    font-weight: 900;
+    font-size: 100px;
+    color: var(--color-numero);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--dorado);
+    color: var(--negro);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+.box-oferta {
+    background: rgba(26,0,0,0.7);
+    border: 2px dashed var(--dorado);
+    border-radius: 14px;
+    padding: 15px;
+    margin: 15px 0;
+}
+.box-oferta h5 {
+    font-weight: 900;
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+.figus-oferta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.figu-oferta {
+    width: 45px;
+    aspect-ratio: 3/4;
+    border-radius: 6px;
+    background: var(--gradiente-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-numero);
+    font-weight: 900;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    border: 2px solid var(--dorado);
+    background-size: cover;
+    background-position: center;
+}
+.amigo-box {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.2) 0%, rgba(26, 0, 0, 0.8) 100%);
+    border: 2px solid var(--rojo-claro);
+    padding: 20px;
+    border-radius: 18px;
+    margin: 15px 0;
+}
+.amigo-box h4 {
+    color: var(--dorado);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.id-usuario {
+    background: var(--negro);
+    color: var(--dorado);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    word-break: break-all;
+    border: 2px solid var(--rojo);
+}
+    </style>
+</head>
+<body>
+    <div id="pantalla-inicio">
+        <div class="logo-inicio"></div>
+        <div class="tocar-inicio">Toca para entrar</div>
+    </div>
+
+    <div id="app-contenido">
+        <header>
+            <h1>🏆 ÁLBUM TRIBU HUAYNA 2026</h1>
+            <p id="progreso">0/13 figuritas</p>
+            <div class="monedas">💰 $<span id="plata">5000</span></div>
+        </header>
+
+        <nav id="menu">
+            <button data-seccion="album" class="activo">Álbum</button>
+            <button data-seccion="repetidas">Repes</button>
+            <button data-seccion="paquetes">Paquetes</button>
+            <button data-seccion="cambios">Cambios</button>
+            <button data-seccion="config">Config</button>
+        </nav>
+
+        <div id="album" class="seccion activa">
+            <div class="stats">
+                <h3>Tu Colección</h3>
+                <p id="stats-album"></p>
+                <p class="aviso">Tocá una figurita para verla en grande</p>
+            </div>
+            <div class="grid-figuritas" id="grid-album"></div>
+        </div>
+
+        <div id="repetidas" class="seccion">
+            <div class="stats">
+                <h3>Figuritas Repetidas</h3>
+                <p>Tocá para seleccionar las que das en un cambio</p>
+                <p class="aviso" id="contador-seleccion">Seleccionadas: 0</p>
+            </div>
+            <div class="grid-figuritas" id="grid-repetidas"></div>
+        </div>
+
+        <div id="paquetes" class="seccion">
+            <div class="stats">
+                <h3>Abrir Paquetes</h3>
+                <p id="info-paquetes">Te quedan 5 paquetes gratis hoy</p>
+                <p>Paquete extra: $1000</p>
+            </div>
+
+            <button class="btn" id="btn-paquete">📦 Abrir Paquete x5</button>
+            <div class="paquete-resultado" id="ultimo-paquete"></div>
+
+            <div class="stats" style="margin-top:30px">
+                <h3>Recargar Plata</h3>
+                <p>Si no tenés saldo para comprar paquetes</p>
+            </div>
+            <a class="btn btn-secundario" href="https://www.mercadopago.com.ar/checkout/v1/payment/redirect/e4e5652a-d512-415e-be1d-aa6783e1a9ad/review/?source=link&preference-id=628177304-e357d36f-8d51-49e4-b63a-6a902327d2e6&router-request-id=6757fa66-e3c6-4224-816e-f36f052ebee1&p=9596d0eef41446c29f862ab45dd822cd" target="_blank">
+                💳 Recargar $1000 con Mercado Pago
+            </a>
+            <p class="aviso">Después de pagar, mandá captura por WhatsApp</p>
+            <a class="btn btn-secundario" href="https://wa.me/541139277913?text=Hola!%20Hice%20una%20recarga%20de%20$1000.%20Adjunto%20captura" target="_blank">
+                📱 Enviar Captura al Admin
+            </a>
+
+            <div class="admin-box">
+                <h4>🔐 Acreditar $1000 al Álbum</h4>
+                <p class="aviso">Usar después de verificar el pago por WhatsApp</p>
+                <input type="password" id="clave-paquete" placeholder="Clave de paquete">
+                <button class="btn btn-secundario" id="btn-acreditar">Acreditar $1000 Ahora</button>
+            </div>
+        </div>
+
+        <div id="cambios" class="seccion">
+            <div class="stats">
+                <h3>Cambios con Amigos</h3>
+                <p>Vinculá tu cuenta con un amigo para intercambiar fácil</p>
+            </div>
+
+            <div class="amigo-box">
+                <h4>👤 Tu ID de Usuario</h4>
+                <div class="id-usuario" id="mi-id">Generando...</div>
+                <button class="btn btn-secundario" onclick="copiarMiID()">Copiar mi ID</button>
+                <p class="aviso">Pasale este ID a tu amigo para que te vincule</p>
+            </div>
+
+            <div id="sin-amigo">
+                <h4>Agregar Amigo</h4>
+                <p>Pegá el ID que te pasó tu amigo:</p>
+                <input type="text" id="id-amigo" placeholder="Pegá el ID acá">
+                <p class="aviso">También necesitás su código de álbum para ver sus repetidas</p>
+                <textarea id="album-amigo" placeholder="Pegá el código de álbum de tu amigo" rows="3"></textarea>
+                <button class="btn" id="btn-vincular">Vincular Amigo</button>
+            </div>
+
+            <div id="con-amigo" style="display:none">
+                <div class="amigo-box">
+                    <h4>✅ Vinculado con: <span id="nombre-amigo"></span></h4>
+                    <button class="btn btn-secundario" id="btn-desvincular">Desvincular</button>
+                </div>
+
+                <div id="comparacion-figus"></div>
+
+                <button class="btn" id="btn-proponer-cambio">Proponer Cambio Automático</button>
+                <div id="codigo-cambio"></div>
+
+                <h4 style="margin-top:25px">Aceptar Cambio de Amigo</h4>
+                <input type="text" id="codigo-recibido" placeholder="Pegá el código que te mandó">
+                <button class="btn btn-secundario" id="btn-aceptar-cambio">Ver y Aceptar Cambio</button>
+                <div id="preview-cambio"></div>
+            </div>
+
+            <div class="stats" style="margin-top:30px">
+                <h4>Compartir tu Álbum</h4>
+                <p>Generá tu código para que tu amigo te vincule:</p>
+                <button class="btn btn-secundario" onclick="generarMiAlbum()">Generar Código de Álbum</button>
+                <div id="mi-codigo-album"></div>
+            </div>
+        </div>
+
+        <div id="config" class="seccion">
+            <div class="stats">
+                <h3>Configuración</h3>
+                <button class="btn" id="btn-tema-rojo">🎨 Tema Sangre Roja</button>
+                <button class="btn" id="btn-tema-amarillo">🎨 Tema Corazón de Oro</button>
+                <button class="btn" id="btn-reiniciar" style="background:#555">🗑️ Reiniciar Álbum</button>
+            </div>
+        </div>
+
+        <div class="modal-zoom" id="modal-zoom">
+            <button class="cerrar-modal" id="cerrar-modal">×</button>
+            <div class="figu-zoom" id="figu-zoom" onclick="voltearFigu()">
+                <div class="figu-zoom-cara figu-zoom-frente" id="figu-zoom-frente"></div>
+                <div class="figu-zoom-cara figu-zoom-atras" id="figu-zoom-atras"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TOTAL_FIGUS = 13;
+        const CLAVE_ADMIN = 'HUAYNA2026';
+        const MONTO_RECARGA = 1000;
+
+        const IMAGENES_FIGUS = {
+            1: 'https://i.imgur.com/CdxQKfi.jpeg',
+            2: 'https://i.imgur.com/yDBlb42.jpeg',
+            3: 'https://i.imgur.com/G3esdby.jpeg',
+            4: 'https://i.imgur.com/Luy2PuW.jpeg',
+            5: 'https://i.imgur.com/OcUG2Hr.jpeg',
+            6: 'https://i.imgur.com/6xj5Ynw.jpeg',
+            7: 'https://i.imgur.com/UkKmQut.jpeg',
+            8: 'https://i.imgur.com/01oE6tZ.jpeg',
+            9: 'https://i.imgur.com/jlKXA4i.jpeg',
+            10: 'https://i.imgur.com/qjKWPvQ.jpeg',
+            11: 'https://i.imgur.com/HgiiZG9.jpeg',
+            12: 'https://i.imgur.com/wvxapQH.jpeg',
+            13: 'https://i.imgur.com/eNOMWpR.jpeg'
+        };
+
+        document.getElementById('pantalla-inicio').addEventListener('click', () => {
+            document.getElementById('pantalla-inicio').classList.add('oculta');
+            document.getElementById('app-contenido').classList.add('visible');
+        });
+
+        if(!localStorage.getItem('userID')) {
+            localStorage.setItem('userID', 'HUAYNA_' + Date.now().toString(36).toUpperCase());
+        }
+
+        let userID = localStorage.getItem('userID');
+        let albumCrudo = JSON.parse(localStorage.getItem('albumHuayna')) || {};
+        let album = {};
+        for(let num in albumCrudo) {
+            let n = parseInt(num);
+            if(n >= 1 && n <= TOTAL_FIGUS) {
+                album[n] = albumCrudo[n];
+            }
+        }
+
+        let plata = parseInt(localStorage.getItem('plataHuayna')) || 5000;
+        let paquetesHoy = JSON.parse(localStorage.getItem('paquetesHoyHuayna')) || {fecha: '', cantidad: 0};
+        let seleccionadas = [];
+        let amigoVinculado = JSON.parse(localStorage.getItem('amigoVinculado')) || null;
+        let cambioTemporal = null;
+
+        document.getElementById('mi-id').textContent = userID;
+                document.getElementById('menu').addEventListener('click', (e) => {
+            if(e.target.tagName === 'BUTTON') {
+                let seccion = e.target.dataset.seccion;
+                document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+                document.querySelectorAll('nav button').forEach(b => b.classList.remove('activo'));
+                document.getElementById(seccion).classList.add('activa');
+                e.target.classList.add('activo');
+                if(seccion === 'cambios') actualizarVistaAmigo();
+            }
+        });
+
+        document.getElementById('btn-paquete').addEventListener('click', abrirPaquete);
+        document.getElementById('btn-vincular').addEventListener('click', vincularAmigo);
+        document.getElementById('btn-desvincular').addEventListener('click', desvincularAmigo);
+        document.getElementById('btn-proponer-cambio').addEventListener('click', proponerCambio);
+        document.getElementById('btn-aceptar-cambio').addEventListener('click', aceptarCambio);
+        document.getElementById('btn-tema-rojo').addEventListener('click', () => cambiarTema('rojo'));
+        document.getElementById('btn-tema-amarillo').addEventListener('click', () => cambiarTema('amarillo'));
+        document.getElementById('btn-reiniciar').addEventListener('click', reiniciar);
+        document.getElementById('btn-acreditar').addEventListener('click', acreditarPlata);
+        document.getElementById('cerrar-modal').addEventListener('click', cerrarZoom);
+        document.getElementById('modal-zoom').addEventListener('click', (e) => {
+            if(e.target.id === 'modal-zoom') cerrarZoom();
+        });
+
+        function copiarMiID() {
+            navigator.clipboard.writeText(userID);
+            alert('ID copiado. Pasáselo a tu amigo para vincularse');
+        }
+
+        function generarMiAlbum() {
+            let codigo = btoa(JSON.stringify(album));
+            document.getElementById('mi-codigo-album').innerHTML = `
+                <p>Copiá este código y pasáselo a tu amigo:</p>
+                <div class="codigo">${codigo}</div>
+                <button class="btn btn-secundario" onclick="navigator.clipboard.writeText('${codigo}');alert('Código copiado')">Copiar Código</button>
+            `;
+        }
+
+        function guardar() {
+            localStorage.setItem('albumHuayna', JSON.stringify(album));
+            localStorage.setItem('plataHuayna', plata);
+            localStorage.setItem('paquetesHoyHuayna', JSON.stringify(paquetesHoy));
+            localStorage.setItem('amigoVinculado', JSON.stringify(amigoVinculado));
+            actualizarVista();
+        }
+
+        function acreditarPlata() {
+            let clave = document.getElementById('clave-paquete').value;
+            if(clave!== CLAVE_ADMIN) {
+                alert('Clave incorrecta');
+                return;
+            }
+            plata += MONTO_RECARGA;
+            alert(`Se acreditaron $${MONTO_RECARGA}. Nuevo saldo: $${plata}`);
+            document.getElementById('clave-paquete').value = '';
+            guardar();
+        }
+
+        function resetearPaquetesDiarios() {
+            let hoy = new Date().toDateString();
+            if(paquetesHoy.fecha!== hoy) {
+                paquetesHoy = {fecha: hoy, cantidad: 0};
+            }
+        }
+
+        function abrirPaquete() {
+            resetearPaquetesDiarios();
+            let costo = 0;
+            if(paquetesHoy.cantidad >= 5) {
+                costo = 1000;
+                if(plata < costo) {
+                    alert('No tenés plata suficiente. Recargá con Mercado Pago');
+                    return;
+                }
+                plata -= costo;
+            }
+
+            paquetesHoy.cantidad++;
+            let nuevas = [];
+            for(let i = 0; i < 5; i++) {
+                let num = Math.floor(Math.random() * TOTAL_FIGUS) + 1;
+                album[num] = (album[num] || 0) + 1;
+                nuevas.push(num);
+            }
+            mostrarResultadoPaquete(nuevas);
+            guardar();
+        }
+
+        function mostrarResultadoPaquete(figus) {
+            const div = document.getElementById('ultimo-paquete');
+            div.innerHTML = '<h4>Te tocaron:</h4>';
+            figus.forEach((n, index) => {
+                setTimeout(() => {
+                    let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                    div.innerHTML += `<div class="figu-mini" ${imgStyle}><span class="num-figu">${n}</span></div>`;
+                }, index * 100);
+            });
+        }
+
+        function seleccionarFigu(num) {
+            if(album[num] <= 1) return;
+            let index = seleccionadas.indexOf(num);
+            if(index > -1) {
+                seleccionadas.splice(index, 1);
+            } else {
+                seleccionadas.push(num);
+            }
+            actualizarVista();
+        }
+
+        function zoomFigu(num) {
+            if(!album[num] || album[num] === 0) return;
+            let figuZoom = document.getElementById('figu-zoom');
+            let frente = document.getElementById('figu-zoom-frente');
+            let atras = document.getElementById('figu-zoom-atras');
+
+            figuZoom.classList.remove('volteada');
+            atras.textContent = num;
+
+            if(IMAGENES_FIGUS[num]) {
+                frente.style.backgroundImage = `url('${IMAGENES_FIGUS[num]}')`;
+            } else {
+                frente.style.backgroundImage = '';
+            }
+            document.getElementById('modal-zoom').classList.add('activo');
+        }
+
+        function voltearFigu() {
+            document.getElementById('figu-zoom').classList.toggle('volteada');
+        }
+
+        function cerrarZoom() {
+            document.getElementById('modal-zoom').classList.remove('activo');
+        }
+
+        function vincularAmigo() {
+            let id = document.getElementById('id-amigo').value.trim();
+            let albumCod = document.getElementById('album-amigo').value.trim();
+            if(!id ||!albumCod || id === userID) {
+                alert('Completá los 2 campos con datos válidos');
+                return;
+            }
+            try {
+                let data = JSON.parse(atob(albumCod));
+                amigoVinculado = {id: id, album: data};
+                alert('¡Amigo vinculado! Ahora pueden ver qué figuritas se pueden cambiar');
+                document.getElementById('id-amigo').value = '';
+                document.getElementById('album-amigo').value = '';
+                guardar();
+                actualizarVistaAmigo();
+            } catch(e) {
+                alert('Código de álbum inválido');
+            }
+        }
+
+        function desvincularAmigo() {
+            if(confirm('¿Desvincular amigo?')) {
+                amigoVinculado = null;
+                guardar();
+                actualizarVistaAmigo();
+            }
+        }
+
+        function actualizarVistaAmigo() {
+            if(amigoVinculado) {
+                document.getElementById('sin-amigo').style.display = 'none';
+                document.getElementById('con-amigo').style.display = 'block';
+                document.getElementById('nombre-amigo').textContent = amigoVinculado.id;
+                compararFiguritas();
+            } else {
+                document.getElementById('sin-amigo').style.display = 'block';
+                document.getElementById('con-amigo').style.display = 'none';
+            }
+        }
+
+        function compararFiguritas() {
+            if(!amigoVinculado) return;
+            let misRepes = Object.keys(album).filter(n => album[n] > 1).map(n => parseInt(n));
+            let amigoAlbum = amigoVinculado.album;
+            let amigoRepes = Object.keys(amigoAlbum).filter(n => amigoAlbum[n] > 1).map(n => parseInt(n));
+
+            let leSirven = misRepes.filter(n =>!amigoAlbum[n]);
+            let meSirven = amigoRepes.filter(n =>!album[n]);
+
+            let html = '';
+            if(meSirven.length > 0) {
+                html += '<div class="box-oferta"><h5>🎁 A vos te sirven:</h5><div class="figus-oferta">';
+                meSirven.forEach(n => {
+                    let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                    html += `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                });
+                html += '</div></div>';
+            } else {
+                html += '<p class="aviso">No tiene repetidas que te sirvan</p>';
+            }
+
+            if(leSirven.length > 0) {
+                html += '<div class="box-oferta"><h5>🤝 A tu amigo le sirven:</h5><div class="figus-oferta">';
+                leSirven.forEach(n => {
+                    let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                    html += `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                });
+                html += '</div></div>';
+            } else {
+                html += '<p class="aviso">No tenés repetidas que le sirvan</p>';
+            }
+
+            document.getElementById('comparacion-figus').innerHTML = html;
+        }
+
+        function proponerCambio() {
+            if(!amigoVinculado) return;
+            if(seleccionadas.length === 0) {
+                alert('Seleccioná en "Repes" las figuritas que QUERÉS DAR');
+                return;
+            }
+
+            let amigoAlbum = amigoVinculado.album;
+            let leSirven = seleccionadas.filter(n =>!amigoAlbum[n]);
+
+            if(leSirven.length === 0) {
+                alert('Las figuritas que seleccionaste no le sirven a tu amigo');
+                return;
+            }
+
+            let amigoRepes = Object.keys(amigoAlbum).filter(n => amigoAlbum[n] > 1).map(n => parseInt(n));
+            let meSirven = amigoRepes.filter(n =>!album[n]);
+
+            if(meSirven.length === 0) {
+                alert('Tu amigo no tiene repetidas que te sirvan. No se puede hacer el cambio');
+                return;
+            }
+
+            let cantidad = Math.min(leSirven.length, meSirven.length);
+            let doy = leSirven.slice(0, cantidad);
+            let recibo = meSirven.slice(0, cantidad);
+
+            let codigo = btoa(JSON.stringify({
+                de: userID,
+                para: amigoVinculado.id,
+                doy: doy,
+                recibo: recibo,
+                timestamp: Date.now()
+            }));
+
+            document.getElementById('codigo-cambio').innerHTML = `
+                <p>Propuesta de cambio generada:</p>
+                <div class="box-oferta">
+                    <h5>Vos das:</h5>
+                    <div class="figus-oferta">${doy.map(n => {
+                        let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                        return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                    }).join('')}</div>
+                </div>
+                <div class="box-oferta">
+                    <h5>Vos recibís:</h5>
+                    <div class="figus-oferta">${recibo.map(n => {
+                        let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                        return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                    }).join('')}</div>
+                </div>
+                <div class="codigo">${codigo}</div>
+                <button class="btn btn-secundario" onclick="navigator.clipboard.writeText('${codigo}');alert('Código copiado')">Copiar Código</button>
+                <p class="aviso">Mandale este código a tu amigo por WhatsApp</p>
+            `;
+        }
+
+        function aceptarCambio() {
+            let codigo = document.getElementById('codigo-recibido').value.trim();
+            if(!codigo) {
+                alert('Pegá un código primero');
+                return;
+            }
+            try {
+                let data = JSON.parse(atob(codigo));
+                if(data.para!== userID) {
+                    alert('Este código no es para vos');
+                    return;
+                }
+                if(!amigoVinculado || data.de!== amigoVinculado.id) {
+                    alert('No estás vinculado con ese usuario');
+                    return;
+                }
+
+                let tengoTodas = data.recibo.every(n => album[n] > 1);
+                if(!tengoTodas) {
+                    alert('No tenés todas las repetidas que te pide tu amigo');
+                    return;
+                }
+
+                cambioTemporal = data;
+                let html = `
+                    <div class="box-oferta">
+                        <h5>Tu amigo te da:</h5>
+                        <div class="figus-oferta">${data.doy.map(n => {
+                            let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                            return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                        }).join('')}</div>
+                    </div>
+                    <div class="box-oferta">
+                        <h5>Vos das:</h5>
+                        <div class="figus-oferta">${data.recibo.map(n => {
+                            let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
+                            return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
+                        }).join('')}</div>
+                    </div>
+                    <button class="btn" onclick="confirmarCambio()">Confirmar Cambio</button>
+                `;
+                document.getElementById('preview-cambio').innerHTML = html;
+            } catch(e) {
+                alert('Código inválido');
+            }
+        }
+
+        function confirmarCambio() {
+            if(!cambioTemporal) return;
+
+            cambioTemporal.recibo.forEach(num => album[num]--);
+            cambioTemporal.doy.forEach(num => album[num] = (album[num] || 0) + 1);
+
+            alert(`¡Cambio hecho! Diste: ${cambioTemporal.recibo.join(', ')} | Recibiste: ${cambioTemporal.doy.join(', ')}`);
+            seleccionadas = [];
+            cambioTemporal = null;
+            document.getElementById('codigo-recibido').value = '';
+            document.getElementById('preview-cambio').innerHTML = '';
+            document.getElementById('codigo-cambio').innerHTML = '';
+            guardar();
+        }
+
+        function cambiarTema(tema) {
+            if(tema === 'amarillo') document.body.classList.add('tema-amarillo');
+            else document.body.classList.remove('tema-amarillo');
+            localStorage.setItem('temaHuayna', tema);
+        }
+
+        function reiniciar() {
+            if(confirm('¿Borrar todo el álbum y la plata?')) {
+                album = {};
+                plata = 5000;
+                paquetesHoy = {fecha: '', cantidad: 0};
+                seleccionadas = [];
+                amigoVinculado = null;
+                cambioTemporal = null;
+                guardar();
+            }
+        }
+
+        function actualizarVista() {
+            resetearPaquetesDiarios();
+            let tenidas = Object.keys(album).filter(n => n >= 1 && n <= TOTAL_FIGUS).length;
+            let totalRepes = Object.keys(album)
+          .filter(n => n >= 1 && n <= TOTAL_FIGUS)
+          .reduce((acc, n) => acc + album[n], 0) - tenidas;
+
+            document.getElementById('progreso').textContent = `${tenidas}/${TOTAL_FIGUS} figuritas`;
+            document.getElementById('plata').textContent = plata;
+            document.getElementById('stats-album').textContent = `Tenés ${tenidas} de ${TOTAL_FIGUS}. Repetidas: ${totalRepes}`;
+            document.getElementById('contador-seleccion').textContent = `Seleccionadas: ${seleccionadas.length}`;
+
+            let gratisRestantes = Math.max(0, 5 - paquetesHoy.cantidad);
+            document.getElementById('info-paquetes').textContent =
+                gratisRestantes > 0? `Te quedan ${gratisRestantes} paquetes gratis hoy` : `Ya usaste los 5 gratis. Próximo: $1000`;
+
+            let btnPaquete = document.getElementById('btn-paquete');
+            if(paquetesHoy.cantidad >= 5 && plata < 1000) {
+                btnPaquete.disabled = true;
+                btnPaquete.textContent = 'Sin plata. Recargá con MP';
+            } else {
+                btnPaquete.disabled = false;
+                btnPaquete.textContent = paquetesHoy.cantidad >= 5? '📦 Abrir Paquete x5 - $1000' : '📦 Abrir Paquete x5 - GRATIS';
+            }
+
+            let gridAlbum = document.getElementById('grid-album');
+            let gridRepes = document.getElementById('grid-repetidas');
+            gridAlbum.innerHTML = '';
+            gridRepes.innerHTML = '';
+
+            for(let i = 1; i <= TOTAL_FIGUS; i++) {
+                let cant = album[i] || 0;
+                let seleccionada = seleccionadas.includes(i)? 'seleccionada' : '';
+                let onClickAlbum = cant? `zoomFigu(${i})` : '';
+                let onClickRepe = `seleccionarFigu(${i})`;
+                let imgStyle = cant && IMAGENES_FIGUS[i]? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
+                let claseBloqueada =!cant? 'bloqueada' : '';
+
+                let badgeRepe = cant > 1? `<span class="figu repe">${cant}</span>` : '';
+                let mostrarNum =!cant? `<span class="num-figu">${i}</span>` : '';
+                let divAlbum = `<div class="figu ${cant? 'tenida' : ''} ${claseBloqueada}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}</div>`;
+                gridAlbum.innerHTML += divAlbum;
+
+                if(cant > 1) {
+                    gridRepes.innerHTML += `<div class="figu tenida ${seleccionada}" onclick="${onClickRepe}" ${imgStyle}><span class="num-figu">${i}</span>${badgeRepe}</div>`;
+                }
+            }
+        }
+
+        if(localStorage.getItem('temaHuayna') === 'amarillo') document.body.classList.add('tema-amarillo');
+        actualizarVista();
+    </script>
+</body>
+</html>
