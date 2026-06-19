@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Álbum Tribu Huayna 2026</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght=400;600;700;800;900&display=swap');
 
         :root {
             --rojo: #8B0000;
@@ -14,15 +14,16 @@
             --dorado: #FFD700;
             --negro: #0A0A0A;
             --azul: #1A1A1A;
-            --gradiente-principal: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
+            --gradiente-principal: linear-gradient(135deg, #4A0000 0%, #8B0000 50%, #C41E3A 100%);
             --gradiente-secundario: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
-            --gradiente-fondo: linear-gradient(180deg, #1A0000 0%, #0A0A0A 100%);
-            --sombra: 0 10px 30px rgba(139,0,0,0.4);
+            --gradiente-fondo: linear-gradient(180deg, #120000 0%, #0A0A0A 100%);
+            --sombra: 0 10px 30px rgba(139,0,0,0.5);
             --sombra-hover: 0 15px 40px rgba(212, 175, 55, 0.5);
             --color-badge-repe: #D4AF37;
             --texto-principal: #F5F5F5;
             --texto-btn: #FFD700;
             --color-numero: #FFD700;
+            --notificacion: #FF2E2E;
         }
 
         body.tema-amarillo {
@@ -30,599 +31,292 @@
             --amarillo: #D4AF37;
             --rojo-claro: #5C0000;
             --azul: #0A0A0A;
-            --gradiente-principal: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            --gradiente-principal: linear-gradient(135deg, #A87C1E 0%, #D4AF37 50%, #FFD700 100%);
             --gradiente-secundario: linear-gradient(135deg, #8B0000 0%, #5C0000 100%);
-            --gradiente-fondo: linear-gradient(180deg, #2A1A00 0%, #0A0A0A 100%);
+            --gradiente-fondo: linear-gradient(180deg, #1F1300 0%, #0A0A0A 100%);
             --color-badge-repe: #8B0000;
             --texto-principal: #FFFFFF;
             --texto-btn: #0A0A0A;
             --color-numero: #8B0000;
+            --notificacion: #8B0000;
         }
-        body.tema-amarillo header {
-            color: var(--negro);
-            text-shadow: none;
-        }
-        body.tema-amarillo header p {
-            color: var(--negro);
-            font-weight: 700;
-        }
-        body.tema-amarillo nav {
-            background: rgba(42, 26, 0, 0.95);
-            border-bottom: 2px solid var(--dorado);
-        }
-        body.tema-amarillo nav button {
-            color: #DDDDDD;
-        }
-        body.tema-amarillo nav button.activo {
-            color: var(--dorado);
-            font-weight: 900;
-        }
-        body.tema-amarillo nav button.activo::after {
-            background: var(--dorado);
-            box-shadow: 0 0 10px var(--dorado);
-        }
-        body.tema-amarillo .stats {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--dorado);
-            color: var(--texto-principal);
-        }
-        body.tema-amarillo .stats h3 {
-            color: var(--dorado);
-        }
-        body.tema-amarillo .btn {
-            color: var(--texto-btn);
-            font-weight: 900;
-            border-color: var(--negro);
-        }
-        body.tema-amarillo .btn-secundario {
-            color: var(--dorado);
-            border-color: var(--dorado);
-        }
-        body.tema-amarillo .btn:disabled {
-            background: #333;
-            color: #666;
-            border-color: #444;
-        }
-        body.tema-amarillo input,
-        body.tema-amarillo textarea {
-            background: rgba(0,0,0,0.7);
-            border-color: var(--dorado);
-            color: #FFF;
-        }
-        body.tema-amarillo .aviso {
-            color: #CCCCCC;
-        }
-        body.tema-amarillo .amigo-box,
-        body.tema-amarillo .box-oferta {
-            background: rgba(0,0,0,0.6);
-            border-color: var(--dorado);
-        }
-        body.tema-amarillo .amigo-box h4,
-        body.tema-amarillo .box-oferta h5 {
-            color: var(--dorado);
-        }
-        body.tema-amarillo .num-figu {
-            color: var(--color-numero);
-            text-shadow: 0 2px 6px rgba(0,0,0,0.8), 0 0 10px rgba(139,0,0,0.5);
-        }
-        body.tema-amarillo .figu.tenida .num-figu {
-            color: var(--color-numero);
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 0 15px rgba(139,0,0,0.7);
-        }
-        body.tema-amarillo .figu-mini .num-figu {
-            color: var(--color-numero);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-        }
+        body.tema-amarillo header { background-image: linear-gradient(rgba(212, 175, 55, 0.2), rgba(10, 10, 10, 0.85)), url('https://www.transparenttextures.com/patterns/dark-matter.png'); }
+        body.tema-amarillo header h1 { color: #FFF; text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px var(--dorado); }
+        body.tema-amarillo .badge-header { background: rgba(0,0,0,0.9); border-color: var(--dorado); color: #FFF; }
+        body.tema-amarillo .badge-header span { color: var(--amarillo); }
+        body.tema-amarillo nav { background: rgba(20, 13, 1, 0.96); border-bottom: 2px solid var(--dorado); }
+        body.tema-amarillo nav button { color: #BBB; }
+        body.tema-amarillo nav button.activo { color: var(--dorado); font-weight: 900; }
+        body.tema-amarillo nav button.activo::after { background: var(--dorado); box-shadow: 0 0 10px var(--dorado); }
+        body.tema-amarillo .stats { background: rgba(0, 0, 0, 0.6); border: 2px solid var(--dorado); }
+        body.tema-amarillo .stats h3 { color: var(--dorado); }
+        body.tema-amarillo .btn { color: var(--texto-btn); font-weight: 900; border-color: var(--negro); }
+        body.tema-amarillo .btn-secundario { color: var(--dorado); border-color: var(--dorado); }
+        body.tema-amarillo .btn:disabled { background: #333; color: #666; border-color: #444; }
+        body.tema-amarillo input { background: rgba(0,0,0,0.7); border-color: var(--dorado); color: #FFF; }
+        body.tema-amarillo .progress-bar { background: rgba(0,0,0,0.7); border-color: var(--dorado); }
+        body.tema-amarillo .num-figu { color: var(--color-numero); text-shadow: 0 2px 6px rgba(0,0,0,0.8); }
+        body.tema-amarillo .pagina-album h4 { color: var(--dorado); border-bottom: 2px solid var(--dorado); }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--gradiente-fondo);
-            color: var(--texto-principal);
-            min-height: 100vh;
+        body { font-family: 'Poppins', sans-serif; background: var(--gradiente-fondo); color: var(--texto-principal); min-height: 100vh; padding-top: 175px; } 
+
+        /* PANTALLA DE CARGA */
+        #pantalla-carga { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease; }
+        #pantalla-carga.oculta { opacity: 0; pointer-events: none; }
+        .imagen-carga { width: min(75vw, 320px); aspect-ratio: 1/1; height: auto; background-image: url('https://i.imgur.com/3YbxRCs.png'); background-size: contain; background-repeat: no-repeat; background-position: center; filter: drop-shadow(0 0 30px rgba(196, 30, 58, 0.9)); animation: latidoCarga 1.2s ease-in-out infinite; }
+        @keyframes latidoCarga { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(196, 30, 58, 0.9)); } 50% { transform: scale(1.08); filter: drop-shadow(0 0 50px rgba(255, 23, 68, 1)); } }
+        .texto-carga { color: var(--dorado); font-weight: 900; font-size: 22px; margin-top: 30px; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.9); animation: parpadeo 1.5s infinite; }
+        .porcentaje-carga { color: var(--rojo); font-weight: 700; font-size: 18px; margin-top: 10px; opacity: 0.9; }
+
+        /* PANTALLA INICIO */
+        #pantalla-inicio { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 998; display: none; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.5s ease, transform 0.5s ease; }
+        #pantalla-inicio.visible { display: flex; }
+        #pantalla-inicio.oculta { opacity: 0; transform: scale(1.1); pointer-events: none; }
+        .logo-inicio { width: min(85vw, 380px); aspect-ratio: 7/10; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6); display: flex; align-items: center; justify-content: flex-end; flex-direction: column; animation: pulse 2s infinite; position: relative; overflow: hidden; background-image: url('https://i.imgur.com/ZkLDHiq.jpeg'); background-size: cover; background-position: center; border: 4px solid var(--dorado); padding-bottom: 20px; }
+        .logo-inicio::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%); z-index: 1; }
+        .tocar-inicio { color: var(--dorado); font-weight: 900; font-size: 22px; margin-top: 30px; text-transform: uppercase; letter-spacing: 3px; animation: parpadeo 1.5s infinite; text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 2px 10px rgba(0,0,0,1); z-index: 2; position: relative; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6); border-color: var(--dorado); } 50% { transform: scale(1.03); box-shadow: 0 25px 80px rgba(139, 0, 0, 0.9); border-color: var(--rojo-claro); } }
+        @keyframes parpadeo { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+        #app-contenido { display: none; }
+        #app-contenido.visible { display: block; }
+        
+        /* ENCABEZADO CON TEXTURA ÉPICA */
+        header { 
+            background-image: linear-gradient(rgba(139, 0, 0, 0.4), rgba(10, 10, 10, 0.85)), url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            background-color: #3a0000;
+            background-size: auto, cover;
+            padding: 15px 15px 12px; 
+            text-align: center; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            z-index: 100; 
+            box-shadow: 0 6px 30px rgba(0,0,0,0.8); 
+            border-bottom: 3px solid var(--dorado); 
+            height: 125px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
         }
-        #pantalla-inicio {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        #pantalla-inicio.oculta {
-            opacity: 0;
-            transform: scale(1.1);
-            pointer-events: none;
-        }
-        .logo-inicio {
-            width: 280px;
-            height: 400px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-direction: column;
-            animation: pulse 2s infinite;
-            position: relative;
-            overflow: hidden;
-            background-image: url('https://i.imgur.com/ZkLDHiq.jpeg');
-            background-size: cover;
-            background-position: center;
-            border: 4px solid var(--dorado);
-            padding-bottom: 20px;
-        }
-        .logo-inicio::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
-            z-index: 1;
-        }
-        .tocar-inicio {
-            color: var(--dorado);
-            font-weight: 900;
-            font-size: 22px;
-            margin-top: 30px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: parpadeo 1.5s infinite;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 2px 10px rgba(0,0,0,1);
-            z-index: 2;
-            position: relative;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
-                border-color: var(--dorado);
-            }
-            50% {
-                transform: scale(1.03);
-                box-shadow: 0 25px 80px rgba(139, 0, 0, 0.9);
-                border-color: var(--rojo-claro);
-            }
-        }
-        @keyframes parpadeo {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-        #app-contenido {
-            display: none;
-        }
-        #app-contenido.visible {
-            display: block;
-        }
-        header {
-            background: var(--gradiente-principal);
-            color: var(--dorado);
-            padding: 20px 15px 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 4px 20px rgba(139,0,0,0.6);
-            border-bottom: 3px solid var(--dorado);
-        }
-        header h1 {
-            font-weight: 900;
-            font-size: 22px;
-            letter-spacing: -0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            padding-right: 80px;
-        }
-        header p {
-            opacity: 0.95;
-            font-weight: 600;
-            margin-top: 5px;
-            font-size: 14px;
-            padding-right: 80px;
-            color: #FFF;
-        }
-        nav {
-            display: flex;
-            background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(10px);
-            overflow-x: auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            border-bottom: 2px solid var(--rojo);
-        }
-        nav button {
-            flex: 1;
-            padding: 14px 10px;
-            border: none;
-            background: transparent;
-            font-weight: 700;
-            cursor: pointer;
-            color: #CCC;
-            min-width: 75px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        nav button.activo {
-            color: var(--dorado);
-        }
-        nav button.activo::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 3px;
-            background: var(--gradiente-secundario);
-            border-radius: 3px;
-            box-shadow: 0 0 10px var(--dorado);
-        }
+        header h1 { font-weight: 950; font-size: 21px; letter-spacing: 1px; color: #FFF; text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(255,215,0,0.6); text-transform: uppercase; text-align: center; }
+        
+        .header-badges { display: flex; gap: 10px; width: 100%; justify-content: center; margin-top: 2px; }
+        .badge-header { background: rgba(0, 0, 0, 0.8); border: 2px solid var(--dorado); padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: 800; color: #FFF; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); flex: 1; max-width: 170px; justify-content: center; backdrop-filter: blur(5px); }
+        .badge-header span { color: var(--dorado); font-weight: 900; }
+
+        nav { display: flex; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); overflow-x: auto; box-shadow: 0 6px 20px rgba(0,0,0,0.6); border-bottom: 2px solid var(--rojo); position: fixed; top: 125px; left: 0; width: 100%; z-index: 99; height: 50px; }
+        nav button { flex: 1; padding: 0 10px; height: 100%; border: none; background: transparent; font-weight: 700; cursor: pointer; color: #BBB; min-width: 75px; transition: all 0.3s ease; position: relative; font-size: 13px; text-transform: uppercase; }
+        nav button.activo { color: var(--dorado); font-weight: 800; }
+        nav button.activo::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 45px; height: 4px; background: var(--gradiente-secundario); border-radius: 3px; box-shadow: 0 0 12px var(--dorado); }
+        
+        .nav-btn-contenedor { position: relative; flex: 1; display: flex; height: 100%; min-width: 75px; }
+        .nav-btn-contenedor button { width: 100%; }
+        
+        .dot-notificacion { position: absolute; top: 10px; right: 12px; width: 10px; height: 10px; background-color: var(--notificacion); border-radius: 50%; border: 1px solid var(--dorado); box-shadow: 0 0 8px var(--notificacion); display: none; pointer-events: none; animation: parpadeoNoti 1.2s infinite ease-in-out; z-index: 10; }
+        @keyframes parpadeoNoti { 0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 2px var(--notificacion)); } 50% { transform: scale(1.3); opacity: 0.7; filter: drop-shadow(0 0 6px var(--notificacion)); } }
+
         .seccion { display: none; padding: 20px 15px; animation: fadeIn 0.4s ease; }
         .seccion.activa { display: block; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* PÁGINAS VERTICALES */
+        .pagina-album { background: rgba(0, 0, 0, 0.4); border-radius: 16px; padding: 15px; margin-bottom: 25px; border: 1px solid rgba(255, 215, 0, 0.1); }
+        .pagina-album h4 { font-size: 15px; font-weight: 900; color: var(--rojo-claro); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 2px solid var(--rojo); }
+
+        .grid-figuritas { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 12px; margin-top: 10px; }
+
+        .figu { aspect-ratio: 3/4; border: 2px solid rgba(212,175,55,0.3); border-radius: 12px; position: relative; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, #2a0000 0%, #1a1a1a 100%); overflow: hidden; }
+        .figu.bloqueada { background: linear-gradient(135deg, rgba(30, 5, 5, 0.6) 0%, rgba(10, 10, 10, 0.9) 100%); border: 2px dashed rgba(212, 175, 55, 0.35); box-shadow: inset 0 0 15px rgba(0,0,0,0.8); }
+        .figu.tenida { border: 3px solid var(--dorado); background-size: cover; background-position: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), var(--sombra); transform: scale(1.02); }
+        .figu.tenida::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%); border-radius: 9px; z-index: 1; }
+        .figu:active { transform: scale(0.95); }
+
+        .figu.destacada { grid-column: span 2; grid-row: span 2; }
+
+        /* EFECTO HOLOGRÁFICO EN ÁLBUM */
+        .figu.especial.tenida::before { content: ''; position: absolute; top: 0; left: -150%; width: 60%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: brilloHolo 3.5s infinite ease-in-out; z-index: 3; pointer-events: none; }
+        @keyframes brilloHolo { 0% { left: -150%; } 30% { left: 150%; } 100% { left: 150%; } }
+
+        .num-figu { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 900; font-size: 26px; color: var(--color-numero); z-index: 2; pointer-events: none; text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(212,175,55,0.6); }
+        .figu.tenida .num-figu { text-shadow: 0 3px 12px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8); z-index: 2; }
+        .figu.bloqueada .num-figu { color: rgba(255, 215, 0, 0.4); text-shadow: none; }
+        .figu .repe { position: absolute; top: 4px; right: 4px; background: var(--gradiente-secundario); color: var(--negro); border-radius: 50%; width: 24px; height: 24px; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: 900; box-shadow: 0 3px 10px rgba(0,0,0,0.8); border: 2px solid var(--rojo); z-index: 5; pointer-events: none; }
+        
+        .btn { background: var(--gradiente-principal); color: var(--texto-btn); border: 2px solid var(--dorado); padding: 16px 24px; border-radius: 14px; font-size: 15px; font-weight: 800; margin: 12px 0; cursor: pointer; width: 100%; text-decoration: none; display: block; text-align: center; box-shadow: var(--sombra); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn:active { transform: scale(0.98); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+        .btn:disabled { background: #333; color: #666; cursor: not-allowed; box-shadow: none; border-color: #444; }
+        .btn-secundario { background: var(--gradiente-secundario); color: var(--negro); border-color: var(--rojo); }
+        
+        .stats { background: rgba(26,0,0,0.8); backdrop-filter: blur(10px); padding: 20px; border-radius: 18px; margin: 15px 0; text-align: center; box-shadow: var(--sombra); border: 2px solid rgba(212,175,55,0.2); }
+        .stats h3 { font-weight: 900; color: var(--dorado); margin-bottom: 8px; font-size: 20px; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+        .progress-bar { width: 100%; height: 30px; background: rgba(0,0,0,0.6); border-radius: 15px; overflow: hidden; border: 2px solid var(--dorado); margin: 15px 0; }
+        .progress-fill { height: 100%; background: var(--gradiente-secundario); transition: width 0.5s ease; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--negro); font-size: 14px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
+        .stat-box { background: rgba(0,0,0,0.5); padding: 15px; border-radius: 12px; border: 2px solid rgba(212,175,55,0.2); }
+        .stat-box h4 { color: var(--dorado); font-size: 28px; font-weight: 900; margin-bottom: 5px; }
+        .stat-box p { font-size: 13px; opacity: 0.8; }
+        
+        /* LOGROS */
+        .titulo-seccion-logros { color: var(--dorado); font-size: 17px; font-weight: 900; margin: 25px 0 12px 0; text-transform: uppercase; letter-spacing: 1px; text-align: left; border-left: 4px solid var(--rojo-claro); padding-left: 10px; }
+        .grilla-logros { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+        .tarjeta-logro { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 14px; padding: 15px; display: flex; justify-content: space-between; align-items: center; gap: 15px; transition: border-color 0.3s ease; }
+        .tarjeta-logro:hover { border-color: rgba(212, 175, 55, 0.4); }
+        .tarjeta-logro.logro-reclamado { opacity: 0.5; background: rgba(0, 0, 0, 0.6); border-color: rgba(255, 255, 255, 0.05); }
+        .logro-info { flex-grow: 1; }
+        .logro-info h4 { margin: 0 0 3px 0; color: #FFF; font-size: 14px; font-weight: 800; }
+        .logro-info p { margin: 0 0 8px 0; color: #BBB; font-size: 12px; line-height: 1.3; font-weight: 500; }
+        .logro-meta-barra { display: flex; align-items: center; gap: 12px; }
+        .barra-progreso-logro { flex-grow: 1; height: 8px; background: rgba(0, 0, 0, 0.6); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+        .progreso-logro-llenado { height: 100%; background: var(--gradiente-secundario); border-radius: 10px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .logro-numeros { color: var(--dorado); font-size: 12px; font-weight: 800; min-width: 40px; text-align: right; font-family: monospace; }
+        .btn-reclamar-logro { padding: 10px 14px; border-radius: 10px; font-size: 12px; font-weight: 900; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease; white-space: nowrap; min-width: 110px; text-transform: uppercase; text-align: center; }
+        .btn-reclamar-logro.disabled { background: #222; color: #555; cursor: not-allowed; border-color: #333; }
+        .btn-reclamar-logro.active { background: var(--gradiente-secundario); color: var(--negro); border-color: var(--rojo); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); animation: pulsoDorado 1.5s infinite; }
+        .btn-reclamar-logro.active:active { transform: scale(0.95); }
+        .btn-reclamar-logro.claimed { background: rgba(0, 0, 0, 0.5); color: #4ade80; border-color: #22c55e; cursor: not-allowed; }
+        @keyframes pulsoDorado { 0%, 100% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); } 50% { box-shadow: 0 0 22px rgba(255, 215, 0, 0.8); } }
+
+        /* PAQUETE RESULTADO */
+        .paquete-resultado { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 20px 0; min-height: 80px; }
+        .figu-mini { width: 55px; aspect-ratio: 3/4; border-radius: 8px; position: relative; background: var(--gradiente-principal); box-shadow: 0 3px 10px rgba(0,0,0,0.6); animation: aparecerFigu 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; border: 2px solid var(--dorado); background-size: cover; background-position: center; }
+
+        /* FIX: esta animación faltaba — por eso las miniaturas del paquete no se veían (quedaban en opacity:0 para siempre) */
+        @keyframes aparecerFigu {
+            from { opacity: 0; transform: scale(0.5) translateY(15px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
-        .grid-figuritas { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 12px; margin-top: 20px; }
-        .figu {
-            aspect-ratio: 3/4;
-            border: 3px solid rgba(212,175,55,0.3);
-            border-radius: 12px;
-            position: relative;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: linear-gradient(135deg, #2a0000 0%, #1a1a1a 100%);
-            overflow: visible;
+        
+        .figu.tenida.figu-repe .num-figu {
+            top: 6px;
+            left: 6px;
+            transform: none;
+            font-size: 11px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 2px 6px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-shadow: none;
         }
-        .figu.bloqueada {
-            filter: blur(8px) brightness(0.3);
-            cursor: default;
-            overflow: hidden;
+
+        .figu-mini .num-figu { 
+            position: absolute; 
+            top: 4px; 
+            left: 4px; 
+            transform: none; 
+            font-weight: 800; 
+            font-size: 11px; 
+            color: var(--color-numero); 
+            background: rgba(0, 0, 0, 0.75); 
+            padding: 2px 5px; 
+            border-radius: 4px; 
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-shadow: none; 
+            z-index: 2; 
         }
-        .figu.tenida {
-            border: 3px solid var(--dorado);
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), var(--sombra);
-            transform: scale(1.02);
-            overflow: visible;
+        
+        input { width: 100%; padding: 14px; margin: 10px 0; border: 2px solid rgba(212,175,55,0.3); border-radius: 12px; font-size: 16px; font-family: 'Poppins', sans-serif; background: rgba(26,0,0,0.6); color: #FFF; text-align: center; }
+        input:focus { outline: none; border-color: var(--dorado); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2); }
+        
+        .admin-box { background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(26, 0, 0, 0.8) 100%); border: 2px solid var(--rojo-claro); padding: 20px; border-radius: 18px; margin: 25px 0; box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4); }
+        .admin-box h4 { color: var(--dorado); font-weight: 900; margin-bottom: 8px; }
+        .aviso { font-size: 12px; text-align: center; color: #999; margin-top: 8px; font-weight: 600; }
+        
+        /* MODALES */
+        .modal-zoom { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 500; align-items: center; justify-content: center; animation: fadeIn 0.3s ease; }
+        .modal-zoom.activo { display: flex; }
+        .figu-zoom { width: min(90vw, 420px); aspect-ratio: 3/4; border-radius: 20px; position: relative; cursor: pointer; transform-style: preserve-3d; transition: transform 0.6s; box-shadow: 0 20px 60px rgba(212,175,55,0.5); }
+        .figu-zoom.volteada { transform: rotateY(180deg); }
+        .figu-zoom-cara { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; border: 4px solid var(--dorado); display: flex; align-items: center; justify-content: center; }
+        .figu-zoom-frente { background-size: cover; background-position: center; }
+        .figu-zoom-atras { background: var(--gradiente-principal); transform: rotateY(180deg); font-weight: 900; font-size: 100px; color: var(--color-numero); text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+        .cerrar-modal { position: absolute; top: 20px; right: 20px; background: var(--dorado); color: var(--negro); width: 45px; height: 45px; border-radius: 50%; border: none; font-size: 24px; font-weight: 900; cursor: pointer; z-index: 20; }
+
+        /* MODAL DE APERTURA DE SOBRES — ahora a pantalla completa */
+        .modal-paquete { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 501; align-items: center; justify-content: center; flex-direction: column; overflow: hidden; }
+        .modal-paquete.activo { display: flex; }
+        
+        /* Antes: tamaño fijo 240x336px (chico en celulares verticales). Ahora escala con el viewport. */
+        .contenedor-sobre-interactivo { position: relative; width: min(85vw, 380px); aspect-ratio: 3 / 4; height: auto; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        
+        .sobre-mitad { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; border-radius: 16px; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease; z-index: 10; pointer-events: none; }
+        .sobre-mitad.arriba { clip-path: inset(0 0 50% 0); }
+        .sobre-mitad.abajo { clip-path: inset(50% 0 0 0); }
+        
+        .contenedor-sobre-interactivo.rasgado .sobre-mitad.arriba { transform: translateY(-220px) rotate(-15deg); opacity: 0; }
+        .contenedor-sobre-interactivo.rasgado .sobre-mitad.abajo { transform: translateY(220px) rotate(15deg); opacity: 0; }
+        
+        .tocar-abrir { color: var(--dorado); font-weight: 900; font-size: 15px; margin-top: 25px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); transition: opacity 0.3s; z-index: 12; pointer-events: none; text-align: center; }
+        .contador-flujo-carta { display: none; color: #888; font-size: 12px; font-weight: 700; margin-top: 15px; letter-spacing: 1px; text-transform: uppercase; z-index: 12; pointer-events: none; }
+        
+        /* Antes: tamaño fijo 220x308px. Ahora escala con el viewport para verse grande en mobile vertical. */
+        .contenedor-revelado-secuencial { width: min(80vw, 340px); aspect-ratio: 3 / 4; height: auto; position: absolute; z-index: 15; display: none; align-items: center; justify-content: center; cursor: pointer; }
+        .contenedor-revelado-secuencial.activo { display: flex; }
+
+        .carta-individual-revelada { width: 100%; height: 100%; border: 4px solid var(--dorado); border-radius: 16px; background-size: cover; background-position: center; box-shadow: 0 15px 35px rgba(0,0,0,0.9); position: relative; overflow: hidden; }
+        
+        .carta-individual-revelada .num-figu { 
+            top: 12px; 
+            left: 12px; 
+            transform: none; 
+            font-size: 16px; 
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 4px 10px; 
+            border-radius: 8px; 
+            border: 1.5px solid var(--dorado);
+            text-shadow: none; 
         }
-        .figu.tenida::after {
+
+        /* ====== NUEVAS ANIMACIONES DE LA CARTA ====== */
+
+        /* Entrada Clásica (Para repetidas) */
+        @keyframes slideUpEntrada {
+            from { transform: translateY(60px) scale(0.8); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Efecto Pegado Físico (Slam - Para nuevas) */
+        .animacion-pegado-nuevo {
+            animation: slamPegado 0.45s cubic-bezier(0.215, 0.610, 0.355, 1) forwards !important;
+        }
+        @keyframes slamPegado {
+            0% { transform: translateY(-100px) scale(1.6); opacity: 0; filter: blur(4px); box-shadow: 0 50px 50px rgba(0,0,0,0.5); }
+            75% { transform: translateY(0) scale(0.96); opacity: 1; filter: blur(0); }
+            85% { transform: scale(1.03); box-shadow: 0 0 25px rgba(212,175,55,0.6); }
+            100% { transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.9); }
+        }
+
+        /* EFECTO OPCIÓN B: METALIZADO LÍQUIDO (Únicamente en la carta) */
+        .carta-individual-revelada.efecto-metalizado::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
+            left: -150%;
+            width: 60%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
-            border-radius: 9px;
-            z-index: 0;
-        }
-        .figu:active {
-            transform: scale(0.95);
-        }
-        .figu.seleccionada {
-            border: 3px solid var(--dorado);
-            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3), var(--sombra-hover);
-            transform: scale(1.05);
-        }
-        .num-figu {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: 900;
-            font-size: 28px;
-            color: var(--color-numero);
-            z-index: 1;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            z-index: 4;
             pointer-events: none;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(212,175,55,0.6);
+            animation: reflejoMetalicoUnico 0.6s ease-in-out forwards;
         }
-        .figu.tenida .num-figu {
-            text-shadow: 0 3px 12px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);
-            z-index: 2;
-        }
-        .figu.bloqueada .num-figu {
-            color: #666;
-            text-shadow: none;
-        }
-        .figu .repe {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--gradiente-secundario);
-            color: var(--negro);
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.8);
-            border: 3px solid var(--rojo);
-            z-index: 5;
-            pointer-events: none;
-        }
-        .btn {
-            background: var(--gradiente-principal);
-            color: var(--texto-btn);
-            border: 2px solid var(--dorado);
-            padding: 16px 24px;
-            border-radius: 14px;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 12px 0;
-            cursor: pointer;
-            width: 100%;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            box-shadow: var(--sombra);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .btn:active {
-            transform: scale(0.98);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
-        .btn:disabled {
-            background: #333;
-            color: #666;
-            cursor: not-allowed;
-            box-shadow: none;
-            border-color: #444;
-        }
-        .btn-secundario {
-            background: var(--gradiente-secundario);
-            color: var(--negro);
-            border-color: var(--rojo);
-        }
-        .stats {
-            background: rgba(26,0,0,0.8);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 18px;
-            margin: 15px 0;
-            text-align: center;
-            box-shadow: var(--sombra);
-            border: 2px solid rgba(212,175,55,0.3);
-        }
-        .stats h3 {
-            font-weight: 900;
-            color: var(--dorado);
-            margin-bottom: 8px;
-            font-size: 20px;
-            text-shadow: 0 0 10px rgba(212,175,55,0.5);
-        }
-        .paquete-resultado {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .figu-mini {
-            width: 55px;
-            aspect-ratio: 3/4;
-            border-radius: 8px;
-            position: relative;
-            background: var(--gradiente-principal);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.6);
-            animation: aparecerFigu 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            opacity: 0;
-            border: 2px solid var(--dorado);
-            background-size: cover;
-            background-position: center;
-        }
-        @keyframes aparecerFigu {
-            from { transform: scale(0.5) rotateY(90deg); opacity: 0; }
-            to { transform: scale(1) rotateY(0); opacity: 1; }
-        }
-        .figu-mini .num-figu {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: 900;
-            font-size: 20px;
-            color: var(--color-numero);
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
-            z-index: 2;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 14px;
-            margin: 10px 0;
-            border: 2px solid rgba(212,175,55,0.3);
-            border-radius: 12px;
-            font-size: 16px;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            background: rgba(26,0,0,0.6);
-            color: #FFF;
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--dorado);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-        }
-        .codigo {
-            background: var(--negro);
-            color: var(--dorado);
-            padding: 18px;
-            border-radius: 12px;
-            font-family: monospace;
-            word-break: break-all;
-            margin: 12px 0;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.8);
-            border: 2px solid var(--rojo);
-        }
-        .monedas {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(10,10,10,0.95);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            color: var(--dorado);
-            font-size: 13px;
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--dorado);
-        }
-        .admin-box {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(26, 0, 0, 0.8) 100%);
-            border: 2px solid var(--rojo-claro);
-            padding: 20px;
-            border-radius: 18px;
-            margin: 25px 0;
-            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
-        }
-        .admin-box h4 {
-            color: var(--dorado);
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-        .aviso { font-size: 12px; text-align: center; color: #999; margin-top: 8px; font-weight: 600; }
-        .modal-zoom {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-        .modal-zoom.activo { display: flex; }
-        .figu-zoom {
-            width: 80vw;
-            max-width: 300px;
-            aspect-ratio: 3/4;
-            border-radius: 20px;
-            position: relative;
-            cursor: pointer;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-            box-shadow: 0 20px 60px rgba(212,175,55,0.5);
-        }
-        .figu-zoom.volteada {
-            transform: rotateY(180deg);
-        }
-        .figu-zoom-cara {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 20px;
-            border: 4px solid var(--dorado);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .figu-zoom-frente {
-            background-size: cover;
-            background-position: center;
-        }
-        .figu-zoom-atras {
-            background: var(--gradiente-principal);
-            transform: rotateY(180deg);
-            font-weight: 900;
-            font-size: 100px;
-            color: var(--color-numero);
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-        }
-        .cerrar-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--dorado);
-            color: var(--negro);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: none;
-            font-size: 24px;
-            font-weight: 900;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-        }
-        .box-oferta {
-            background: rgba(26,0,0,0.7);
-            border: 2px dashed var(--dorado);
-            border-radius: 14px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        .box-oferta h5 {
-            font-weight: 900;
-            color: var(--dorado);
-            margin-bottom: 10px;
-        }
-        .figus-oferta {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .figu-oferta {
-            width: 45px;
-            aspect-ratio: 3/4;
-            border-radius: 6px;
-            background: var(--gradiente-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-numero);
-            font-weight: 900;
-            font-size: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-            border: 2px solid var(--dorado);
-            background-size: cover;
-            background-position: center;
-        }
-        .amigo-box {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2) 0%, rgba(26, 0, 0, 0.8) 100%);
-            border: 2px solid var(--rojo-claro);
-            padding: 20px;
-            border-radius: 18px;
-            margin: 15px 0;
-        }
-        .amigo-box h4 {
-            color: var(--dorado);
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-        .id-usuario {
-            background: var(--negro);
-            color: var(--dorado);
-            padding: 10px;
-            border-radius: 8px;
-            font-family: monospace;
-            text-align: center;
-            margin: 10px 0;
-            font-size: 14px;
-            word-break: break-all;
-            border: 2px solid var(--rojo);
+
+        @keyframes reflejoMetalicoUnico {
+            0% { left: -150%; }
+            100% { left: 150%; }
         }
     </style>
 </head>
 <body>
+    <div id="pantalla-carga">
+        <div class="imagen-carga"></div>
+        <div class="texto-carga">Cargando Álbum</div>
+        <div class="porcentaje-carga" id="porcentaje-carga">0%</div>
+    </div>
+
     <div id="pantalla-inicio">
         <div class="logo-inicio"></div>
         <div class="tocar-inicio">Toca para entrar</div>
@@ -630,17 +324,22 @@
 
     <div id="app-contenido">
         <header>
-            <h1>🏆 ÁLBUM TRIBU HUAYNA 2026</h1>
-            <p id="progreso">0/65 figuritas</p>
-            <div class="monedas">💰 $<span id="plata">5000</span></div>
+            <h1>🔥 Tribu Huayna 2026 🔥</h1>
+            <div class="header-badges">
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/96</span></div>
+                <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
+            </div>
         </header>
 
         <nav id="menu">
-            <button data-seccion="album" class="activo">Álbum</button>
-            <button data-seccion="repetidas">Repes</button>
-            <button data-seccion="paquetes">Paquetes</button>
-            <button data-seccion="cambios">Cambios</button>
-            <button data-seccion="config">Config</button>
+            <div class="nav-btn-contenedor"><button data-seccion="album" class="activo">Álbum</button></div>
+            <div class="nav-btn-contenedor"><button data-seccion="repetidas">Repes</button></div>
+            <div class="nav-btn-contenedor"><button data-seccion="paquetes">Paquetes</button></div>
+            <div class="nav-btn-contenedor">
+                <button data-seccion="progreso">Progreso</button>
+                <div class="dot-notificacion" id="noti-progreso"></div>
+            </div>
+            <div class="nav-btn-contenedor"><button data-seccion="config">Config</button></div>
         </nav>
 
         <div id="album" class="seccion activa">
@@ -649,14 +348,14 @@
                 <p id="stats-album"></p>
                 <p class="aviso">Tocá una figurita para verla en grande</p>
             </div>
-            <div class="grid-figuritas" id="grid-album"></div>
+            <div id="paginas-contenedor"></div>
         </div>
 
         <div id="repetidas" class="seccion">
             <div class="stats">
-                <h3>Figuritas Repetidas</h3>
-                <p>Tocá para seleccionar las que das en un cambio</p>
-                <p class="aviso" id="contador-seleccion">Seleccionadas: 0</p>
+                <h3>Fuego Sagrado</h3>
+                <p>Cada copia extra suma para conseguir nuevos paquetes.</p>
+                <button class="btn btn-secundario" id="btn-quemar-repes" style="margin-top: 15px;">Cargando repes...</button>
             </div>
             <div class="grid-figuritas" id="grid-repetidas"></div>
         </div>
@@ -664,77 +363,61 @@
         <div id="paquetes" class="seccion">
             <div class="stats">
                 <h3>Abrir Paquetes</h3>
-                <p id="info-paquetes">Te quedan 5 paquetes gratis hoy</p>
-                <p>Paquete extra: $1000</p>
+                <p id="info-paquetes">Tenés 5 paquetes gratis por única vez</p>
             </div>
 
-            <button class="btn" id="btn-paquete">📦 Abrir Paquete x5</button>
+            <button class="btn" id="btn-paquete">Abrir Sobre (5 figuritas)</button>
             <div class="paquete-resultado" id="ultimo-paquete"></div>
 
             <div class="stats" style="margin-top:30px">
-                <h3>Recargar Plata</h3>
-                <p>Si no tenés saldo para comprar paquetes</p>
+                <h3>🛒 Comprar Saldo</h3>
+                <p>Ingresá al link oficial y elegí el monto exacto que quieras cargar:</p>
             </div>
-            <a class="btn btn-secundario" href="https://www.mercadopago.com.ar/checkout/v1/payment/redirect/e4e5652a-d512-415e-be1d-aa6783e1a9ad/review/?source=link&preference-id=628177304-e357d36f-8d51-49e4-b63a-6a902327d2e6&router-request-id=6757fa66-e3c6-4224-816e-f36f052ebee1&p=9596d0eef41446c29f862ab45dd822cd" target="_blank">
-                💳 Recargar $1000 con Mercado Pago
+            
+            <a class="btn btn-secundario" href="https://link.mercadopago.com.ar/albumhuayna" target="_blank">
+                Ir a Mercado Pago (Monto Editable)
             </a>
-            <p class="aviso">Después de pagar, mandá captura por WhatsApp</p>
-            <a class="btn btn-secundario" href="https://wa.me/541139277913?text=Hola!%20Hice%20una%20recarga%20de%20$1000.%20Adjunto%20captura" target="_blank">
-                📱 Enviar Captura al Admin
+            
+            <p class="aviso" style="margin-top: 15px;">⚠️ Una vez realizado el pago, enviá el comprobante al Administrador para recibir tu código único de acreditación.</p>
+            
+            <a class="btn" id="btn-whatsapp" href="https://wa.me/541139277913?text=Hola!%20Acabo%20de%20cargar%20saldo%20para%20el%20album%20con%20monto%20editable.%20Adjunto%20comprobante!" target="_blank">
+                Enviar Comprobante por WhatsApp
             </a>
 
             <div class="admin-box">
-                <h4>🔐 Acreditar $1000 al Álbum</h4>
-                <p class="aviso">Usar después de verificar el pago por WhatsApp</p>
-                <input type="password" id="clave-paquete" placeholder="Clave de paquete">
-                <button class="btn btn-secundario" id="btn-acreditar">Acreditar $1000 Ahora</button>
+                <h4>🔐 Canjear Código de Saldo</h4>
+                <p class="aviso">Ingresá el código alfanumérico que te entregó el Admin:</p>
+                <input type="text" id="clave-paquete" placeholder="" style="text-transform: uppercase;">
+                <button class="btn btn-secundario" id="btn-acreditar">Validar y Acreditar Saldo</button>
             </div>
         </div>
 
-        <div id="cambios" class="seccion">
+        <div id="progreso" class="seccion">
             <div class="stats">
-                <h3>Cambios con Amigos</h3>
-                <p>Vinculá tu cuenta con un amigo para intercambiar fácil</p>
-            </div>
-
-            <div class="amigo-box">
-                <h4>👤 Tu ID de Usuario</h4>
-                <div class="id-usuario" id="mi-id">Generando...</div>
-                <button class="btn btn-secundario" onclick="copiarMiID()">Copiar mi ID</button>
-                <p class="aviso">Pasale este ID a tu amigo para que te vincule</p>
-            </div>
-
-            <div id="sin-amigo">
-                <h4>Agregar Amigo</h4>
-                <p>Pegá el ID que te pasó tu amigo:</p>
-                <input type="text" id="id-amigo" placeholder="Pegá el ID acá">
-                <p class="aviso">También necesitás su código de álbum para ver sus repetidas</p>
-                <textarea id="album-amigo" placeholder="Pegá el código de álbum de tu amigo" rows="3"></textarea>
-                <button class="btn" id="btn-vincular">Vincular Amigo</button>
-            </div>
-
-            <div id="con-amigo" style="display:none">
-                <div class="amigo-box">
-                    <h4>✅ Vinculado con: <span id="nombre-amigo"></span></h4>
-                    <button class="btn btn-secundario" id="btn-desvincular">Desvincular</button>
+                <h3>Progreso del Álbum</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill">0%</div>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <h4 id="stat-tenidas">0</h4>
+                        <p>Figuritas Únicas</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 id="stat-faltan">96</h4>
+                        <p>Te Faltan</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 id="stat-repes">0</h4>
+                        <p>Repetidas Totales</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 id="stat-porcentaje">0%</h4>
+                        <p>Completado</p>
+                    </div>
                 </div>
 
-                <div id="comparacion-figus"></div>
-
-                <button class="btn" id="btn-proponer-cambio">Proponer Cambio Automático</button>
-                <div id="codigo-cambio"></div>
-
-                <h4 style="margin-top:25px">Aceptar Cambio de Amigo</h4>
-                <input type="text" id="codigo-recibido" placeholder="Pegá el código que te mandó">
-                <button class="btn btn-secundario" id="btn-aceptar-cambio">Ver y Aceptar Cambio</button>
-                <div id="preview-cambio"></div>
-            </div>
-
-            <div class="stats" style="margin-top:30px">
-                <h4>Compartir tu Álbum</h4>
-                <p>Generá tu código para que tu amigo te vincule:</p>
-                <button class="btn btn-secundario" onclick="generarMiAlbum()">Generar Código de Álbum</button>
-                <div id="mi-codigo-album"></div>
+                <div id="contenedor-logros"></div>
             </div>
         </div>
 
@@ -754,201 +437,355 @@
                 <div class="figu-zoom-cara figu-zoom-atras" id="figu-zoom-atras"></div>
             </div>
         </div>
+
+        <div class="modal-paquete" id="modal-paquete">
+            <div class="contenedor-sobre-interactivo" id="sobre-interactivo" onclick="rasgarSobre()">
+                <div class="sobre-mitad arriba" id="sobre-mitad-arriba"></div>
+                <div class="sobre-mitad abajo" id="sobre-mitad-abajo"></div>
+                
+                <div class="contenedor-revelado-secuencial" id="contenedor-revelado-secuencial" onclick="avanzarRevelado(event)">
+                    <div class="carta-individual-revelada" id="carta-revelada-actual"></div>
+                </div>
+            </div>
+            
+            <div class="tocar-abrir" id="texto-sobre-guia">TOCÁ EL SOBRE PARA ROMPERLO</div>
+            <div class="contador-flujo-carta" id="contador-flujo-carta">Figurita 1 de 5</div>
+        </div>
     </div>
 
     <script>
-        const TOTAL_FIGUS = 65;
-        const CLAVE_ADMIN = 'HUAYNA2026';
-        const MONTO_RECARGA = 1000;
-        const VERSION_ALBUM = '2026-v2'; 
+        const TOTAL_FIGUS = 96;
+        const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
-        // Si la versión guardada es distinta, borra el álbum viejo
-        if(localStorage.getItem('versionHuayna') !== VERSION_ALBUM) {
-            localStorage.removeItem('albumHuayna');
-            localStorage.setItem('versionHuayna', VERSION_ALBUM);
-            alert('¡Álbum actualizado! Ahora hay 65 figuritas para coleccionar');
+        const SECCIONES_ALBUM = [
+            { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 12 },
+            { titulo: "🪵 Sección II: Raíces de nuestra Tribu", de: 13, hasta: 36 },
+            { titulo: "⭐ Sección III: El Legado Viviente", de: 37, hasta: 60 },
+            { titulo: "🌙 Sección IV: El Ritmo de la Noche", de: 61, hasta: 84 },
+            { titulo: "✨ Sección V: Los Destellos de Oro", de: 85, hasta: 96 }
+        ];
+
+        // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
+        const IMAGENES_FIGUS = {
+            1: 'https://i.imgur.com/UVFAQRp.jpeg', 2: 'https://i.imgur.com/yDBlb42.jpeg',
+            3: 'https://i.imgur.com/G3esdby.jpeg', 4: 'https://i.imgur.com/wvxapQH.jpeg', 
+            5: 'https://i.imgur.com/OcUG2Hr.jpeg', 6: 'https://i.imgur.com/6xj5Ynw.jpeg',
+            7: 'https://i.imgur.com/UkKmQut.jpeg', 8: 'https://i.imgur.com/01oE6tZ.jpeg',
+            9: 'https://i.imgur.com/jlKXA4i.jpeg', 10: 'https://i.imgur.com/qjKWPvQ.jpeg',
+            11: 'https://i.imgur.com/HgiiZG9.jpeg', 12: 'https://i.imgur.com/Luy2PuW.jpeg', 
+            13: 'https://i.imgur.com/eNOMWpR.jpeg', 14: 'https://i.imgur.com/2GeqRkN.jpeg',
+            15: 'https://i.imgur.com/d8r7UJt.jpeg', 16: 'https://i.imgur.com/WGGY3LK.jpeg',
+            17: 'https://i.imgur.com/i8Z6Bq0.jpeg', 18: 'https://i.imgur.com/cVY9Jys.jpeg', 
+            19: 'https://i.imgur.com/FKEqvSd.jpeg', 20: 'https://i.imgur.com/KyoiWXj.jpeg',
+            21: 'https://i.imgur.com/ltebDgp.jpeg', 22: 'https://i.imgur.com/81pdvNY.jpeg',
+            23: 'https://i.imgur.com/8BCPT1u.jpeg', 24: 'https://i.imgur.com/MLrr1TI.jpeg', 
+            25: 'https://i.imgur.com/ljUSJcd.jpeg', 26: 'https://i.imgur.com/G8nV0xp.jpeg',
+            27: 'https://i.imgur.com/t4r8Wmd.jpeg', 28: 'https://i.imgur.com/tPqwQaq.jpeg',
+            29: 'https://i.imgur.com/XIYc8V2.jpeg', 30: 'https://i.imgur.com/tLRZATA.jpeg', 
+            31: 'https://i.imgur.com/QpAn97W.jpeg', 32: 'https://i.imgur.com/BvCCw5T.jpeg',
+            33: 'https://i.imgur.com/ICSFYuJ.jpeg', 34: 'https://i.imgur.com/gCIuSue.jpeg',
+            35: 'https://i.imgur.com/VorNcUG.jpeg', 36: 'https://i.imgur.com/MhFphX9.jpeg', 
+            37: 'https://i.imgur.com/cYvniPl.jpeg', 38: 'https://i.imgur.com/yyfQ1Wn.jpeg',
+            39: 'https://i.imgur.com/NJTDCqc.jpeg', 40: 'https://i.imgur.com/ZCiDh6m.jpeg',
+            41: 'https://i.imgur.com/oMSYr58.jpeg', 42: 'https://i.imgur.com/H1ksdNh.jpeg',
+            43: 'https://i.imgur.com/5wXk0Bx.jpeg', 44: 'https://i.imgur.com/cxnKSEy.jpeg',
+            45: 'https://i.imgur.com/yD15gmj.jpeg', 46: 'https://i.imgur.com/L6741zk.jpeg',
+            47: 'https://i.imgur.com/p4QN5PR.jpeg', 48: 'https://i.imgur.com/aCe6wWN.jpeg',
+            49: 'https://i.imgur.com/G4NVfqt.jpeg', 50: 'https://i.imgur.com/rpiuRzg.jpeg',
+            51: 'https://i.imgur.com/1WXe6B6.jpeg', 52: 'https://i.imgur.com/8pTrQyd.jpeg',
+            53: 'https://i.imgur.com/Ux4E0EX.jpeg', 54: 'https://i.imgur.com/0ThSeac.jpeg',
+            55: 'https://i.imgur.com/sIrFVYx.jpeg', 56: 'https://i.imgur.com/6CFADnQ.jpeg',
+            57: 'https://i.imgur.com/pFaPR26.jpeg', 58: 'https://i.imgur.com/CdxQKfi.jpeg', 
+            59: 'https://i.imgur.com/SSO69vv.jpeg', 60: 'https://i.imgur.com/VPbRPQH.jpeg', 
+            61: 'https://i.imgur.com/se6lrng.jpeg', 62: 'https://i.imgur.com/kPHcCRo.jpeg',
+            63: 'https://i.imgur.com/rQasZMy.jpeg', 64: 'https://i.imgur.com/vgUwegN.jpeg',
+            65: 'https://i.imgur.com/6jeamAM.jpeg', 66: 'https://i.imgur.com/ssBhUQW.jpeg',
+            67: 'https://i.imgur.com/GAZA19O.jpeg', 68: 'https://i.imgur.com/IzXlt3C.jpeg',
+            69: 'https://i.imgur.com/EuGhT7S.jpeg', 70: 'https://i.imgur.com/AChwUS8.jpeg',
+            71: 'https://i.imgur.com/7avBDkR.jpeg', 72: 'https://i.imgur.com/klZbBvx.jpeg', 
+            73: 'https://i.imgur.com/hR3uHOA.jpeg', 74: 'https://i.imgur.com/0c5ChPc.jpeg',
+            75: 'https://i.imgur.com/ndM96UA.jpeg', 76: 'https://i.imgur.com/ifGXgPq.jpeg',
+            77: 'https://i.imgur.com/g3IRsci.jpeg', 78: 'https://i.imgur.com/iAjfq1w.jpeg',
+            79: 'https://i.imgur.com/4yhUG7c.jpeg', 80: 'https://i.imgur.com/l4HQRiq.jpeg',
+            81: 'https://i.imgur.com/Zoein1m.jpeg', 82: 'https://i.imgur.com/5Wf5sQs.jpeg',
+            83: 'https://i.imgur.com/TFqrZb4.jpeg', 84: 'https://i.imgur.com/LYW2iY8.jpeg', 
+            85: 'https://i.imgur.com/3c7oLbh.jpeg', 86: 'https://i.imgur.com/0zxFNDa.jpeg',
+            87: 'https://i.imgur.com/ajRoDyC.jpeg', 88: 'https://i.imgur.com/mqoQgme.jpeg',
+            89: 'https://i.imgur.com/Ru0umO3.jpeg', 90: 'https://i.imgur.com/0MtE8Nx.jpeg',
+            91: 'https://i.imgur.com/S8sEsSI.jpeg', 92: 'https://i.imgur.com/IiKyVxp.jpeg',
+            93: 'https://i.imgur.com/26v8jQR.jpeg', 94: 'https://i.imgur.com/pRoCzx7.jpeg',
+            95: 'https://i.imgur.com/DzafIjt.jpeg', 96: 'https://i.imgur.com/XyhDq2x.jpeg'
+        };
+
+        // ====== SISTEMA DE RAREZA ======
+        // Especiales = la 1 y los múltiplos de 12 (1, 12, 24, 36, 48, 60, 72, 84, 96)
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96];
+        const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
+        const FIGURITAS_COMUNES = [];
+        for (let i = 1; i <= TOTAL_FIGUS; i++) {
+            if (!FIGURITAS_ESPECIALES.includes(i)) FIGURITAS_COMUNES.push(i);
         }
 
-        const IMAGENES_FIGUS = {
-            1: 'https://i.imgur.com/CdxQKfi.jpeg',
-            2: 'https://i.imgur.com/yDBlb42.jpeg',
-            3: 'https://i.imgur.com/G3esdby.jpeg',
-            4: 'https://i.imgur.com/Luy2PuW.jpeg',
-            5: 'https://i.imgur.com/OcUG2Hr.jpeg',
-            6: 'https://i.imgur.com/6xj5Ynw.jpeg',
-            7: 'https://i.imgur.com/UkKmQut.jpeg',
-            8: 'https://i.imgur.com/01oE6tZ.jpeg',
-            9: 'https://i.imgur.com/jlKXA4i.jpeg',
-            10: 'https://i.imgur.com/qjKWPvQ.jpeg',
-            11: 'https://i.imgur.com/HgiiZG9.jpeg',
-            12: 'https://i.imgur.com/wvxapQH.jpeg',
-            13: 'https://i.imgur.com/eNOMWpR.jpeg',
-            14: 'https://i.imgur.com/2GeqRkN.jpeg',
-            15: 'https://i.imgur.com/d8r7UJt.jpeg',
-            16: 'https://i.imgur.com/aCe6wWN.jpeg',
-            17: 'https://i.imgur.com/i8Z6Bq0.jpeg',
-            18: 'https://i.imgur.com/MLrr1TI.jpeg',
-            19: 'https://i.imgur.com/FKEqvSd.jpeg',
-            20: 'https://i.imgur.com/KyoiWXj.jpeg',
-            21: 'https://i.imgur.com/VPbRPQH.jpeg',
-            22: 'https://i.imgur.com/81pdvNY.jpeg',
-            23: 'https://i.imgur.com/8BCPT1u.jpeg',
-            24: 'https://i.imgur.com/cVY9Jys.jpeg',
-            25: 'https://i.imgur.com/ljUSJcd.jpeg',
-            26: 'https://i.imgur.com/G8nV0xp.jpeg',
-            27: 'https://i.imgur.com/2YSzfyz.jpeg',
-            28: 'https://i.imgur.com/tPqwQaq.jpeg',
-            29: 'https://i.imgur.com/XIYc8V2.jpeg',
-            30: 'https://i.imgur.com/MhFphX9.jpeg',
-            31: 'https://i.imgur.com/QpAn97W.jpeg',
-            32: 'https://i.imgur.com/BvCCw5T.jpeg',
-            33: 'https://i.imgur.com/ICSFYuJ.jpeg',
-            34: 'https://i.imgur.com/gCIuSue.jpeg',
-            35: 'https://i.imgur.com/VorNcUG.jpeg',
-            36: 'https://i.imgur.com/tLRZATA.jpeg',
-            37: 'https://i.imgur.com/cYvniPl.jpeg',
-            38: 'https://i.imgur.com/yyfQ1Wn.jpeg',
-            39: 'https://i.imgur.com/NJTDCqc.jpeg',
-            40: 'https://i.imgur.com/ZCiDh6m.jpeg',
-            41: 'https://i.imgur.com/oMSYr58.jpeg',
-            42: 'https://i.imgur.com/H1ksdNh.jpeg',
-            43: 'https://i.imgur.com/5wXk0Bx.jpeg',
-            44: 'https://i.imgur.com/cxnKSEy.jpeg',
-            45: 'https://i.imgur.com/yD15gmj.jpeg',
-            46: 'https://i.imgur.com/L6741zk.jpeg',
-            47: 'https://i.imgur.com/p4QN5PR.jpeg',
-            48: 'https://i.imgur.com/WGGY3LK.jpeg',
-            49: 'https://i.imgur.com/G4NVfqt.jpeg',
-            50: 'https://i.imgur.com/rpiuRzg.jpeg',
-            51: 'https://i.imgur.com/1WXe6B6.jpeg',
-            52: 'https://i.imgur.com/8pTrQyd.jpeg',
-            53: 'https://i.imgur.com/Ux4E0EX.jpeg',
-            54: 'https://i.imgur.com/0ThSeac.jpeg',
-            55: 'https://i.imgur.com/sIrFVYx.jpeg',
-            56: 'https://i.imgur.com/6CFADnQ.jpeg',
-            57: 'https://i.imgur.com/pFaPR26.jpeg',
-            58: 'https://i.imgur.com/UVFAQRp.jpeg',
-            59: 'https://i.imgur.com/SSO69vv.jpeg',
-            60: 'https://i.imgur.com/ltebDgp.jpeg',
-            61: 'https://i.imgur.com/se6lrng.jpeg',
-            62: 'https://i.imgur.com/kPHcCRo.jpeg',
-            63: 'https://i.imgur.com/rQasZMy.jpeg',
-            64: 'https://i.imgur.com/vgUwegN.jpeg',
-            65: 'https://i.imgur.com/6jeamAM.jpeg',
-        };
+        function sortearFigurita() {
+            let saleEspecial = Math.random() < PROBABILIDAD_ESPECIALES;
+            if (saleEspecial) {
+                return FIGURITAS_ESPECIALES[Math.floor(Math.random() * FIGURITAS_ESPECIALES.length)];
+            }
+            return FIGURITAS_COMUNES[Math.floor(Math.random() * FIGURITAS_COMUNES.length)];
+        }
+
+        let imagenesCargadas = 0;
+        let totalImagenes = TOTAL_FIGUS + 1;
+
+        window.addEventListener('load', () => { precargarImagenes(); });
+
+        function precargarImagenes() {
+            const todasLasImagenes = [...Object.values(IMAGENES_FIGUS), IMAGEN_PAQUETE];
+            todasLasImagenes.forEach(url => {
+                if(!url) { imagenesCargadas++; actualizarProgresoCarga(); return; }
+                const img = new Image();
+                img.onload = () => { imagenesCargadas++; actualizarProgresoCarga(); };
+                img.onerror = () => { imagenesCargadas++; actualizarProgresoCarga(); };
+                img.src = url;
+            });
+        }
+
+        function actualizarProgresoCarga() {
+            const porcentaje = Math.round((imagenesCargadas / totalImagenes) * 100);
+            document.getElementById('porcentaje-carga').textContent = porcentaje + '%';
+            if(imagenesCargadas >= totalImagenes) {
+                setTimeout(() => {
+                    document.getElementById('pantalla-carga').classList.add('oculta');
+                    setTimeout(() => { document.getElementById('pantalla-inicio').classList.add('visible'); }, 500);
+                }, 400);
+            }
+        }
+
         document.getElementById('pantalla-inicio').addEventListener('click', () => {
             document.getElementById('pantalla-inicio').classList.add('oculta');
-            document.getElementById('app-contenido').classList.add('visible');
+            setTimeout(() => { document.getElementById('app-contenido').classList.add('visible'); }, 500);
         });
 
-        if(!localStorage.getItem('userID')) {
-            localStorage.setItem('userID', 'HUAYNA_' + Date.now().toString(36).toUpperCase());
-        }
-
-        let userID = localStorage.getItem('userID');
         let albumCrudo = JSON.parse(localStorage.getItem('albumHuayna')) || {};
         let album = {};
         for(let num in albumCrudo) {
             let n = parseInt(num);
-            if(n >= 1 && n <= TOTAL_FIGUS) {
-                album[n] = albumCrudo[n];
-            }
+            if(n >= 1 && n <= TOTAL_FIGUS) album[n] = albumCrudo[n];
         }
 
-        let plata = parseInt(localStorage.getItem('plataHuayna')) || 5000;
-        let paquetesHoy = JSON.parse(localStorage.getItem('paquetesHoyHuayna')) || {fecha: '', cantidad: 0};
-        let seleccionadas = [];
-        let amigoVinculado = JSON.parse(localStorage.getItem('amigoVinculado')) || null;
-        let cambioTemporal = null;
+        let plataGuardada = localStorage.getItem('plataHuayna');
+        let plata = plataGuardada !== null ? parseInt(plataGuardada) : 0;
+        let paquetesAbiertos = parseInt(localStorage.getItem('paquetesAbiertosHuayna')) || 0;
+        
+        let figuritasPendientes = [];
+        let historicoTenidasAntesDeAbrir = []; 
+        let indiceReveladoActual = 0;
+        let sobreYaFueRasgado = false;
 
-        document.getElementById('mi-id').textContent = userID;
-                document.getElementById('menu').addEventListener('click', (e) => {
+        document.getElementById('sobre-mitad-arriba').style.backgroundImage = `url('${IMAGEN_PAQUETE}')`;
+        document.getElementById('sobre-mitad-abajo').style.backgroundImage = `url('${IMAGEN_PAQUETE}')`;
+
+        document.getElementById('menu').addEventListener('click', (e) => {
             if(e.target.tagName === 'BUTTON') {
                 let seccion = e.target.dataset.seccion;
                 document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
                 document.querySelectorAll('nav button').forEach(b => b.classList.remove('activo'));
                 document.getElementById(seccion).classList.add('activa');
                 e.target.classList.add('activo');
-                if(seccion === 'cambios') actualizarVistaAmigo();
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                if(seccion === 'progreso') {
+                    actualizarProgreso();
+                }
             }
         });
 
         document.getElementById('btn-paquete').addEventListener('click', abrirPaquete);
-        document.getElementById('btn-vincular').addEventListener('click', vincularAmigo);
-        document.getElementById('btn-desvincular').addEventListener('click', desvincularAmigo);
-        document.getElementById('btn-proponer-cambio').addEventListener('click', proponerCambio);
-        document.getElementById('btn-aceptar-cambio').addEventListener('click', aceptarCambio);
         document.getElementById('btn-tema-rojo').addEventListener('click', () => cambiarTema('rojo'));
         document.getElementById('btn-tema-amarillo').addEventListener('click', () => cambiarTema('amarillo'));
         document.getElementById('btn-reiniciar').addEventListener('click', reiniciar);
         document.getElementById('btn-acreditar').addEventListener('click', acreditarPlata);
+        document.getElementById('btn-quemar-repes').addEventListener('click', canjearRepetidas);
         document.getElementById('cerrar-modal').addEventListener('click', cerrarZoom);
-        document.getElementById('modal-zoom').addEventListener('click', (e) => {
-            if(e.target.id === 'modal-zoom') cerrarZoom();
-        });
-
-        function copiarMiID() {
-            navigator.clipboard.writeText(userID);
-            alert('ID copiado. Pasáselo a tu amigo para vincularse');
-        }
-
-        function generarMiAlbum() {
-            let codigo = btoa(JSON.stringify(album));
-            document.getElementById('mi-codigo-album').innerHTML = `
-                <p>Copiá este código y pasáselo a tu amigo:</p>
-                <div class="codigo">${codigo}</div>
-                <button class="btn btn-secundario" onclick="navigator.clipboard.writeText('${codigo}');alert('Código copiado')">Copiar Código</button>
-            `;
-        }
+        document.getElementById('modal-zoom').addEventListener('click', (e) => { if(e.target.id === 'modal-zoom') cerrarZoom(); });
 
         function guardar() {
             localStorage.setItem('albumHuayna', JSON.stringify(album));
             localStorage.setItem('plataHuayna', plata);
-            localStorage.setItem('paquetesHoyHuayna', JSON.stringify(paquetesHoy));
-            localStorage.setItem('amigoVinculado', JSON.stringify(amigoVinculado));
+            localStorage.setItem('paquetesAbiertosHuayna', paquetesAbiertos);
             actualizarVista();
         }
 
-        function acreditarPlata() {
-            let clave = document.getElementById('clave-paquete').value;
-            if(clave!== CLAVE_ADMIN) {
-                alert('Clave incorrecta');
+        function canjearRepetidas() {
+            let totalRepesNetas = 0;
+            for (let i = 1; i <= TOTAL_FIGUS; i++) {
+                let cant = album[i] || 0;
+                if (cant > 1) totalRepesNetas += (cant - 1); 
+            }
+
+            if (totalRepesNetas === 0) {
+                alert("No tenés figuritas repetidas para canjear en este momento.");
                 return;
             }
-            plata += MONTO_RECARGA;
-            alert(`Se acreditaron $${MONTO_RECARGA}. Nuevo saldo: $${plata}`);
-            document.getElementById('clave-paquete').value = '';
-            guardar();
+
+            let ganancia = totalRepesNetas * 100;
+            if (confirm(`🔥 ¿Querés entregar tus ${totalRepesNetas} repetidas totales al fuego sagrado?\nRecibirás $${ganancia} de saldo inmediato.`)) {
+                for (let i = 1; i <= TOTAL_FIGUS; i++) {
+                    let cant = album[i] || 0;
+                    if (cant > 1) album[i] = 1; 
+                }
+                plata += ganancia;
+                alert(`🔥 ¡El fuego consumió tus repes! Se acreditaron $${ganancia} a tu cuenta.`);
+                
+                SistemaLogros.registrarAccion('fuego', totalRepesNetas);
+                SistemaLogros.registrarAccion('fuego_total', totalRepesNetas);
+                guardar();
+            }
         }
 
-        function resetearPaquetesDiarios() {
-            let hoy = new Date().toDateString();
-            if(paquetesHoy.fecha!== hoy) {
-                paquetesHoy = {fecha: hoy, cantidad: 0};
+        function acreditarPlata() {
+            let codigo = document.getElementById('clave-paquete').value.trim().toUpperCase();
+            let usados = JSON.parse(localStorage.getItem('codigosUsadosHuayna')) || [];
+
+            if (!codigo) { alert('Por favor, ingresá un código.'); return; }
+            if (usados.includes(codigo)) { alert('❌ Este código ya fue utilizado en este dispositivo.'); document.getElementById('clave-paquete').value = ''; return; }
+            if (codigo.length < 5) { alert('❌ Código inválido.'); return; }
+
+            let firma = codigo.slice(-3);
+            let d1 = parseInt(firma[0]); let d2 = parseInt(firma[1]); let d3 = parseInt(firma[2]);
+
+            if (isNaN(d1) || isNaN(d2) || isNaN(d3) || (d1 + d2 + d3 !== 9)) {
+                alert('❌ Código inválido. Firma incorrecta.'); return;
+            }
+
+            let monto = 0;
+            if (codigo.startsWith("H100K-")) monto = 100000;
+            else if (codigo.startsWith("H5K-"))  monto = 5000;
+            else if (codigo.startsWith("H4K-"))  monto = 4000;
+            else if (codigo.startsWith("H3K-"))  monto = 3000;
+            else if (codigo.startsWith("H2K-"))  monto = 2000;
+            else if (codigo.startsWith("H1K-"))  monto = 1000;
+
+            if (monto > 0) {
+                plata += monto;
+                usados.push(codigo);
+                localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
+                alert(`✅ ¡Excelente! Se acreditaron $${monto} correctamente.`);
+                document.getElementById('clave-paquete').value = '';
+                guardar();
+            } else {
+                alert('❌ Prefijo de código no reconocido.');
             }
         }
 
         function abrirPaquete() {
-            resetearPaquetesDiarios();
             let costo = 0;
-            if(paquetesHoy.cantidad >= 5) {
+            let esDePago = paquetesAbiertos >= 5;
+
+            if(esDePago) {
                 costo = 1000;
-                if(plata < costo) {
-                    alert('No tenés plata suficiente. Recargá con Mercado Pago');
-                    return;
-                }
+                if(plata < costo) { alert('No tenés plata suficiente. Cargá saldo mediante Mercado Pago.'); return; }
                 plata -= costo;
             }
 
-            paquetesHoy.cantidad++;
-            let nuevas = [];
+            paquetesAbiertos++;
+            if(esDePago) SistemaLogros.registrarAccion('compra', 1);
+            SistemaLogros.registrarAccion('abrir', 1);
+
+            figuritasPendientes = [];
+            historicoTenidasAntesDeAbrir = []; 
+            let huboNuevasEnEstePaquete = 0;
+
             for(let i = 0; i < 5; i++) {
-                let num = Math.floor(Math.random() * TOTAL_FIGUS) + 1;
+                let num = sortearFigurita();
+                let yaLaTenía = (album[num] && album[num] > 0);
+                historicoTenidasAntesDeAbrir.push(yaLaTenía);
+
+                if(!yaLaTenía) huboNuevasEnEstePaquete++;
                 album[num] = (album[num] || 0) + 1;
-                nuevas.push(num);
+                figuritasPendientes.push(num);
             }
-            mostrarResultadoPaquete(nuevas);
+
+            if(huboNuevasEnEstePaquete > 0) SistemaLogros.registrarAccion('pegar', huboNuevasEnEstePaquete);
+
+            sobreYaFueRasgado = false;
+            indiceReveladoActual = 0;
+            
+            document.getElementById('sobre-interactivo').classList.remove('rasgado');
+            document.getElementById('contenedor-revelado-secuencial').classList.remove('activo');
+            document.getElementById('texto-sobre-guia').style.opacity = '1';
+            document.getElementById('texto-sobre-guia').textContent = 'TOCÁ EL SOBRE PARA ROMPERLO';
+            document.getElementById('contador-flujo-carta').style.display = 'none';
+
+            document.getElementById('modal-paquete').classList.add('activo');
+            document.getElementById('ultimo-paquete').innerHTML = '';
             guardar();
+        }
+
+        function rasgarSobre() {
+            if (sobreYaFueRasgado) return;
+            sobreYaFueRasgado = true;
+
+            document.getElementById('sobre-interactivo').classList.add('rasgado');
+            document.getElementById('texto-sobre-guia').style.opacity = '0';
+
+            setTimeout(() => {
+                document.getElementById('contenedor-revelado-secuencial').classList.add('activo');
+                renderizarFiguritaSecuencial();
+                
+                let guia = document.getElementById('texto-sobre-guia');
+                guia.textContent = 'Tocá la figurita para pasar';
+                guia.style.opacity = '0.6';
+                
+                let contador = document.getElementById('contador-flujo-carta');
+                contador.textContent = `Figurita 1 de 5`;
+                contador.style.display = 'block';
+            }, 500);
+        }
+
+        function renderizarFiguritaSecuencial() {
+            let num = figuritasPendientes[indiceReveladoActual];
+            let yaLaTenía = historicoTenidasAntesDeAbrir[indiceReveladoActual];
+            let cartaTarget = document.getElementById('carta-revelada-actual');
+            
+            // Una figurita es "especial" si está en la lista de rareza (1 y múltiplos de 12)
+            let esEspecial = FIGURITAS_ESPECIALES.includes(num);
+
+            // Inyectamos o quitamos la clase del brillo líquido metálico
+            if (esEspecial) {
+                cartaTarget.classList.add('efecto-metalizado');
+            } else {
+                cartaTarget.classList.remove('efecto-metalizado');
+            }
+
+            // Reseteo técnico de animaciones CSS
+            cartaTarget.style.animation = 'none';
+            cartaTarget.offsetHeight; 
+
+            // Aplicamos efectos de entrada (Slam si es nueva vs Clásica si es repe)
+            if (!yaLaTenía) {
+                cartaTarget.classList.add('animacion-pegado-nuevo');
+                cartaTarget.style.animation = 'slamPegado 0.45s cubic-bezier(0.215, 0.610, 0.355, 1) forwards';
+            } else {
+                cartaTarget.classList.remove('animacion-pegado-nuevo');
+                cartaTarget.style.animation = 'slideUpEntrada 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+            }
+
+            cartaTarget.style.backgroundImage = IMAGENES_FIGUS[num] ? `url('${IMAGENES_FIGUS[num]}')` : '';
+            cartaTarget.innerHTML = `<span class="num-figu">${num}</span>`;
+            
+            document.getElementById('contador-flujo-carta').textContent = `Figurita ${indiceReveladoActual + 1} de 5`;
+        }
+
+        function avanzarRevelado(event) {
+            if(event) event.stopPropagation();
+
+            if(indiceReveladoActual < 4) {
+                indiceReveladoActual++;
+                renderizarFiguritaSecuencial();
+            } else {
+                document.getElementById('modal-paquete').classList.remove('activo');
+                mostrarResultadoPaquete(figuritasPendientes);
+            }
         }
 
         function mostrarResultadoPaquete(figus) {
@@ -962,302 +799,315 @@
             });
         }
 
-        function seleccionarFigu(num) {
-            if(album[num] <= 1) return;
-            let index = seleccionadas.indexOf(num);
-            if(index > -1) {
-                seleccionadas.splice(index, 1);
-            } else {
-                seleccionadas.push(num);
-            }
-            actualizarVista();
-        }
-
         function zoomFigu(num) {
             if(!album[num] || album[num] === 0) return;
             let figuZoom = document.getElementById('figu-zoom');
             let frente = document.getElementById('figu-zoom-frente');
             let atras = document.getElementById('figu-zoom-atras');
-
             figuZoom.classList.remove('volteada');
             atras.textContent = num;
-
-            if(IMAGENES_FIGUS[num]) {
-                frente.style.backgroundImage = `url('${IMAGENES_FIGUS[num]}')`;
-            } else {
-                frente.style.backgroundImage = '';
-            }
+            frente.style.backgroundImage = IMAGENES_FIGUS[num]? `url('${IMAGENES_FIGUS[num]}')` : '';
             document.getElementById('modal-zoom').classList.add('activo');
         }
 
-        function voltearFigu() {
-            document.getElementById('figu-zoom').classList.toggle('volteada');
-        }
-
-        function cerrarZoom() {
-            document.getElementById('modal-zoom').classList.remove('activo');
-        }
-
-        function vincularAmigo() {
-            let id = document.getElementById('id-amigo').value.trim();
-            let albumCod = document.getElementById('album-amigo').value.trim();
-            if(!id ||!albumCod || id === userID) {
-                alert('Completá los 2 campos con datos válidos');
-                return;
-            }
-            try {
-                let data = JSON.parse(atob(albumCod));
-                amigoVinculado = {id: id, album: data};
-                alert('¡Amigo vinculado! Ahora pueden ver qué figuritas se pueden cambiar');
-                document.getElementById('id-amigo').value = '';
-                document.getElementById('album-amigo').value = '';
-                guardar();
-                actualizarVistaAmigo();
-            } catch(e) {
-                alert('Código de álbum inválido');
-            }
-        }
-
-        function desvincularAmigo() {
-            if(confirm('¿Desvincular amigo?')) {
-                amigoVinculado = null;
-                guardar();
-                actualizarVistaAmigo();
-            }
-        }
-
-        function actualizarVistaAmigo() {
-            if(amigoVinculado) {
-                document.getElementById('sin-amigo').style.display = 'none';
-                document.getElementById('con-amigo').style.display = 'block';
-                document.getElementById('nombre-amigo').textContent = amigoVinculado.id;
-                compararFiguritas();
-            } else {
-                document.getElementById('sin-amigo').style.display = 'block';
-                document.getElementById('con-amigo').style.display = 'none';
-            }
-        }
-
-        function compararFiguritas() {
-            if(!amigoVinculado) return;
-            let misRepes = Object.keys(album).filter(n => album[n] > 1).map(n => parseInt(n));
-            let amigoAlbum = amigoVinculado.album;
-            let amigoRepes = Object.keys(amigoAlbum).filter(n => amigoAlbum[n] > 1).map(n => parseInt(n));
-
-            let leSirven = misRepes.filter(n =>!amigoAlbum[n]);
-            let meSirven = amigoRepes.filter(n =>!album[n]);
-
-            let html = '';
-            if(meSirven.length > 0) {
-                html += '<div class="box-oferta"><h5>🎁 A vos te sirven:</h5><div class="figus-oferta">';
-                meSirven.forEach(n => {
-                    let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                    html += `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                });
-                html += '</div></div>';
-            } else {
-                html += '<p class="aviso">No tiene repetidas que te sirvan</p>';
-            }
-
-            if(leSirven.length > 0) {
-                html += '<div class="box-oferta"><h5>🤝 A tu amigo le sirven:</h5><div class="figus-oferta">';
-                leSirven.forEach(n => {
-                    let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                    html += `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                });
-                html += '</div></div>';
-            } else {
-                html += '<p class="aviso">No tenés repetidas que le sirvan</p>';
-            }
-
-            document.getElementById('comparacion-figus').innerHTML = html;
-        }
-
-        function proponerCambio() {
-            if(!amigoVinculado) return;
-            if(seleccionadas.length === 0) {
-                alert('Seleccioná en "Repes" las figuritas que QUERÉS DAR');
-                return;
-            }
-
-            let amigoAlbum = amigoVinculado.album;
-            let leSirven = seleccionadas.filter(n =>!amigoAlbum[n]);
-
-            if(leSirven.length === 0) {
-                alert('Las figuritas que seleccionaste no le sirven a tu amigo');
-                return;
-            }
-
-            let amigoRepes = Object.keys(amigoAlbum).filter(n => amigoAlbum[n] > 1).map(n => parseInt(n));
-            let meSirven = amigoRepes.filter(n =>!album[n]);
-
-            if(meSirven.length === 0) {
-                alert('Tu amigo no tiene repetidas que te sirvan. No se puede hacer el cambio');
-                return;
-            }
-
-            let cantidad = Math.min(leSirven.length, meSirven.length);
-            let doy = leSirven.slice(0, cantidad);
-            let recibo = meSirven.slice(0, cantidad);
-
-            let codigo = btoa(JSON.stringify({
-                de: userID,
-                para: amigoVinculado.id,
-                doy: doy,
-                recibo: recibo,
-                timestamp: Date.now()
-            }));
-
-            document.getElementById('codigo-cambio').innerHTML = `
-                <p>Propuesta de cambio generada:</p>
-                <div class="box-oferta">
-                    <h5>Vos das:</h5>
-                    <div class="figus-oferta">${doy.map(n => {
-                        let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                        return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                    }).join('')}</div>
-                </div>
-                <div class="box-oferta">
-                    <h5>Vos recibís:</h5>
-                    <div class="figus-oferta">${recibo.map(n => {
-                        let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                        return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                    }).join('')}</div>
-                </div>
-                <div class="codigo">${codigo}</div>
-                <button class="btn btn-secundario" onclick="navigator.clipboard.writeText('${codigo}');alert('Código copiado')">Copiar Código</button>
-                <p class="aviso">Mandale este código a tu amigo por WhatsApp</p>
-            `;
-        }
-
-        function aceptarCambio() {
-            let codigo = document.getElementById('codigo-recibido').value.trim();
-            if(!codigo) {
-                alert('Pegá un código primero');
-                return;
-            }
-            try {
-                let data = JSON.parse(atob(codigo));
-                if(data.para!== userID) {
-                    alert('Este código no es para vos');
-                    return;
-                }
-                if(!amigoVinculado || data.de!== amigoVinculado.id) {
-                    alert('No estás vinculado con ese usuario');
-                    return;
-                }
-
-                let tengoTodas = data.recibo.every(n => album[n] > 1);
-                if(!tengoTodas) {
-                    alert('No tenés todas las repetidas que te pide tu amigo');
-                    return;
-                }
-
-                cambioTemporal = data;
-                let html = `
-                    <div class="box-oferta">
-                        <h5>Tu amigo te da:</h5>
-                        <div class="figus-oferta">${data.doy.map(n => {
-                            let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                            return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                        }).join('')}</div>
-                    </div>
-                    <div class="box-oferta">
-                        <h5>Vos das:</h5>
-                        <div class="figus-oferta">${data.recibo.map(n => {
-                            let imgStyle = IMAGENES_FIGUS[n]? `style="background-image: url('${IMAGENES_FIGUS[n]}')"` : '';
-                            return `<div class="figu-oferta" ${imgStyle}>${n}</div>`;
-                        }).join('')}</div>
-                    </div>
-                    <button class="btn" onclick="confirmarCambio()">Confirmar Cambio</button>
-                `;
-                document.getElementById('preview-cambio').innerHTML = html;
-            } catch(e) {
-                alert('Código inválido');
-            }
-        }
-
-        function confirmarCambio() {
-            if(!cambioTemporal) return;
-
-            cambioTemporal.recibo.forEach(num => album[num]--);
-            cambioTemporal.doy.forEach(num => album[num] = (album[num] || 0) + 1);
-
-            alert(`¡Cambio hecho! Diste: ${cambioTemporal.recibo.join(', ')} | Recibiste: ${cambioTemporal.doy.join(', ')}`);
-            seleccionadas = [];
-            cambioTemporal = null;
-            document.getElementById('codigo-recibido').value = '';
-            document.getElementById('preview-cambio').innerHTML = '';
-            document.getElementById('codigo-cambio').innerHTML = '';
-            guardar();
-        }
+        function voltearFigu() { document.getElementById('figu-zoom').classList.toggle('volteada'); }
+        function cerrarZoom() { document.getElementById('modal-zoom').classList.remove('activo'); }
 
         function cambiarTema(tema) {
             if(tema === 'amarillo') document.body.classList.add('tema-amarillo');
             else document.body.classList.remove('tema-amarillo');
             localStorage.setItem('temaHuayna', tema);
+            actualizarVista();
         }
 
         function reiniciar() {
-            if(confirm('¿Borrar todo el álbum y la plata?')) {
-                album = {};
-                plata = 5000;
-                paquetesHoy = {fecha: '', cantidad: 0};
-                seleccionadas = [];
-                amigoVinculado = null;
-                cambioTemporal = null;
+            if(confirm('¿Borrar tu progreso? Los códigos ya ingresados seguirán invalidados para evitar abusos.')) {
+                album = {}; plata = 0; paquetesAbiertos = 0;
+                localStorage.removeItem('plataHuayna');
+                localStorage.removeItem('albumHuayna');
+                localStorage.removeItem('album_logros');
+                localStorage.setItem('paquetesAbiertosHuayna', 0);
                 guardar();
+                location.reload();
             }
+        }
+
+        function obtenerCantidadPegadas() {
+            return Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).length;
+        }
+
+        function obtenerCantidadSeccionOro() {
+            let contador = 0;
+            for(let i = 85; i <= 96; i++) {
+                if(album[i] && album[i] > 0) contador++;
+            }
+            return contador;
+        }
+
+        function actualizarProgreso() {
+            let tenidas = obtenerCantidadPegadas();
+            let totalRepes = Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).reduce((acc, n) => acc + album[n], 0) - tenidas;
+            let faltan = TOTAL_FIGUS - tenidas;
+            let porcentaje = Math.round((tenidas / TOTAL_FIGUS) * 100);
+
+            document.getElementById('stat-tenidas').textContent = tenidas;
+            document.getElementById('stat-faltan').textContent = faltan;
+            document.getElementById('stat-repes').textContent = totalRepes;
+            document.getElementById('stat-porcentaje').textContent = porcentaje + '%';
+            document.getElementById('progress-fill').style.width = porcentaje + '%';
+            document.getElementById('progress-fill').textContent = porcentaje + '%';
+
+            SistemaLogros.registrarAccion('progreso_album', tenidas);
+            SistemaLogros.registrarAccion('seccion_oro', obtenerCantidadSeccionOro());
+            SistemaLogros.renderizarLogros();
         }
 
         function actualizarVista() {
-            resetearPaquetesDiarios();
-            let tenidas = Object.keys(album).filter(n => n >= 1 && n <= TOTAL_FIGUS).length;
-            let totalRepes = Object.keys(album)
-          .filter(n => n >= 1 && n <= TOTAL_FIGUS)
-          .reduce((acc, n) => acc + album[n], 0) - tenidas;
+            let tenidas = obtenerCantidadPegadas();
+            let totalRepes = Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).reduce((acc, n) => acc + album[n], 0) - tenidas;
 
-            document.getElementById('progreso').textContent = `${tenidas}/${TOTAL_FIGUS} figuritas`;
-            document.getElementById('plata').textContent = plata;
-            document.getElementById('stats-album').textContent = `Tenés ${tenidas} de ${TOTAL_FIGUS}. Repetidas: ${totalRepes}`;
-            document.getElementById('contador-seleccion').textContent = `Seleccionadas: ${seleccionadas.length}`;
+            document.getElementById('progreso-header').textContent = `${tenidas}/${TOTAL_FIGUS}`;
+            document.getElementById('plata').textContent = `$${plata}`;
+            document.getElementById('stats-album').textContent = `Tenés ${tenidas} de ${TOTAL_FIGUS}. Repetidas totales: ${totalRepes}`;
 
-            let gratisRestantes = Math.max(0, 5 - paquetesHoy.cantidad);
-            document.getElementById('info-paquetes').textContent =
-                gratisRestantes > 0? `Te quedan ${gratisRestantes} paquetes gratis hoy` : `Ya usaste los 5 gratis. Próximo: $1000`;
-
-            let btnPaquete = document.getElementById('btn-paquete');
-            if(paquetesHoy.cantidad >= 5 && plata < 1000) {
-                btnPaquete.disabled = true;
-                btnPaquete.textContent = 'Sin plata. Recargá con MP';
+            let btnQuemar = document.getElementById('btn-quemar-repes');
+            if(totalRepes > 0) {
+                btnQuemar.textContent = `Entregar ${totalRepes} Figuritas al Fuego (+$${totalRepes * 100})`;
+                btnQuemar.disabled = false;
             } else {
-                btnPaquete.disabled = false;
-                btnPaquete.textContent = paquetesHoy.cantidad >= 5? '📦 Abrir Paquete x5 - $1000' : '📦 Abrir Paquete x5 - GRATIS';
+                btnQuemar.textContent = `Sin repetidas para canjear`;
+                btnQuemar.disabled = true;
             }
 
-            let gridAlbum = document.getElementById('grid-album');
+            let gratisRestantes = Math.max(0, 5 - paquetesAbiertos);
+            document.getElementById('info-paquetes').textContent = gratisRestantes > 0 ? `Te quedan ${gratisRestantes} paquetes gratis. Después, cada uno cuesta $1000.` : `Cada paquete cuesta $1000.`;
+
+            let btnPaquete = document.getElementById('btn-paquete');
+            if(paquetesAbiertos >= 5 && plata < 1000) {
+                btnPaquete.disabled = true; btnPaquete.textContent = 'Sin saldo. Recargá abajo';
+            } else {
+                btnPaquete.disabled = false;
+                btnPaquete.textContent = paquetesAbiertos >= 5 ? 'Abrir Sobre (5 figuritas) - $1000' : 'Abrir Sobre (5 figuritas) - GRATIS';
+            }
+
+            let contenedorAlbum = document.getElementById('paginas-contenedor');
             let gridRepes = document.getElementById('grid-repetidas');
-            gridAlbum.innerHTML = '';
-            gridRepes.innerHTML = '';
+            contenedorAlbum.innerHTML = ''; gridRepes.innerHTML = '';
+
+            SECCIONES_ALBUM.forEach(seccion => {
+                let paginaDiv = document.createElement('div');
+                paginaDiv.className = 'pagina-album';
+                paginaDiv.innerHTML = `<h4>${seccion.titulo}</h4>`;
+                let gridDiv = document.createElement('div');
+                gridDiv.className = 'grid-figuritas';
+
+                for(let i = seccion.de; i <= seccion.hasta; i++) {
+                    let cant = album[i] || 0;
+                    let onClickAlbum = cant ? `zoomFigu(${i})` : '';
+                    let imgStyle = cant && IMAGENES_FIGUS[i] ? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
+                    let claseBloqueada = !cant ? 'bloqueada' : '';
+                    let esEspecial = (i === 1 || i % 12 === 0) ? 'especial destacada' : '';
+                    let badgeRepe = cant > 1 ? `<span class="repe">${cant}</span>` : '';
+                    let mostrarNum = !cant ? `<span class="num-figu">${i}</span>` : '';
+                    
+                    gridDiv.innerHTML += `<div class="figu ${cant? 'tenida':''} ${claseBloqueada} ${esEspecial}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}</div>`;
+                }
+                paginaDiv.appendChild(gridDiv);
+                contenedorAlbum.appendChild(paginaDiv);
+            });
 
             for(let i = 1; i <= TOTAL_FIGUS; i++) {
                 let cant = album[i] || 0;
-                let seleccionada = seleccionadas.includes(i)? 'seleccionada' : '';
-                let onClickAlbum = cant? `zoomFigu(${i})` : '';
-                let onClickRepe = `seleccionarFigu(${i})`;
-                let imgStyle = cant && IMAGENES_FIGUS[i]? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
-                let claseBloqueada =!cant? 'bloqueada' : '';
-
-                let badgeRepe = cant > 1? `<span class="figu repe">${cant}</span>` : '';
-                let mostrarNum =!cant? `<span class="num-figu">${i}</span>` : '';
-                let divAlbum = `<div class="figu ${cant? 'tenida' : ''} ${claseBloqueada}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}</div>`;
-                gridAlbum.innerHTML += divAlbum;
-
                 if(cant > 1) {
-                    gridRepes.innerHTML += `<div class="figu tenida ${seleccionada}" onclick="${onClickRepe}" ${imgStyle}><span class="num-figu">${i}</span>${badgeRepe}</div>`;
+                    let imgStyle = IMAGENES_FIGUS[i] ? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
+                    gridRepes.innerHTML += `<div class="figu tenida figu-repe" ${imgStyle}><span class="num-figu">${i}</span><span class="repe">${cant - 1}</span></div>`;
                 }
             }
+
+            SistemaLogros.verificarNotificacion();
         }
+
+
+        // ====== LOGROS ======
+        const SistemaLogros = {
+            config: {
+                diarios: {
+                    fiebre_sobres: { id: 'diario_sobres', titulo: '☀️ Fiebre de Sobres', desc: 'Comprá 5 paquetes pagos hoy.', meta: 5, premio: 2000, tipo: 'compra' },
+                    ofrenda_diaria: { id: 'diario_fuego', titulo: '🔥 Ofrenda Diaria', desc: 'Quemá 3 repetidas en el fuego hoy.', meta: 3, premio: 500, tipo: 'fuego' }
+                },
+                permanentes: {
+                    primeros_pasos: { id: 'perm_primeros', titulo: '🪵 Primeros Pasos', desc: 'Pegá tu primera figurita en el álbum.', meta: 1, premio: 200, tipo: 'pegar' },
+                    buscador_tesoros: { id: 'perm_buscador', titulo: '📦 Buscador de Tesoros', desc: 'Abrí tus primeros 5 paquetes en total.', meta: 5, premio: 500, tipo: 'abrir' },
+                    devoto_fuego: { id: 'perm_devoto', titulo: '🔥 Devoto del Fuego', desc: 'Entregá 10 repetidas al fuego sagrado.', meta: 10, premio: 300, tipo: 'fuego_total' },
+                    mitad_camino: { id: 'perm_mitad', titulo: '🦅 Mitad del Camino', desc: 'Llegá a 48 figuritas únicas pegadas.', meta: 48, premio: 1500, tipo: 'progreso_album' },
+                    conquistador_oro: { id: 'perm_oro', titulo: '✨ Conquistador de Oro', desc: 'Completá la Sección V (Figuritas 85 a 96).', meta: 12, premio: 2500, tipo: 'seccion_oro' }
+                }
+            },
+
+            obtenerEstado: function() {
+                let estado = JSON.parse(localStorage.getItem('album_logros'));
+                const hoy = new Date().toISOString().split('T')[0];
+
+                if (!estado) {
+                    estado = {
+                        ultimaFecha: hoy,
+                        progresoDiario: { compra: 0, fuego: 0 },
+                        reclamadosDiarios: { diario_sobres: false, diario_fuego: false },
+                        permanentes: { pegar: 0, abrir: 0, fuego_total: 0, progreso_album: 0, seccion_oro: 0 },
+                        reclamadosPermanentes: { perm_primeros: false, perm_buscador: false, perm_devoto: false, perm_mitad: false, perm_oro: false }
+                    };
+                    this.guardarEstado(estado);
+                }
+
+                if (estado.ultimaFecha !== hoy) {
+                    estado.ultimaFecha = hoy;
+                    estado.progresoDiario = { compra: 0, fuego: 0 };
+                    estado.reclamadosDiarios = { diario_sobres: false, diario_fuego: false };
+                    this.guardarEstado(estado);
+                }
+
+                return estado;
+            },
+
+            guardarEstado: function(estado) {
+                localStorage.setItem('album_logros', JSON.stringify(estado));
+            },
+
+            registrarAccion: function(tipo, cantidad = 1) {
+                const estado = this.obtenerEstado();
+
+                if (tipo === 'compra' || tipo === 'fuego') {
+                    estado.progresoDiario[tipo] += cantidad;
+                }
+
+                if (tipo in estado.permanentes) {
+                    if (tipo === 'progreso_album' || tipo === 'seccion_oro') {
+                        estado.permanentes[tipo] = cantidad;
+                    } else {
+                        estado.permanentes[tipo] += cantidad;
+                    }
+                }
+
+                this.guardarEstado(estado);
+                this.verificarNotificacion();
+            },
+
+            verificarNotificacion: function() {
+                const estado = this.obtenerEstado();
+                let hayPendientes = false;
+
+                for (const key in this.config.diarios) {
+                    const l = this.config.diarios[key];
+                    const progreso = estado.progresoDiario[l.tipo];
+                    if (progreso >= l.meta && !estado.reclamadosDiarios[l.id]) hayPendientes = true;
+                }
+
+                for (const key in this.config.permanentes) {
+                    const l = this.config.permanentes[key];
+                    let progreso = estado.permanentes[l.tipo];
+                    if (l.tipo === 'progreso_album') progreso = obtenerCantidadPegadas();
+                    if (l.tipo === 'seccion_oro') progreso = obtenerCantidadSeccionOro();
+
+                    if (progreso >= l.meta && !estado.reclamadosPermanentes[l.id]) hayPendientes = true;
+                }
+
+                const dot = document.getElementById('noti-progreso');
+                if (dot) dot.style.display = hayPendientes ? 'block' : 'none';
+            },
+
+            reclamarPremio: function(idLogro, esDiario) {
+                const estado = this.obtenerEstado();
+                let logroDef = null;
+
+                if (esDiario) {
+                    logroDef = this.config.diarios[Object.keys(this.config.diarios).find(k => this.config.diarios[k].id === idLogro)];
+                    if (estado.reclamadosDiarios[idLogro]) return;
+                    estado.reclamadosDiarios[idLogro] = true;
+                } else {
+                    logroDef = this.config.permanentes[Object.keys(this.config.permanentes).find(k => this.config.permanentes[k].id === idLogro)];
+                    if (estado.reclamadosPermanentes[idLogro]) return;
+                    estado.reclamadosPermanentes[idLogro] = true;
+                }
+
+                this.guardarEstado(estado);
+
+                plata += logroDef.premio;
+                guardar();
+
+                alert(`🏆 ¡Logro de la Tribu desbloqueado!\nReclamaste un bono de +$${logroDef.premio} de saldo.`);
+                actualizarProgreso();
+            },
+
+            renderizarLogros: function() {
+                const contenedor = document.getElementById('contenedor-logros');
+                if (!contenedor) return;
+
+                const estado = this.obtenerEstado();
+                let html = '';
+
+                html += `<h3 class="titulo-seccion-logros">📅 Desafíos del Día</h3>`;
+                html += `<div class="grilla-logros">`;
+                for (const key in this.config.diarios) {
+                    const l = this.config.diarios[key];
+                    const progreso = estado.progresoDiario[l.tipo];
+                    const completado = progreso >= l.meta;
+                    const reclamado = estado.reclamadosDiarios[l.id];
+                    html += this.crearTarjetaLogroHTML(l, progreso, completado, reclamado, true);
+                }
+                html += `</div>`;
+
+                html += `<h3 class="titulo-seccion-logros">🏅 Hitos de la Tribu</h3>`;
+                html += `<div class="grilla-logros">`;
+                for (const key in this.config.permanentes) {
+                    const l = this.config.permanentes[key];
+                    let progreso = estado.permanentes[l.tipo];
+                    
+                    if (l.tipo === 'progreso_album') progreso = obtenerCantidadPegadas();
+                    if (l.tipo === 'seccion_oro') progreso = obtenerCantidadSeccionOro();
+
+                    const completado = progreso >= l.meta;
+                    const reclamado = estado.reclamadosPermanentes[l.id];
+                    html += this.crearTarjetaLogroHTML(l, progreso, completado, reclamado, false);
+                }
+                html += `</div>`;
+
+                contenedor.innerHTML = html;
+                this.verificarNotificacion();
+            },
+
+            crearTarjetaLogroHTML: function(l, progreso, completado, reclamado, esDiario) {
+                const pct = Math.min((progreso / l.meta) * 100, 100);
+                let btnStatus = 'disabled';
+                let btnTexto = `+$${l.premio}`;
+
+                if (completado && !reclamado) {
+                    btnStatus = 'active';
+                    btnTexto = `Cobrar`;
+                } else if (reclamado) {
+                    btnStatus = 'claimed';
+                    btnTexto = '✅ Cobrado';
+                }
+
+                return `
+                    <div class="tarjeta-logro ${reclamado ? 'logro-reclamado' : ''}">
+                        <div class="logro-info">
+                            <h4>${l.titulo}</h4>
+                            <p>${l.desc}</p>
+                            <div class="logro-meta-barra">
+                                <div class="barra-progreso-logro">
+                                    <div class="progreso-logro-llenado" style="width: ${pct}%"></div>
+                                </div>
+                                <span class="logro-numeros">${Math.min(progreso, l.meta)}/${l.meta}</span>
+                            </div>
+                        </div>
+                        <button class="btn-reclamar-logro ${btnStatus}" 
+                            ${btnStatus === 'active' ? `onclick="SistemaLogros.reclamarPremio('${l.id}', ${esDiario})"` : 'disabled'}>
+                            ${btnTexto}
+                        </button>
+                    </div>
+                `;
+            }
+        };
 
         if(localStorage.getItem('temaHuayna') === 'amarillo') document.body.classList.add('tema-amarillo');
         actualizarVista();
