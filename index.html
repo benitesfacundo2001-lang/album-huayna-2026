@@ -108,16 +108,102 @@
         .badge-header { background: rgba(0, 0, 0, 0.8); border: 2px solid var(--dorado); padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: 800; color: #FFF; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); flex: 1; max-width: 170px; justify-content: center; backdrop-filter: blur(5px); }
         .badge-header span { color: var(--dorado); font-weight: 900; }
 
-        nav { display: flex; background: rgba(10,10,10,0.96); backdrop-filter: blur(12px); overflow-x: auto; box-shadow: 0 6px 20px rgba(0,0,0,0.6); border-bottom: 2px solid var(--rojo); position: fixed; top: 125px; left: 0; width: 100%; z-index: 99; height: 50px; }
-        nav button { flex: 1; padding: 0 10px; height: 100%; border: none; background: transparent; font-weight: 700; cursor: pointer; color: #BBB; min-width: 75px; transition: all 0.3s ease; position: relative; font-size: 13px; text-transform: uppercase; }
-        nav button.activo { color: var(--dorado); font-weight: 800; }
-        nav button.activo::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 45px; height: 4px; background: var(--gradiente-secundario); border-radius: 3px; box-shadow: 0 0 12px var(--dorado); }
-        
-        .nav-btn-contenedor { position: relative; flex: 1; display: flex; height: 100%; min-width: 75px; }
-        .nav-btn-contenedor button { width: 100%; }
-        
-        .dot-notificacion { position: absolute; top: 10px; right: 12px; width: 10px; height: 10px; background-color: var(--notificacion); border-radius: 50%; border: 1px solid var(--dorado); box-shadow: 0 0 8px var(--notificacion); display: none; pointer-events: none; animation: parpadeoNoti 1.2s infinite ease-in-out; z-index: 10; }
-        @keyframes parpadeoNoti { 0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 2px var(--notificacion)); } 50% { transform: scale(1.3); opacity: 0.7; filter: drop-shadow(0 0 6px var(--notificacion)); } }
+        /* NAV: OCUPA 100% Y SOLO SCROLLEA SI NO ENTRA */
+nav { 
+    display: flex; 
+    background: rgba(10,10,10,0.96); 
+    backdrop-filter: blur(12px); 
+    overflow-x: auto; 
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6); 
+    border-bottom: 2px solid var(--rojo); 
+    position: fixed; 
+    top: 125px; 
+    left: 0; 
+    width: 100%; 
+    z-index: 99; 
+    height: 50px;
+}
+nav::-webkit-scrollbar { 
+    display: none;
+}
+
+/* El gradiente solo aparece cuando hay scroll */
+nav:has(.nav-btn-contenedor:nth-child(5):hover)::after,
+nav.scrolleable::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.96) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.nav-btn-contenedor { 
+    position: relative; 
+    display: flex; 
+    height: 100%; 
+    flex: 1 1 0; /* CLAVE: que se repartan el espacio */
+    min-width: max-content; /* Pero que no se achiquen menos que su texto */
+}
+
+nav button { 
+    width: 100%; /* Ocupa todo su contenedor */
+    padding: 0 12px; 
+    height: 100%; 
+    border: none; 
+    background: transparent; 
+    font-weight: 700; 
+    cursor: pointer; 
+    color: #BBB; 
+    transition: all 0.3s ease; 
+    position: relative; 
+    font-size: 13px; 
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+nav button.activo { 
+    color: var(--dorado); 
+    font-weight: 800; 
+}
+nav button.activo::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 45px; 
+    height: 4px; 
+    background: var(--gradiente-secundario); 
+    border-radius: 3px; 
+    box-shadow: 0 0 12px var(--dorado); 
+}
+
+/* DOT ARRIBA A LA DERECHA - ESTE QUEDA IGUAL PORQUE TE GUSTÓ */
+.dot-notificacion { 
+    position: absolute; 
+    top: 8px; 
+    right: 8px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--notificacion); 
+    border-radius: 50%; 
+    border: 1px solid var(--dorado); 
+    box-shadow: 0 0 8px var(--notificacion); 
+    display: none; 
+    pointer-events: none; 
+    animation: parpadeoNoti 1.2s infinite ease-in-out; 
+    z-index: 10; 
+}
+@keyframes parpadeoNoti { 
+    0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 2px var(--notificacion)); } 
+    50% { transform: scale(1.3); opacity: 0.7; filter: drop-shadow(0 0 6px var(--notificacion)); } 
+}
 
         .seccion { display: none; padding: 20px 15px; animation: fadeIn 0.4s ease; }
         .seccion.activa { display: block; }
@@ -1111,6 +1197,35 @@
 
         if(localStorage.getItem('temaHuayna') === 'amarillo') document.body.classList.add('tema-amarillo');
         actualizarVista();
+        // === SCROLL AUTOMÁTICO DEL NAV ===
+// Centra automáticamente la pestaña activa
+function centrarPestañaActiva() {
+    const nav = document.getElementById('menu');
+    const botonActivo = nav.querySelector('button.activo');
+    if (botonActivo && nav) {
+        const contenedor = botonActivo.parentElement;
+        const scrollPos = contenedor.offsetLeft - (nav.offsetWidth / 2) + (contenedor.offsetWidth / 2);
+        nav.scrollTo({ 
+            left: scrollPos, 
+            behavior: 'smooth' 
+        });
+    }
+}
+
+// Hookearlo a tu función que cambia de sección
+// Buscá donde tengas algo tipo: function mostrarSeccion(nombre) { ... }
+// Y agregá esta línea al final de esa función:
+function mostrarSeccion(nombre) {
+    // ... tu código existente que activa el botón y muestra la sección ...
+    
+    // AGREGÁ ESTA LÍNEA AL FINAL:
+    setTimeout(centrarPestañaActiva, 100);
+}
+
+// Centrar al cargar la página por primera vez
+window.addEventListener('load', () => {
+    setTimeout(centrarPestañaActiva, 300);
+});
     </script>
 </body>
 </html>
