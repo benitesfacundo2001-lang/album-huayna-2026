@@ -801,7 +801,7 @@ nav button.activo::after {
         <header>
             <h1>🔥 Tribu Huayna 2026 🔥</h1>
             <div class="header-badges">
-                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/160</span></div>
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/156</span></div>
                 <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
             </div>
         </header>
@@ -884,7 +884,7 @@ nav button.activo::after {
                         <p>Figuritas Únicas</p>
                     </div>
                     <div class="stat-box">
-                        <h4 id="stat-faltan">156</h4>
+                        <h4 id="stat-faltan">160</h4>
                         <p>Te Faltan</p>
                     </div>
                     <div class="stat-box">
@@ -915,7 +915,7 @@ nav button.activo::after {
         <div class="modal-novedades" id="modal-novedades">
             <div class="novedades-box">
                 <button class="cerrar-novedades" id="cerrar-novedades" type="button">×</button>
-                <h2>📢 Novedades Huaynas</h2>
+                <h2>📢 Novedades Huayna</h2>
                 <div class="novedades-fecha" id="novedades-fecha">Actualización del álbum</div>
                 <div class="novedades-lista" id="novedades-lista"></div>
                 <button class="btn btn-secundario btn-novedades" id="btn-entendido-novedades" type="button">Entendido</button>
@@ -976,16 +976,14 @@ nav button.activo::after {
 
         // ====== NOVEDADES DEL ÁLBUM ======
         // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
-        const VERSION_NOVEDADES = '2026-07-01-NUEVA-TANDA-4';
-const FECHA_NOVEDADES = 'Nueva tanda disponible';
-
-const NOVEDADES_HUAYNA = [
-    '📸 <strong>Se agregaron nuevas figuritas</strong> al Álbum Oficial Tribu Huayna 2026.',
-    '🎟️ Ya podés abrir sobres y buscar las nuevas incorporaciones de esta tanda.',
-    '🔥 Entre las nuevas figuritas también hay una especial esperando aparecer.',
-    '📲 Si todavía no mandaste tu foto y querés aparecer en futuras tandas, usá el botón de WhatsApp dentro del álbum.',
-    '❤️ <strong>Sangre roja y corazón de oro.</strong>'
-];
+        const VERSION_NOVEDADES = '2026-07-01-NUEVA-TANDA-5-SIN-REPETIR';
+        const FECHA_NOVEDADES = 'Nueva tanda disponible';
+        const NOVEDADES_HUAYNA = [
+            '📸 <strong>Ahora podés enviar tu foto</strong> para aparecer en futuras figuritas del álbum.',
+            '🔥 Se vienen nuevas activaciones, códigos sorpresa y dinámicas por WhatsApp.',
+            '👑 La sección <strong>El Consejo Huayna 2025</strong> queda sellada por ahora. Será revelada más adelante.',
+            '📖 Nuevas figuritas fueron agregadas a la colección.'
+        ];
 
         const CONSEJO_HUAYNA_ACTIVO = false;
 
@@ -1061,10 +1059,10 @@ const NOVEDADES_HUAYNA = [
             115: 'https://i.imgur.com/c4SCPcd.jpeg', 116: 'https://i.imgur.com/uFNrEVb.jpeg',
             117: 'https://i.imgur.com/QUPOhPm.jpeg', 118: 'https://i.imgur.com/RGnFZBL.jpeg',
             119: 'https://i.imgur.com/kQ1NIZ4.jpeg', 120: 'https://i.imgur.com/2K5IiWq.jpeg',
-            121: 'https://i.imgur.com/gbc7bKY.jpeg', 122: 'https://i.imgur.com/E3Dxufk.jpeg', 
+            121: 'https://i.imgur.com/gbc7bKY.jpeg', 122: 'https://i.imgur.com/E3Dxufk.jpeg',
             123: 'https://i.imgur.com/Y7MNRf7.jpeg', 124: 'https://i.imgur.com/Qc7upqr.jpeg',
             125: 'https://i.imgur.com/79ojBEm.jpeg', 126: 'https://i.imgur.com/oM4pZ8k.jpeg',
-            127: 'https://i.imgur.com/xdqEX4W.jpeg', 128: 'https://i.imgur.com/UO3Jjpz.jpeg', 
+            127: 'https://i.imgur.com/xdqEX4W.jpeg', 128: 'https://i.imgur.com/UO3Jjpz.jpeg',
             129: 'https://i.imgur.com/HPJqG4O.jpeg', 130: 'https://i.imgur.com/qPMhN6b.jpeg',
             131: 'https://i.imgur.com/Gs17Q49.jpeg', 132: 'https://i.imgur.com/zkDoAUN.jpeg',
             133: 'https://i.imgur.com/gOJjxom.jpeg', 134: 'https://i.imgur.com/A2sUyVX.jpeg',
@@ -1074,9 +1072,9 @@ const NOVEDADES_HUAYNA = [
             141: 'https://i.imgur.com/I0ElT4S.jpeg', 142: 'https://i.imgur.com/5lTb7vA.jpeg',
             143: 'https://i.imgur.com/9OKsliN.jpeg', 144: 'https://i.imgur.com/62yijku.jpeg',
             145: 'https://i.imgur.com/NHfO22q.jpeg', 146: 'https://i.imgur.com/MIVyBX6.jpeg',
-            147: 'https://i.imgur.com/470j98J.jpeg', 157: 'https://i.imgur.com/5pMGufE.jpeg', 
-            158: 'https://i.imgur.com/UkKPB5E.jpeg', 159: 'https://i.imgur.com/oylWm8z.jpeg', 
-            160: 'https://i.imgur.com/7J1rHDI.jpeg'
+            147: 'https://i.imgur.com/470j98J.jpeg',
+            157: 'https://i.imgur.com/5pMGufE.jpeg', 158: 'https://i.imgur.com/UkKPB5E.jpeg',
+            159: 'https://i.imgur.com/oylWm8z.jpeg', 160: 'https://i.imgur.com/7J1rHDI.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
@@ -1132,6 +1130,36 @@ const NOVEDADES_HUAYNA = [
             }
 
             return FIGURITAS_SORTEABLES[Math.floor(Math.random() * FIGURITAS_SORTEABLES.length)];
+        }
+
+        function sortearFiguritaSinRepetir(figusYaElegidas) {
+            const especialesDisponibles = FIGURITAS_ESPECIALES_DISPONIBLES.filter(num =>
+                !figusYaElegidas.includes(num)
+            );
+
+            const comunesDisponibles = FIGURITAS_COMUNES.filter(num =>
+                !figusYaElegidas.includes(num)
+            );
+
+            const todasDisponibles = FIGURITAS_SORTEABLES.filter(num =>
+                !figusYaElegidas.includes(num)
+            );
+
+            if (todasDisponibles.length === 0) {
+                return sortearFigurita();
+            }
+
+            let saleEspecial = Math.random() < PROBABILIDAD_ESPECIALES;
+
+            if (saleEspecial && especialesDisponibles.length > 0) {
+                return especialesDisponibles[Math.floor(Math.random() * especialesDisponibles.length)];
+            }
+
+            if (comunesDisponibles.length > 0) {
+                return comunesDisponibles[Math.floor(Math.random() * comunesDisponibles.length)];
+            }
+
+            return todasDisponibles[Math.floor(Math.random() * todasDisponibles.length)];
         }
 
         let imagenesCargadas = 0;
@@ -1204,7 +1232,7 @@ const NOVEDADES_HUAYNA = [
         FIGURITAS_REPRESENTANTES_2025.forEach(num => {
             if (!esRepresentanteDesbloqueado(num) && album[num]) {
                 delete album[num];
-                huboLimpiezaRepresentantes = tru
+                huboLimpiezaRepresentantes = true;
             }
         });
         if (huboLimpiezaRepresentantes) {
@@ -1383,9 +1411,12 @@ const NOVEDADES_HUAYNA = [
             figuritasPendientes = [];
             historicoTenidasAntesDeAbrir = []; 
             let huboNuevasEnEstePaquete = 0;
+            let figusDelPaquete = [];
 
             for(let i = 0; i < 5; i++) {
-                let num = sortearFigurita();
+                let num = sortearFiguritaSinRepetir(figusDelPaquete);
+                figusDelPaquete.push(num);
+
                 let yaLaTenía = (album[num] && album[num] > 0);
                 historicoTenidasAntesDeAbrir.push(yaLaTenía);
 
@@ -1551,8 +1582,6 @@ const NOVEDADES_HUAYNA = [
                 if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
                 return true;
             }).reduce((acc, n) => acc + album[n], 0) - tenidas;
-            let totalVisible = CONSEJO_HUAYNA_ACTIVO ? TOTAL_FIGUS : 156;
-            
             let faltan = TOTAL_FIGUS - tenidas;
             let porcentaje = Math.round((tenidas / TOTAL_FIGUS) * 100);
 
