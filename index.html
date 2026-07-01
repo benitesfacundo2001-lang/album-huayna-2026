@@ -399,6 +399,390 @@ nav button.activo::after {
             0% { left: -150%; }
             100% { left: 150%; }
         }
+
+
+        /* ====== SECCIÓN ESPECIAL: EL CONSEJO HUAYNA 2025 ====== */
+        .pagina-album.consejo-huayna {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            background:
+                radial-gradient(circle at top, rgba(255, 215, 0, 0.18), transparent 35%),
+                linear-gradient(135deg, rgba(139, 0, 0, 0.85), rgba(0, 0, 0, 0.92));
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.16), inset 0 0 35px rgba(139, 0, 0, 0.35);
+        }
+        .pagina-album.consejo-huayna::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 215, 0, 0.08) 45%, transparent 70%);
+            pointer-events: none;
+        }
+        .consejo-intro {
+            position: relative;
+            text-align: center;
+            padding: 14px 10px 18px;
+            margin-bottom: 12px;
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+        }
+        .consejo-intro h3 {
+            color: var(--dorado);
+            font-size: 22px;
+            font-weight: 950;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 18px rgba(255, 215, 0, 0.55);
+            margin-bottom: 5px;
+        }
+        .consejo-intro p {
+            color: #EEE;
+            font-size: 13px;
+            line-height: 1.35;
+            font-weight: 600;
+            opacity: 0.92;
+        }
+        .grid-consejo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .figu.representante {
+            border: 3px solid var(--dorado);
+            border-radius: 16px;
+            box-shadow: 0 0 24px rgba(255, 215, 0, 0.28), 0 8px 20px rgba(0,0,0,0.8);
+            background: linear-gradient(135deg, #3a0000, #050505 70%);
+        }
+        .figu.representante.bloqueada {
+            border-style: solid;
+            background:
+                radial-gradient(circle at center, rgba(255, 215, 0, 0.16), transparent 40%),
+                linear-gradient(135deg, rgba(70, 0, 0, 0.9), rgba(0, 0, 0, 0.94));
+        }
+        .figu.representante.bloqueada::before {
+            content: '👑';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 26px;
+            opacity: 0.85;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+        }
+        .figu.representante .label-bloqueada {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            color: var(--dorado);
+            font-size: 10px;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(0,0,0,0.66);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 8px;
+            padding: 5px 3px;
+            z-index: 4;
+        }
+        .consejo-completo {
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 14px;
+            background: rgba(255, 215, 0, 0.12);
+            border: 1px solid rgba(255, 215, 0, 0.45);
+            color: #FFF;
+            text-align: center;
+            font-weight: 800;
+            box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.08);
+        }
+    
+        /* ====== CREADOR DE FIGURITA PROPIA ====== */
+        .modal-creador {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+        .modal-creador.visible { display: flex; }
+        .creador-box {
+            width: min(96vw, 520px);
+            max-height: 92vh;
+            overflow-y: auto;
+            background: radial-gradient(circle at top, rgba(212,175,55,0.18), rgba(70,0,0,0.95) 45%, rgba(0,0,0,0.98));
+            border: 2px solid var(--dorado);
+            border-radius: 22px;
+            padding: 18px;
+            box-shadow: 0 0 40px rgba(212,175,55,0.35), 0 15px 60px rgba(0,0,0,0.85);
+            position: relative;
+        }
+        .cerrar-creador {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--dorado);
+            background: #000;
+            color: var(--dorado);
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .creador-box h3 {
+            color: var(--dorado);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin: 10px 38px 8px;
+            text-shadow: 0 0 12px rgba(212,175,55,0.55);
+        }
+        .creador-box p {
+            text-align: center;
+            color: #eee;
+            font-size: 13px;
+            line-height: 1.35;
+            margin-bottom: 14px;
+        }
+        .creador-controles {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .creador-controles input[type="text"],
+        .creador-controles input[type="file"] {
+            width: 100%;
+            background: rgba(0,0,0,0.62);
+            border: 2px solid rgba(212,175,55,0.55);
+            border-radius: 12px;
+            color: #fff;
+            padding: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+        .vista-figurita-propia {
+            width: min(78vw, 300px);
+            aspect-ratio: 3 / 4;
+            margin: 12px auto 16px;
+            border-radius: 20px;
+            border: 5px solid var(--dorado);
+            background:
+                radial-gradient(circle at 30% 15%, rgba(255,215,0,0.34), transparent 20%),
+                radial-gradient(circle at 75% 20%, rgba(120,0,0,0.8), transparent 35%),
+                linear-gradient(135deg, #1b0000, #050505 72%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 26px rgba(212,175,55,0.45), 0 12px 35px rgba(0,0,0,0.8);
+        }
+        .vista-figurita-propia::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle, rgba(255,255,255,0.9) 0 1px, transparent 1.5px) 12px 18px / 48px 48px,
+                linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.18) 48%, transparent 58%);
+            opacity: 0.35;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .vista-figurita-propia::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 52%, rgba(0,0,0,0.86) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .foto-figurita-propia {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        .placeholder-figurita-propia {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: rgba(255,215,0,0.9);
+            font-weight: 900;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        .nombre-figurita-propia {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 14px;
+            background: rgba(0,0,0,0.76);
+            border: 2px solid rgba(212,175,55,0.75);
+            border-radius: 12px;
+            padding: 8px 6px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            z-index: 4;
+        }
+        .nombre-figurita-propia span {
+            display: block;
+            color: var(--dorado);
+            font-size: 10px;
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+        #canvas-figurita-propia { display:none; }
+
+    
+        /* ====== NOVEDADES HUAYNA ====== */
+        .modal-novedades {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 1001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+        .modal-novedades.visible { display: flex; }
+        .novedades-box {
+            width: min(94vw, 560px);
+            max-height: 88vh;
+            overflow-y: auto;
+            background:
+                radial-gradient(circle at top, rgba(212,175,55,0.22), transparent 28%),
+                linear-gradient(135deg, rgba(85,0,0,0.98), rgba(0,0,0,0.98));
+            border: 2px solid var(--dorado);
+            border-radius: 24px;
+            padding: 22px 18px;
+            box-shadow: 0 0 45px rgba(212,175,55,0.35), 0 18px 70px rgba(0,0,0,0.9);
+            position: relative;
+            animation: aparecerNovedades 0.35s ease both;
+        }
+        @keyframes aparecerNovedades {
+            from { opacity: 0; transform: translateY(18px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .novedades-box h2 {
+            color: var(--dorado);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin: 4px 38px 8px;
+            text-shadow: 0 0 16px rgba(212,175,55,0.6);
+        }
+        .novedades-fecha {
+            text-align: center;
+            color: #eee;
+            font-size: 12px;
+            font-weight: 800;
+            opacity: 0.85;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .novedades-lista {
+            display: grid;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .novedad-item {
+            background: rgba(0,0,0,0.55);
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 14px;
+            padding: 12px;
+            color: #f6f6f6;
+            font-size: 14px;
+            line-height: 1.35;
+            font-weight: 650;
+        }
+        .novedad-item strong { color: var(--dorado); }
+        .cerrar-novedades {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--dorado);
+            background: #000;
+            color: var(--dorado);
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .btn-novedades {
+            margin-top: 14px;
+        }
+
+        /* ====== CONSEJO HUAYNA EN MODO PRÓXIMAMENTE ====== */
+        .consejo-proximamente {
+            margin-top: 16px;
+            min-height: 260px;
+            border-radius: 22px;
+            border: 2px solid rgba(212,175,55,0.62);
+            background:
+                radial-gradient(circle at 50% 10%, rgba(212,175,55,0.24), transparent 28%),
+                radial-gradient(circle at 20% 80%, rgba(170,0,0,0.25), transparent 34%),
+                linear-gradient(135deg, rgba(25,0,0,0.95), rgba(0,0,0,0.98));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px 16px;
+            box-shadow: inset 0 0 35px rgba(212,175,55,0.12), 0 0 28px rgba(0,0,0,0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        .consejo-proximamente::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle, rgba(255,255,255,0.75) 0 1px, transparent 1.5px) 18px 20px / 58px 58px,
+                linear-gradient(120deg, transparent 0%, rgba(255,215,0,0.14) 48%, transparent 60%);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+        .consejo-proximamente-contenido {
+            position: relative;
+            z-index: 1;
+            max-width: 520px;
+        }
+        .consejo-candado {
+            font-size: 52px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 14px rgba(212,175,55,0.72));
+        }
+        .consejo-proximamente h4 {
+            color: var(--dorado);
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-shadow: 0 0 18px rgba(212,175,55,0.58);
+        }
+        .consejo-proximamente p {
+            color: #f2f2f2;
+            font-size: 14px;
+            line-height: 1.45;
+            font-weight: 700;
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -417,7 +801,7 @@ nav button.activo::after {
         <header>
             <h1>🔥 Tribu Huayna 2026 🔥</h1>
             <div class="header-badges">
-                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/156</span></div>
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/160</span></div>
                 <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
             </div>
         </header>
@@ -475,9 +859,14 @@ nav button.activo::after {
                 Enviar Comprobante por WhatsApp
             </a>
 
+            <a class="btn" id="btn-enviar-foto" href="https://wa.me/541139277913?text=Hola!%20Quiero%20enviar%20mi%20foto%20para%20aparecer%20como%20figurita%20en%20el%20Album%20Huayna%202026.%20Te%20adjunto%20la%20imagen!" target="_blank">
+                📸 Enviar foto para aparecer en el álbum
+            </a>
+
+
             <div class="admin-box">
-                <h4>🔐 Canjear Código de Saldo</h4>
-                <p class="aviso">Ingresá el código alfanumérico que te entregó el Admin:</p>
+                <h4>🔐 Canjear Código de Saldo o Figurita Especial</h4>
+                <p class="aviso">Ingresá el código de saldo o el código especial que te entregó el Admin:</p>
                 <input type="text" id="clave-paquete" placeholder="" style="text-transform: uppercase;">
                 <button class="btn btn-secundario" id="btn-acreditar">Validar y Acreditar Saldo</button>
             </div>
@@ -521,6 +910,43 @@ nav button.activo::after {
             </div>
         </div>
 
+
+
+        <div class="modal-novedades" id="modal-novedades">
+            <div class="novedades-box">
+                <button class="cerrar-novedades" id="cerrar-novedades" type="button">×</button>
+                <h2>📢 Novedades Huayna</h2>
+                <div class="novedades-fecha" id="novedades-fecha">Actualización del álbum</div>
+                <div class="novedades-lista" id="novedades-lista"></div>
+                <button class="btn btn-secundario btn-novedades" id="btn-entendido-novedades" type="button">Entendido</button>
+            </div>
+        </div>
+
+        <div class="modal-creador" id="modal-creador-figurita">
+            <div class="creador-box">
+                <button class="cerrar-creador" id="cerrar-creador-figurita" type="button">×</button>
+                <h3>🎨 Armá tu propia figurita</h3>
+                <p>Subí una foto, escribí tu nombre y descargá una versión estilo Huayna. Esta figurita es de recuerdo y no modifica tu álbum.</p>
+
+                <div class="creador-controles">
+                    <input type="file" id="foto-creador-figurita" accept="image/*">
+                    <input type="text" id="nombre-creador-figurita" maxlength="28" placeholder="Escribí tu nombre">
+                </div>
+
+                <div class="vista-figurita-propia" id="vista-figurita-propia">
+                    <div class="foto-figurita-propia" id="foto-preview-figurita"></div>
+                    <div class="placeholder-figurita-propia" id="placeholder-figurita-propia">Subí tu foto</div>
+                    <div class="nombre-figurita-propia" id="nombre-preview-figurita">
+                        TU NOMBRE
+                        <span>ÁLBUM OFICIAL HUAYNA 2026</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-secundario" id="btn-descargar-figurita-propia" type="button">Descargar figurita</button>
+                <canvas id="canvas-figurita-propia" width="900" height="1200"></canvas>
+            </div>
+        </div>
+
         <div class="modal-zoom" id="modal-zoom">
             <button class="cerrar-modal" id="cerrar-modal">×</button>
             <div class="figu-zoom" id="figu-zoom" onclick="voltearFigu()">
@@ -548,14 +974,28 @@ nav button.activo::after {
         const TOTAL_FIGUS = 156;
         const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
+        // ====== NOVEDADES DEL ÁLBUM ======
+        // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
+        const VERSION_NOVEDADES = '2026-07-01-A';
+        const FECHA_NOVEDADES = 'Novedades de esta semana';
+        const NOVEDADES_HUAYNA = [
+            '📸 <strong>Ahora podés enviar tu foto</strong> para aparecer en futuras figuritas del álbum.',
+            '🔥 Se vienen nuevas activaciones, códigos sorpresa y dinámicas por WhatsApp.',
+            '👑 La sección <strong>El Consejo Huayna 2025</strong> queda sellada por ahora. Será revelada más adelante.',
+            '📖 Nuevas figuritas fueron agregadas a la colección.'
+        ];
+
+        const CONSEJO_HUAYNA_ACTIVO = false;
+
         const SECCIONES_ALBUM = [
-              { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 26 },
-              { titulo: "🪵 Sección II: Raíces de nuestra Tribu", de: 27, hasta: 52 },
-              { titulo: "⭐ Sección III: Leyendas y Herencia", de: 53, hasta: 78 },
-              { titulo: "🌙 Sección IV: Canciones y Pasión", de: 79, hasta: 104 },
-              { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
-              { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 156 }
-];
+            { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 26 },
+            { titulo: "🪵 Sección II: Raíces de nuestra Tribu", de: 27, hasta: 52 },
+            { titulo: "⭐ Sección III: Leyendas y Herencia", de: 53, hasta: 78 },
+            { titulo: "🌙 Sección IV: Canciones y Pasión", de: 79, hasta: 104 },
+            { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
+            { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 156 },
+            { titulo: "👑 Sección VII: El Consejo Huayna 2025", de: 157, hasta: 160, tipo: "consejo" }
+        ];
 
         // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
         const IMAGENES_FIGUS = {
@@ -606,29 +1046,65 @@ nav button.activo::after {
             89: 'https://i.imgur.com/Ru0umO3.jpeg', 90: 'https://i.imgur.com/0MtE8Nx.jpeg',
             91: 'https://i.imgur.com/S8sEsSI.jpeg', 92: 'https://i.imgur.com/IiKyVxp.jpeg',
             93: 'https://i.imgur.com/26v8jQR.jpeg', 94: 'https://i.imgur.com/pRoCzx7.jpeg',
-            95: 'https://i.imgur.com/DzafIjt.jpeg', 96: 'https://i.imgur.com/XyhDq2x.jpeg', 97: 'https://i.imgur.com/VRUeaDm.jpeg',
-98: 'https://i.imgur.com/LZpnN38.jpeg', 99: 'https://i.imgur.com/mY1qUAR.jpeg',
-100: 'https://i.imgur.com/j6LtCvR.jpeg', 101: 'https://i.imgur.com/eKxP5WE.jpeg', 102: 'https://i.imgur.com/9uhwN99.jpeg', 103: 'https://i.imgur.com/wZu1VkJ.jpeg',
-104: 'https://i.imgur.com/aaOOcNa.jpeg', 105: 'https://i.imgur.com/lux85Mr.jpeg',
-106: 'https://i.imgur.com/ICe9Dz4.jpeg', 107: 'https://i.imgur.com/YYUcBiG.jpeg',
-108: 'https://i.imgur.com/3O25JBA.jpeg', 109: 'https://i.imgur.com/iywQlQP.jpeg',
-110: 'https://i.imgur.com/EOOLHY0.jpeg', 111: 'https://i.imgur.com/iR7TfgU.jpeg',
-112: 'https://i.imgur.com/Nmzas7g.jpeg',
+            95: 'https://i.imgur.com/DzafIjt.jpeg', 96: 'https://i.imgur.com/XyhDq2x.jpeg',
+            97: 'https://i.imgur.com/VRUeaDm.jpeg', 98: 'https://i.imgur.com/LZpnN38.jpeg',
+            99: 'https://i.imgur.com/mY1qUAR.jpeg', 100: 'https://i.imgur.com/j6LtCvR.jpeg',
+            101: 'https://i.imgur.com/eKxP5WE.jpeg', 102: 'https://i.imgur.com/9uhwN99.jpeg',
+            103: 'https://i.imgur.com/wZu1VkJ.jpeg', 104: 'https://i.imgur.com/aaOOcNa.jpeg',
+            105: 'https://i.imgur.com/lux85Mr.jpeg', 106: 'https://i.imgur.com/ICe9Dz4.jpeg',
+            107: 'https://i.imgur.com/YYUcBiG.jpeg', 108: 'https://i.imgur.com/3O25JBA.jpeg',
+            109: 'https://i.imgur.com/iywQlQP.jpeg', 110: 'https://i.imgur.com/EOOLHY0.jpeg',
+            111: 'https://i.imgur.com/iR7TfgU.jpeg', 112: 'https://i.imgur.com/Nmzas7g.jpeg',
+            113: 'https://i.imgur.com/OoptuVd.jpeg', 114: 'https://i.imgur.com/Qykmzj4.jpeg',
+            115: 'https://i.imgur.com/c4SCPcd.jpeg', 116: 'https://i.imgur.com/uFNrEVb.jpeg',
+            117: 'https://i.imgur.com/QUPOhPm.jpeg', 118: 'https://i.imgur.com/RGnFZBL.jpeg',
+            119: 'https://i.imgur.com/kQ1NIZ4.jpeg', 120: 'https://i.imgur.com/2K5IiWq.jpeg',
+            121: 'https://i.imgur.com/gbc7bKY.jpeg', 122: 'https://i.imgur.com/E3Dxufk.jpeg', 
+            123: 'https://i.imgur.com/Y7MNRf7.jpeg', 124: 'https://i.imgur.com/Qc7upqr.jpeg',
+            125: 'https://i.imgur.com/79ojBEm.jpeg', 126: 'https://i.imgur.com/oM4pZ8k.jpeg',
+            127: 'https://i.imgur.com/xdqEX4W.jpeg', 128: 'https://i.imgur.com/UO3Jjpz.jpeg',
+            157: 'https://i.imgur.com/5pMGufE.jpeg', 158: 'https://i.imgur.com/UkKPB5E.jpeg',
+            159: 'https://i.imgur.com/oylWm8z.jpeg', 160: 'https://i.imgur.com/7J1rHDI.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
-        // Especiales = la 1 y los múltiplos de 12, hasta la figurita final 156.
-        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156];
+        // Especiales = la 1, múltiplos de 12 y los 4 Representantes Camada 2025.
+        const FIGURITAS_REPRESENTANTES_2025 = [157, 158, 159, 160];
+        const FIGURITAS_BLOQUEADAS_POR_CODIGO = [...FIGURITAS_REPRESENTANTES_2025];
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 157, 158, 159, 160];
         const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
 
+        // Códigos especiales para desbloquear los Representantes Camada 2025.
+        // Estos códigos NO acreditan plata: desbloquean una figurita específica.
+        const CODIGOS_REPRESENTANTES_2025 = {
+            "REP25-ROJA-157": 157,
+            "REP25-ORO-158": 158,
+            "REP25-HUAYNA-159": 159,
+            "REP25-CONSEJO-160": 160
+        };
+
+        // Estado separado de desbloqueo para que estas figuritas NO aparezcan solo por estar en el álbum anterior.
+        let representantesDesbloqueados = JSON.parse(localStorage.getItem('representantes2025Desbloqueados')) || [];
+
+        function esRepresentanteDesbloqueado(num) {
+            return representantesDesbloqueados.includes(num);
+        }
+
+        function guardarRepresentantesDesbloqueados() {
+            localStorage.setItem('representantes2025Desbloqueados', JSON.stringify(representantesDesbloqueados));
+        }
+
         // IMPORTANTE PARA ACTUALIZAR SIN ROMPER:
-        // Aunque el álbum tenga 156 espacios, los sobres solo sortean figuritas que ya tienen imagen cargada.
-        // Cuando agregues imágenes 97, 98, 99, etc. en IMAGENES_FIGUS, automáticamente empiezan a salir.
+        // Aunque el álbum tenga 160 espacios, los sobres solo sortean figuritas que ya tienen imagen cargada
+        // y NO sortean las bloqueadas por código.
         const FIGURITAS_DISPONIBLES = Object.keys(IMAGENES_FIGUS).map(Number);
-        const FIGURITAS_ESPECIALES_DISPONIBLES = FIGURITAS_ESPECIALES.filter(num =>
-            FIGURITAS_DISPONIBLES.includes(num)
+        const FIGURITAS_SORTEABLES = FIGURITAS_DISPONIBLES.filter(num =>
+            !FIGURITAS_BLOQUEADAS_POR_CODIGO.includes(num)
         );
-        const FIGURITAS_COMUNES = FIGURITAS_DISPONIBLES.filter(num =>
+        const FIGURITAS_ESPECIALES_DISPONIBLES = FIGURITAS_ESPECIALES.filter(num =>
+            FIGURITAS_SORTEABLES.includes(num)
+        );
+        const FIGURITAS_COMUNES = FIGURITAS_SORTEABLES.filter(num =>
             !FIGURITAS_ESPECIALES.includes(num)
         );
 
@@ -639,7 +1115,11 @@ nav button.activo::after {
                 return FIGURITAS_ESPECIALES_DISPONIBLES[Math.floor(Math.random() * FIGURITAS_ESPECIALES_DISPONIBLES.length)];
             }
 
-            return FIGURITAS_COMUNES[Math.floor(Math.random() * FIGURITAS_COMUNES.length)];
+            if (FIGURITAS_COMUNES.length > 0) {
+                return FIGURITAS_COMUNES[Math.floor(Math.random() * FIGURITAS_COMUNES.length)];
+            }
+
+            return FIGURITAS_SORTEABLES[Math.floor(Math.random() * FIGURITAS_SORTEABLES.length)];
         }
 
         let imagenesCargadas = 0;
@@ -693,7 +1173,10 @@ nav button.activo::after {
 
         document.getElementById('pantalla-inicio').addEventListener('click', () => {
             document.getElementById('pantalla-inicio').classList.add('oculta');
-            setTimeout(() => { document.getElementById('app-contenido').classList.add('visible'); }, 500);
+            setTimeout(() => {
+                document.getElementById('app-contenido').classList.add('visible');
+                mostrarNovedadesSiCorresponde();
+            }, 500);
         });
 
         let albumCrudo = JSON.parse(localStorage.getItem('albumHuayna')) || {};
@@ -701,6 +1184,19 @@ nav button.activo::after {
         for(let num in albumCrudo) {
             let n = parseInt(num);
             if(n >= 1 && n <= TOTAL_FIGUS) album[n] = albumCrudo[n];
+        }
+
+        // Las figuritas 157 a 160 solo se consideran obtenidas si fueron desbloqueadas por código.
+        // Esto corrige el caso en que hayan quedado guardadas por una versión anterior o de prueba.
+        let huboLimpiezaRepresentantes = false;
+        FIGURITAS_REPRESENTANTES_2025.forEach(num => {
+            if (!esRepresentanteDesbloqueado(num) && album[num]) {
+                delete album[num];
+                huboLimpiezaRepresentantes = true;
+            }
+        });
+        if (huboLimpiezaRepresentantes) {
+            localStorage.setItem('albumHuayna', JSON.stringify(album));
         }
 
         let plataGuardada = localStorage.getItem('plataHuayna');
@@ -774,61 +1270,89 @@ nav button.activo::after {
         }
 
         function acreditarPlata() {
-    let codigo = document.getElementById('clave-paquete').value.trim().toUpperCase();
-    let usados = JSON.parse(localStorage.getItem('codigosUsadosHuayna')) || [];
+            let codigo = document.getElementById('clave-paquete').value.trim().toUpperCase();
+            let usados = JSON.parse(localStorage.getItem('codigosUsadosHuayna')) || [];
 
-    if (!codigo) {
-        alert('Por favor, ingresá un código.');
-        return;
-    }
+            if (!codigo) {
+                alert('Por favor, ingresá un código.');
+                return;
+            }
 
-    if (usados.includes(codigo)) {
-        alert('❌ Este código ya fue utilizado en este dispositivo.');
-        document.getElementById('clave-paquete').value = '';
-        return;
-    }
+            if (usados.includes(codigo)) {
+                alert('❌ Este código ya fue utilizado en este dispositivo.');
+                document.getElementById('clave-paquete').value = '';
+                return;
+            }
 
-    // Formato válido:
-    // H1K-ABCDEF-423
-    // H5K-ABCDEF-342
-    // H9K-ABCDEF-306
-    // H50K-ABCDEF-522
-    // H100K-ABCDEF-810
-    const patronCodigo = /^H(\d+)K-[A-Z]{6}-(\d{3})$/;
-    const coincidencia = codigo.match(patronCodigo);
+            // ====== CÓDIGOS ESPECIALES: REPRESENTANTES CAMADA 2025 ======
+            if (CODIGOS_REPRESENTANTES_2025[codigo]) {
+                if (!CONSEJO_HUAYNA_ACTIVO) {
+                    alert('👑 La sección El Consejo Huayna 2025 todavía no fue revelada. Este código se activará más adelante.');
+                    document.getElementById('clave-paquete').value = '';
+                    return;
+                }
 
-    if (!coincidencia) {
-        alert('❌ Código inválido. Revisá que tenga el formato correcto.');
-        return;
-    }
+                const numFigu = CODIGOS_REPRESENTANTES_2025[codigo];
 
-    let montoEnMiles = parseInt(coincidencia[1]);
-    let firma = coincidencia[2];
+                if (esRepresentanteDesbloqueado(numFigu)) {
+                    usados.push(codigo);
+                    localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
+                    alert('👑 Ya tenías desbloqueada esta figurita especial.');
+                    document.getElementById('clave-paquete').value = '';
+                    guardar();
+                    return;
+                }
 
-    let d1 = parseInt(firma[0]);
-    let d2 = parseInt(firma[1]);
-    let d3 = parseInt(firma[2]);
+                album[numFigu] = 1;
+                representantesDesbloqueados.push(numFigu);
+                guardarRepresentantesDesbloqueados();
+                usados.push(codigo);
+                localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
 
-    if (isNaN(d1) || isNaN(d2) || isNaN(d3) || (d1 + d2 + d3 !== 9)) {
-        alert('❌ Código inválido. Firma incorrecta.');
-        return;
-    }
+                SistemaLogros.registrarAccion('pegar', 1);
+                alert(`👑 ¡Representante desbloqueado!\nSe agregó la figurita especial N°${numFigu} a tu álbum.`);
+                document.getElementById('clave-paquete').value = '';
+                guardar();
+                return;
+            }
 
-    let monto = montoEnMiles * 1000;
+            // ====== CÓDIGOS DE SALDO CON CUALQUIER MONTO EN MILES ======
+            // Formato válido: H1K-ABCDEF-423 / H9K-ABCDEF-306 / H50K-ABCDEF-522 / H100K-ABCDEF-810
+            const patronCodigo = /^H(\d+)K-[A-Z]{6}-(\d{3})$/;
+            const coincidencia = codigo.match(patronCodigo);
 
-    if (monto <= 0) {
-        alert('❌ Monto inválido.');
-        return;
-    }
+            if (!coincidencia) {
+                alert('❌ Código inválido. Revisá que tenga el formato correcto.');
+                return;
+            }
 
-    plata += monto;
-    usados.push(codigo);
-    localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
+            let montoEnMiles = parseInt(coincidencia[1]);
+            let firma = coincidencia[2];
 
-    alert(`✅ ¡Excelente! Se acreditaron $${monto} correctamente.`);
-    document.getElementById('clave-paquete').value = '';
-    guardar();
-}
+            let d1 = parseInt(firma[0]);
+            let d2 = parseInt(firma[1]);
+            let d3 = parseInt(firma[2]);
+
+            if (isNaN(d1) || isNaN(d2) || isNaN(d3) || (d1 + d2 + d3 !== 9)) {
+                alert('❌ Código inválido. Firma incorrecta.');
+                return;
+            }
+
+            let monto = montoEnMiles * 1000;
+
+            if (monto <= 0) {
+                alert('❌ Monto inválido.');
+                return;
+            }
+
+            plata += monto;
+            usados.push(codigo);
+            localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
+
+            alert(`✅ ¡Excelente! Se acreditaron $${monto} correctamente.`);
+            document.getElementById('clave-paquete').value = '';
+            guardar();
+        }
 
         function abrirPaquete() {
             let costo = 0;
@@ -979,6 +1503,7 @@ nav button.activo::after {
                 localStorage.removeItem('plataHuayna');
                 localStorage.removeItem('albumHuayna');
                 localStorage.removeItem('album_logros');
+                localStorage.removeItem('representantes2025Desbloqueados');
                 localStorage.setItem('paquetesAbiertosHuayna', 0);
                 guardar();
                 location.reload();
@@ -986,7 +1511,12 @@ nav button.activo::after {
         }
 
         function obtenerCantidadPegadas() {
-            return Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).length;
+            return Object.keys(album).filter(n => {
+                let num = parseInt(n);
+                if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && (!CONSEJO_HUAYNA_ACTIVO || !esRepresentanteDesbloqueado(num))) return false;
+                return album[num] && album[num] > 0;
+            }).length;
         }
 
         function obtenerCantidadSeccionOro() {
@@ -997,9 +1527,20 @@ nav button.activo::after {
             return contador;
         }
 
+        function obtenerConsejoCompleto() {
+            return FIGURITAS_REPRESENTANTES_2025.every(num => esRepresentanteDesbloqueado(num));
+        }
+
         function actualizarProgreso() {
             let tenidas = obtenerCantidadPegadas();
-            let totalRepes = Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).reduce((acc, n) => acc + album[n], 0) - tenidas;
+            let totalRepes = Object.keys(album).filter(n => {
+                let num = parseInt(n);
+                if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
+                return true;
+            }).reduce((acc, n) => acc + album[n], 0) - tenidas;
+            let totalVisible = CONSEJO_HUAYNA_ACTIVO ? TOTAL_FIGUS : 156;
+            
             let faltan = TOTAL_FIGUS - tenidas;
             let porcentaje = Math.round((tenidas / TOTAL_FIGUS) * 100);
 
@@ -1017,7 +1558,12 @@ nav button.activo::after {
 
         function actualizarVista() {
             let tenidas = obtenerCantidadPegadas();
-            let totalRepes = Object.keys(album).filter(n => parseInt(n) >= 1 && parseInt(n) <= TOTAL_FIGUS).reduce((acc, n) => acc + album[n], 0) - tenidas;
+            let totalRepes = Object.keys(album).filter(n => {
+                let num = parseInt(n);
+                if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
+                return true;
+            }).reduce((acc, n) => acc + album[n], 0) - tenidas;
 
             document.getElementById('progreso-header').textContent = `${tenidas}/${TOTAL_FIGUS}`;
             document.getElementById('plata').textContent = `$${plata}`;
@@ -1049,21 +1595,46 @@ nav button.activo::after {
 
             SECCIONES_ALBUM.forEach(seccion => {
                 let paginaDiv = document.createElement('div');
-                paginaDiv.className = 'pagina-album';
+                paginaDiv.className = seccion.tipo === 'consejo' ? 'pagina-album consejo-huayna' : 'pagina-album';
+
+                if (seccion.tipo === 'consejo') {
+                    paginaDiv.innerHTML = `
+                        <div class="consejo-intro">
+                            <h3>👑 El Consejo Huayna 2025</h3>
+                            <p>Representantes de la Camada 2025.</p>
+                        </div>
+                        <div class="consejo-proximamente">
+                            <div class="consejo-proximamente-contenido">
+                                <div class="consejo-candado">🔒</div>
+                                <h4>Próximamente</h4>
+                                <p>Esta sección todavía está sellada.<br>Los representantes serán revelados cuando llegue el momento.</p>
+                            </div>
+                        </div>
+                    `;
+                    contenedorAlbum.appendChild(paginaDiv);
+                    return;
+                }
+
                 paginaDiv.innerHTML = `<h4>${seccion.titulo}</h4>`;
+
                 let gridDiv = document.createElement('div');
                 gridDiv.className = 'grid-figuritas';
 
                 for(let i = seccion.de; i <= seccion.hasta; i++) {
-                    let cant = album[i] || 0;
+                    let esRepresentante = FIGURITAS_REPRESENTANTES_2025.includes(i);
+                    let desbloqueadaPorCodigo = !esRepresentante || esRepresentanteDesbloqueado(i);
+                    let cant = desbloqueadaPorCodigo ? (album[i] || 0) : 0;
                     let onClickAlbum = cant ? `zoomFigu(${i})` : '';
                     let imgStyle = cant && IMAGENES_FIGUS[i] ? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
                     let claseBloqueada = !cant ? 'bloqueada' : '';
-                    let esEspecial = (i === 1 || i % 12 === 0) ? 'especial destacada' : '';
+                    let esEspecial = FIGURITAS_ESPECIALES.includes(i) ? 'especial' : '';
+                    let esDestacada = (FIGURITAS_ESPECIALES.includes(i) && !esRepresentante) ? 'destacada' : '';
+                    let claseRepresentante = esRepresentante ? 'representante' : '';
                     let badgeRepe = cant > 1 ? `<span class="repe">${cant}</span>` : '';
                     let mostrarNum = !cant ? `<span class="num-figu">${i}</span>` : '';
-                    
-                    gridDiv.innerHTML += `<div class="figu ${cant? 'tenida':''} ${claseBloqueada} ${esEspecial}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}</div>`;
+                    let labelBloqueada = (!cant && esRepresentante) ? `<span class="label-bloqueada">Código especial</span>` : '';
+
+                    gridDiv.innerHTML += `<div class="figu ${cant? 'tenida':''} ${claseBloqueada} ${esEspecial} ${esDestacada} ${claseRepresentante}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}${labelBloqueada}</div>`;
                 }
                 paginaDiv.appendChild(gridDiv);
                 contenedorAlbum.appendChild(paginaDiv);
@@ -1283,6 +1854,211 @@ function centrarPestañaActiva() {
 window.addEventListener('load', () => {
     setTimeout(centrarPestañaActiva, 300);
 });
-    </script>
+    
+
+        // ====== MODAL DE NOVEDADES ======
+        function renderizarNovedades() {
+            const lista = document.getElementById('novedades-lista');
+            const fecha = document.getElementById('novedades-fecha');
+            if (!lista || !fecha) return;
+
+            fecha.textContent = FECHA_NOVEDADES;
+            lista.innerHTML = NOVEDADES_HUAYNA.map(novedad => `<div class="novedad-item">${novedad}</div>`).join('');
+        }
+
+        function abrirNovedades() {
+            renderizarNovedades();
+            document.getElementById('modal-novedades').classList.add('visible');
+        }
+
+        function cerrarNovedades() {
+            localStorage.setItem('novedadesHuaynaVistas', VERSION_NOVEDADES);
+            document.getElementById('modal-novedades').classList.remove('visible');
+        }
+
+        function mostrarNovedadesSiCorresponde() {
+            const versionVista = localStorage.getItem('novedadesHuaynaVistas');
+            if (versionVista !== VERSION_NOVEDADES) {
+                setTimeout(abrirNovedades, 450);
+            }
+        }
+
+        (function iniciarModalNovedades() {
+            const btnCerrar = document.getElementById('cerrar-novedades');
+            const btnEntendido = document.getElementById('btn-entendido-novedades');
+            const modal = document.getElementById('modal-novedades');
+
+            if (!btnCerrar || !btnEntendido || !modal) return;
+
+            btnCerrar.addEventListener('click', cerrarNovedades);
+            btnEntendido.addEventListener('click', cerrarNovedades);
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-novedades') cerrarNovedades();
+            });
+        })();
+
+        // ====== CREADOR DE FIGURITA PROPIA ======
+        let imagenCreadorFigurita = null;
+
+        function abrirCreadorFigurita() {
+            document.getElementById('modal-creador-figurita').classList.add('visible');
+        }
+
+        function cerrarCreadorFigurita() {
+            document.getElementById('modal-creador-figurita').classList.remove('visible');
+        }
+
+        function actualizarPreviewFiguritaPropia() {
+            const nombreInput = document.getElementById('nombre-creador-figurita');
+            const nombrePreview = document.getElementById('nombre-preview-figurita');
+            const nombre = nombreInput.value.trim() || 'TU NOMBRE';
+            nombrePreview.innerHTML = `${nombre}<span>ÁLBUM OFICIAL HUAYNA 2026</span>`;
+        }
+
+        function cargarFotoFiguritaPropia(event) {
+            const archivo = event.target.files && event.target.files[0];
+            if (!archivo) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagenCreadorFigurita = e.target.result;
+                document.getElementById('foto-preview-figurita').style.backgroundImage = `url('${imagenCreadorFigurita}')`;
+                document.getElementById('placeholder-figurita-propia').style.display = 'none';
+            };
+            reader.readAsDataURL(archivo);
+        }
+
+        function dibujarImagenCubriendo(ctx, img, x, y, w, h) {
+            const imgRatio = img.width / img.height;
+            const boxRatio = w / h;
+            let sx = 0, sy = 0, sw = img.width, sh = img.height;
+
+            if (imgRatio > boxRatio) {
+                sw = img.height * boxRatio;
+                sx = (img.width - sw) / 2;
+            } else {
+                sh = img.width / boxRatio;
+                sy = (img.height - sh) / 2;
+            }
+
+            ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+        }
+
+        function descargarFiguritaPropia() {
+            if (!imagenCreadorFigurita) {
+                alert('Primero subí una foto para armar tu figurita.');
+                return;
+            }
+
+            const canvas = document.getElementById('canvas-figurita-propia');
+            const ctx = canvas.getContext('2d');
+            const nombre = (document.getElementById('nombre-creador-figurita').value.trim() || 'TU NOMBRE').toUpperCase();
+
+            const img = new Image();
+            img.onload = function() {
+                const W = canvas.width;
+                const H = canvas.height;
+
+                ctx.clearRect(0, 0, W, H);
+
+                const grad = ctx.createLinearGradient(0, 0, W, H);
+                grad.addColorStop(0, '#3b0000');
+                grad.addColorStop(0.45, '#110000');
+                grad.addColorStop(1, '#020202');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, W, H);
+
+                dibujarImagenCubriendo(ctx, img, 38, 38, W - 76, H - 76);
+
+                const overlay = ctx.createLinearGradient(0, 0, 0, H);
+                overlay.addColorStop(0, 'rgba(0,0,0,0.05)');
+                overlay.addColorStop(0.58, 'rgba(0,0,0,0.02)');
+                overlay.addColorStop(1, 'rgba(0,0,0,0.86)');
+                ctx.fillStyle = overlay;
+                ctx.fillRect(38, 38, W - 76, H - 76);
+
+                // Estrellas suaves
+                ctx.save();
+                ctx.globalAlpha = 0.65;
+                for (let i = 0; i < 95; i++) {
+                    const px = Math.random() * W;
+                    const py = Math.random() * H;
+                    const r = Math.random() * 2.2 + 0.6;
+                    ctx.fillStyle = Math.random() > 0.35 ? '#f7d777' : '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(px, py, r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+
+                // Brillo diagonal
+                const shine = ctx.createLinearGradient(0, 120, W, 620);
+                shine.addColorStop(0, 'rgba(255,255,255,0)');
+                shine.addColorStop(0.48, 'rgba(255,255,255,0.20)');
+                shine.addColorStop(0.58, 'rgba(255,215,0,0.18)');
+                shine.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.fillStyle = shine;
+                ctx.fillRect(0, 0, W, H);
+
+                // Marco dorado
+                ctx.lineWidth = 26;
+                ctx.strokeStyle = '#d4af37';
+                ctx.strokeRect(22, 22, W - 44, H - 44);
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = '#fff1a8';
+                ctx.strokeRect(43, 43, W - 86, H - 86);
+
+                // Placa de nombre
+                const placaY = H - 185;
+                ctx.fillStyle = 'rgba(0,0,0,0.78)';
+                ctx.fillRect(78, placaY, W - 156, 112);
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = '#d4af37';
+                ctx.strokeRect(78, placaY, W - 156, 112);
+
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '900 48px Arial';
+                ctx.fillText(nombre, W / 2, placaY + 62, W - 190);
+
+                ctx.fillStyle = '#d4af37';
+                ctx.font = '900 22px Arial';
+                ctx.fillText('ÁLBUM OFICIAL HUAYNA 2026', W / 2, placaY + 94);
+
+                ctx.fillStyle = '#d4af37';
+                ctx.font = '900 30px Arial';
+                ctx.fillText('❤️ SANGRE ROJA Y CORAZÓN DE ORO', W / 2, 92);
+
+                const link = document.createElement('a');
+                const nombreArchivo = nombre.toLowerCase().replace(/[^a-z0-9áéíóúñ]+/gi, '-').replace(/^-|-$/g, '') || 'figurita-huayna';
+                link.download = `${nombreArchivo}-huayna.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            };
+
+            img.src = imagenCreadorFigurita;
+        }
+
+        (function iniciarCreadorFiguritaPropia() {
+            const btnAbrir = document.getElementById('btn-crear-figurita');
+            const btnCerrar = document.getElementById('cerrar-creador-figurita');
+            const modal = document.getElementById('modal-creador-figurita');
+            const inputFoto = document.getElementById('foto-creador-figurita');
+            const inputNombre = document.getElementById('nombre-creador-figurita');
+            const btnDescargar = document.getElementById('btn-descargar-figurita-propia');
+
+            if (!btnAbrir || !btnCerrar || !modal || !inputFoto || !inputNombre || !btnDescargar) return;
+
+            btnAbrir.addEventListener('click', abrirCreadorFigurita);
+            btnCerrar.addEventListener('click', cerrarCreadorFigurita);
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-creador-figurita') cerrarCreadorFigurita();
+            });
+            inputFoto.addEventListener('change', cargarFotoFiguritaPropia);
+            inputNombre.addEventListener('input', actualizarPreviewFiguritaPropia);
+            btnDescargar.addEventListener('click', descargarFiguritaPropia);
+        })();
+
+</script>
 </body>
 </html>
