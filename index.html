@@ -73,6 +73,11 @@
         #pantalla-inicio { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 998; display: none; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.5s ease, transform 0.5s ease; }
         #pantalla-inicio.visible { display: flex; }
         #pantalla-inicio.oculta { opacity: 0; transform: scale(1.1); pointer-events: none; }
+
+        /* PANTALLA INICIO */
+        #pantalla-inicio { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 998; display: none; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.5s ease, transform 0.5s ease; }
+        #pantalla-inicio.visible { display: flex; }
+        #pantalla-inicio.oculta { opacity: 0; transform: scale(1.1); pointer-events: none; }
         .logo-inicio { width: min(85vw, 380px); aspect-ratio: 7/10; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6); display: flex; align-items: center; justify-content: flex-end; flex-direction: column; animation: pulse 2s infinite; position: relative; overflow: hidden; background-image: url('https://i.imgur.com/ZkLDHiq.jpeg'); background-size: cover; background-position: center; border: 4px solid var(--dorado); padding-bottom: 20px; }
         .logo-inicio::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%); z-index: 1; }
         .tocar-inicio { color: var(--dorado); font-weight: 900; font-size: 22px; margin-top: 30px; text-transform: uppercase; letter-spacing: 3px; animation: parpadeo 1.5s infinite; text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 2px 10px rgba(0,0,0,1); z-index: 2; position: relative; }
@@ -319,36 +324,8 @@ nav button.activo::after {
         .figu-zoom-cara { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; border: 4px solid var(--dorado); display: flex; align-items: center; justify-content: center; }
         .figu-zoom-frente { background-size: cover; background-position: center; }
         .figu-zoom-atras { background: var(--gradiente-principal); transform: rotateY(180deg); font-weight: 900; font-size: 100px; color: var(--color-numero); text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
-        .cerrar-modal {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    color: #1a1a1a;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1;
-    
-    /* ESTO CENTRA EL CÍRCULO Y LA X */
-    width: 32px;
-    height: 32px;
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    padding: 0;
-    border: none;
-}
+        .cerrar-modal { position: absolute; top: 20px; right: 20px; background: var(--dorado); color: var(--negro); width: 45px; height: 45px; border-radius: 50%; border: none; font-size: 24px; font-weight: 900; cursor: pointer; z-index: 20; }
 
-.cerrar-modal:hover { 
-    background: rgba(0, 0, 0, 0.25);
-}
-
-.cerrar-modal:active {
-    transform: scale(0.9);
-}
         /* MODAL DE APERTURA DE SOBRES — ahora a pantalla completa */
         .modal-paquete { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 501; align-items: center; justify-content: center; flex-direction: column; overflow: hidden; }
         .modal-paquete.activo { display: flex; }
@@ -422,361 +399,6 @@ nav button.activo::after {
             0% { left: -150%; }
             100% { left: 150%; }
         }
-        /* ===== FIGU ÚNICA - BOTÓN Y MODAL ===== */
-.config-item {
-    /* Si ya tenés estos estilos, no los dupliques */
-    background: rgba(255, 0, 0, 0.1);
-    border: 2px solid #FFD700;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.config-item.figu-unica {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.1));
-    border: 2px solid #FFD700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-
-.config-texto {
-    flex: 1;
-    text-align: left;
-}
-
-.config-texto h3 {
-    color: #FFD700;
-    font-size: 18px;
-    margin-bottom: 4px;
-}
-
-.config-texto p {
-    color: #ccc;
-    font-size: 14px;
-    margin: 0;
-}
-
-.btn-crear-figu {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #1a1a1a;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.2s;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
-}
-
-.btn-crear-figu:active {
-    transform: scale(0.96);
-}
-.modal-figu {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.3s ease;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal-contenido {
-    background: #1a1a1a;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #333;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 400px;
-    animation: slideUp 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-.cerrar-modal {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1;
-    line-height: 1;
-}
-
-.cerrar-modal:hover { color: #fff; }
-
-.modal-header {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    padding: 20px;
-    text-align: center;
-}
-
-.modal-header h2 {
-    margin: 0;
-    color: #1a1a1a;
-    font-size: 22px;
-}
-
-.modal-body {
-    padding: 24px 20px;
-    color: #eee;
-}
-
-.descripcion {
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
-
-.tip-box {
-    background: rgba(255, 215, 0, 0.1);
-    border-left: 3px solid #FFD700;
-    padding: 12px;
-    border-radius: 8px;
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.tip-icon { 
-    font-size: 20px;
-    flex-shrink: 0;
-}
-
-.tip-box p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.tiempo-estimado {
-    font-size: 13px;
-    color: #999;
-    margin: 0;
-}
-
-.modal-footer {
-    padding: 16px 20px;
-    display: flex;
-    gap: 12px;
-    background: #111;
-}
-
-.btn-cancelar, .btn-whatsapp {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-cancelar {
-    background: #333;
-    color: #eee;
-}
-
-.btn-cancelar:active {
-    background: #444;
-}
-
-.btn-whatsapp {
-    background: #25D366;
-    color: white;
-}
-
-.btn-whatsapp:active {
-    background: #1faa52;
-}
-
-.btn-whatsapp:active, .btn-cancelar:active {
-    transform: scale(0.96);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-/* ===== FIGU ÚNICA - BOTÓN Y MODAL ===== */
-.btn-crear-figu {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #1a1a1a;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.2s;
-}
-
-.btn-crear-figu:active {
-    transform: scale(0.96);
-}
-
-.modal-figu {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal-contenido {
-    background: #1a1a1a;
-    margin: 15% auto;
-    padding: 0;
-    border: 1px solid #333;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 400px;
-    animation: slideUp 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-.cerrar-modal {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1;
-    line-height: 1;
-}
-
-.cerrar-modal:hover { color: #fff; }
-
-.modal-header {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    padding: 20px;
-    text-align: center;
-}
-
-.modal-header h2 {
-    margin: 0;
-    color: #1a1a1a;
-    font-size: 22px;
-}
-
-.modal-body {
-    padding: 24px 20px;
-    color: #eee;
-}
-
-.descripcion {
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
-
-.tip-box {
-    background: rgba(255, 215, 0, 0.1);
-    border-left: 3px solid #FFD700;
-    padding: 12px;
-    border-radius: 8px;
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.tip-icon { 
-    font-size: 20px;
-    flex-shrink: 0;
-}
-
-.tip-box p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.tiempo-estimado {
-    font-size: 13px;
-    color: #999;
-    margin: 0;
-}
-
-.modal-footer {
-    padding: 16px 20px;
-    display: flex;
-    gap: 12px;
-    background: #111;
-}
-
-.btn-cancelar, .btn-whatsapp {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-cancelar {
-    background: #333;
-    color: #eee;
-}
-
-.btn-cancelar:active {
-    background: #444;
-}
-
-.btn-whatsapp {
-    background: #25D366;
-    color: white;
-}
-
-.btn-whatsapp:active {
-    background: #1faa52;
-}
-
-.btn-whatsapp:active, .btn-cancelar:active {
-    transform: scale(0.96);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
     </style>
 </head>
 <body>
@@ -795,7 +417,7 @@ nav button.activo::after {
         <header>
             <h1>🔥 Tribu Huayna 2026 🔥</h1>
             <div class="header-badges">
-                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/96</span></div>
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/156</span></div>
                 <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
             </div>
         </header>
@@ -873,7 +495,7 @@ nav button.activo::after {
                         <p>Figuritas Únicas</p>
                     </div>
                     <div class="stat-box">
-                        <h4 id="stat-faltan">96</h4>
+                        <h4 id="stat-faltan">156</h4>
                         <p>Te Faltan</p>
                     </div>
                     <div class="stat-box">
@@ -896,49 +518,6 @@ nav button.activo::after {
                 <button class="btn" id="btn-tema-rojo">🎨 Tema Sangre Roja</button>
                 <button class="btn" id="btn-tema-amarillo">🎨 Tema Corazón de Oro</button>
                 <button class="btn" id="btn-reiniciar" style="background:#555">🗑️ Reiniciar Álbum</button>
-<div class="config-item figu-unica" onclick="abrirModalFigu()">
-    <div class="config-texto">
-        <h3>⭐ Crear mi Figurita Única</h3>
-        <p>Convertí tu foto en una figu especial del álbum</p>
-    </div>
-    <div class="btn-crear-figu">
-        Crear
-    </div>
-</div>
-    <!-- ===== MODAL DE FIGU ÚNICA ===== -->
-<div id="modalFiguUnica" class="modal-figu">
-    <div class="modal-contenido">
-        <span class="cerrar-modal" onclick="cerrarModalFigu()">&times;</span>
-        
-        <div class="modal-header">
-            <h2>⭐ Tu Figurita Única</h2>
-        </div>
-        
-        <div class="modal-body">
-            <p class="descripcion">
-                Tu foto se convierte en figu especial del álbum y 
-                <strong>brilla como las leyendas</strong> cuando te toque en un sobre.
-            </p>
-            
-            <div class="tip-box">
-                <span class="tip-icon">💡</span>
-                <p><strong>Tip:</strong> Mandá una selfie donde se te vea bien la cara</p>
-            </div>
-            
-            <p class="tiempo-estimado">
-                ⏱️ Tarda 24-48hs hábiles en aparecer en tu álbum
-            </p>
-        </div>
-        
-        <div class="modal-footer">
-            <button class="btn-cancelar" onclick="cerrarModalFigu()">Cancelar</button>
-            <button class="btn-whatsapp" onclick="abrirWhatsAppFigu()">
-                Abrir WhatsApp
-            </button>
-        </div>
-    </div>
-</div>
-</div>
             </div>
         </div>
 
@@ -966,16 +545,17 @@ nav button.activo::after {
     </div>
 
     <script>
-        const TOTAL_FIGUS = 96;
+        const TOTAL_FIGUS = 156;
         const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
         const SECCIONES_ALBUM = [
-            { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 12 },
-            { titulo: "🪵 Sección II: Raíces de nuestra Tribu", de: 13, hasta: 36 },
-            { titulo: "⭐ Sección III: El Legado Viviente", de: 37, hasta: 60 },
-            { titulo: "🌙 Sección IV: El Ritmo de la Noche", de: 61, hasta: 84 },
-            { titulo: "✨ Sección V: Los Destellos de Oro", de: 85, hasta: 96 }
-        ];
+              { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 26 },
+              { titulo: "🪵 Sección II: Raíces de nuestra Tribu", de: 27, hasta: 52 },
+              { titulo: "⭐ Sección III: Leyendas y Herencia", de: 53, hasta: 78 },
+              { titulo: "🌙 Sección IV: Canciones y Pasión", de: 79, hasta: 104 },
+              { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
+              { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 156 }
+];
 
         // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
         const IMAGENES_FIGUS = {
@@ -1026,38 +606,76 @@ nav button.activo::after {
             89: 'https://i.imgur.com/Ru0umO3.jpeg', 90: 'https://i.imgur.com/0MtE8Nx.jpeg',
             91: 'https://i.imgur.com/S8sEsSI.jpeg', 92: 'https://i.imgur.com/IiKyVxp.jpeg',
             93: 'https://i.imgur.com/26v8jQR.jpeg', 94: 'https://i.imgur.com/pRoCzx7.jpeg',
-            95: 'https://i.imgur.com/DzafIjt.jpeg', 96: 'https://i.imgur.com/XyhDq2x.jpeg'
+            95: 'https://i.imgur.com/DzafIjt.jpeg', 96: 'https://i.imgur.com/XyhDq2x.jpeg', 97: 'https://i.imgur.com/VRUeaDm.jpeg',
+98: 'https://i.imgur.com/LZpnN38.jpeg', 99: 'https://i.imgur.com/mY1qUAR.jpeg',
+100: 'https://i.imgur.com/j6LtCvR.jpeg', 101: 'https://i.imgur.com/eKxP5WE.jpeg', 102: 'https://i.imgur.com/9uhwN99.jpeg', 103: 'https://i.imgur.com/wZu1VkJ.jpeg',
+104: 'https://i.imgur.com/aaOOcNa.jpeg', 105: 'https://i.imgur.com/lux85Mr.jpeg',
+106: 'https://i.imgur.com/ICe9Dz4.jpeg', 107: 'https://i.imgur.com/YYUcBiG.jpeg',
+108: 'https://i.imgur.com/3O25JBA.jpeg', 109: 'https://i.imgur.com/iywQlQP.jpeg',
+110: 'https://i.imgur.com/EOOLHY0.jpeg', 111: 'https://i.imgur.com/iR7TfgU.jpeg',
+112: 'https://i.imgur.com/Nmzas7g.jpeg',
         };
 
         // ====== SISTEMA DE RAREZA ======
-        // Especiales = la 1 y los múltiplos de 12 (1, 12, 24, 36, 48, 60, 72, 84, 96)
-        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96];
+        // Especiales = la 1 y los múltiplos de 12, hasta la figurita final 156.
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156];
         const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
-        const FIGURITAS_COMUNES = [];
-        for (let i = 1; i <= TOTAL_FIGUS; i++) {
-            if (!FIGURITAS_ESPECIALES.includes(i)) FIGURITAS_COMUNES.push(i);
-        }
+
+        // IMPORTANTE PARA ACTUALIZAR SIN ROMPER:
+        // Aunque el álbum tenga 156 espacios, los sobres solo sortean figuritas que ya tienen imagen cargada.
+        // Cuando agregues imágenes 97, 98, 99, etc. en IMAGENES_FIGUS, automáticamente empiezan a salir.
+        const FIGURITAS_DISPONIBLES = Object.keys(IMAGENES_FIGUS).map(Number);
+        const FIGURITAS_ESPECIALES_DISPONIBLES = FIGURITAS_ESPECIALES.filter(num =>
+            FIGURITAS_DISPONIBLES.includes(num)
+        );
+        const FIGURITAS_COMUNES = FIGURITAS_DISPONIBLES.filter(num =>
+            !FIGURITAS_ESPECIALES.includes(num)
+        );
 
         function sortearFigurita() {
             let saleEspecial = Math.random() < PROBABILIDAD_ESPECIALES;
-            if (saleEspecial) {
-                return FIGURITAS_ESPECIALES[Math.floor(Math.random() * FIGURITAS_ESPECIALES.length)];
+
+            if (saleEspecial && FIGURITAS_ESPECIALES_DISPONIBLES.length > 0) {
+                return FIGURITAS_ESPECIALES_DISPONIBLES[Math.floor(Math.random() * FIGURITAS_ESPECIALES_DISPONIBLES.length)];
             }
+
             return FIGURITAS_COMUNES[Math.floor(Math.random() * FIGURITAS_COMUNES.length)];
         }
 
         let imagenesCargadas = 0;
-        let totalImagenes = TOTAL_FIGUS + 1;
+        let totalImagenes = 0;
 
-        window.addEventListener('load', () => { precargarImagenes(); });
+        window.addEventListener('load', () => {
+            precargarImagenes();
+        });
 
         function precargarImagenes() {
             const todasLasImagenes = [...Object.values(IMAGENES_FIGUS), IMAGEN_PAQUETE];
+            totalImagenes = todasLasImagenes.length;
+
+            if (totalImagenes === 0) {
+                document.getElementById('porcentaje-carga').textContent = '100%';
+                document.getElementById('pantalla-carga').classList.add('oculta');
+                document.getElementById('pantalla-inicio').classList.add('visible');
+                return;
+            }
+
             todasLasImagenes.forEach(url => {
-                if(!url) { imagenesCargadas++; actualizarProgresoCarga(); return; }
+                if (!url) {
+                    imagenesCargadas++;
+                    actualizarProgresoCarga();
+                    return;
+                }
+
                 const img = new Image();
-                img.onload = () => { imagenesCargadas++; actualizarProgresoCarga(); };
-                img.onerror = () => { imagenesCargadas++; actualizarProgresoCarga(); };
+                img.onload = () => {
+                    imagenesCargadas++;
+                    actualizarProgresoCarga();
+                };
+                img.onerror = () => {
+                    imagenesCargadas++;
+                    actualizarProgresoCarga();
+                };
                 img.src = url;
             });
         }
@@ -1108,6 +726,7 @@ nav button.activo::after {
                 if(seccion === 'progreso') {
                     actualizarProgreso();
                 }
+                setTimeout(centrarPestañaActiva, 100);
             }
         });
 
@@ -1155,39 +774,61 @@ nav button.activo::after {
         }
 
         function acreditarPlata() {
-            let codigo = document.getElementById('clave-paquete').value.trim().toUpperCase();
-            let usados = JSON.parse(localStorage.getItem('codigosUsadosHuayna')) || [];
+    let codigo = document.getElementById('clave-paquete').value.trim().toUpperCase();
+    let usados = JSON.parse(localStorage.getItem('codigosUsadosHuayna')) || [];
 
-            if (!codigo) { alert('Por favor, ingresá un código.'); return; }
-            if (usados.includes(codigo)) { alert('❌ Este código ya fue utilizado en este dispositivo.'); document.getElementById('clave-paquete').value = ''; return; }
-            if (codigo.length < 5) { alert('❌ Código inválido.'); return; }
+    if (!codigo) {
+        alert('Por favor, ingresá un código.');
+        return;
+    }
 
-            let firma = codigo.slice(-3);
-            let d1 = parseInt(firma[0]); let d2 = parseInt(firma[1]); let d3 = parseInt(firma[2]);
+    if (usados.includes(codigo)) {
+        alert('❌ Este código ya fue utilizado en este dispositivo.');
+        document.getElementById('clave-paquete').value = '';
+        return;
+    }
 
-            if (isNaN(d1) || isNaN(d2) || isNaN(d3) || (d1 + d2 + d3 !== 9)) {
-                alert('❌ Código inválido. Firma incorrecta.'); return;
-            }
+    // Formato válido:
+    // H1K-ABCDEF-423
+    // H5K-ABCDEF-342
+    // H9K-ABCDEF-306
+    // H50K-ABCDEF-522
+    // H100K-ABCDEF-810
+    const patronCodigo = /^H(\d+)K-[A-Z]{6}-(\d{3})$/;
+    const coincidencia = codigo.match(patronCodigo);
 
-            let monto = 0;
-            if (codigo.startsWith("H100K-")) monto = 100000;
-            else if (codigo.startsWith("H5K-"))  monto = 5000;
-            else if (codigo.startsWith("H4K-"))  monto = 4000;
-            else if (codigo.startsWith("H3K-"))  monto = 3000;
-            else if (codigo.startsWith("H2K-"))  monto = 2000;
-            else if (codigo.startsWith("H1K-"))  monto = 1000;
+    if (!coincidencia) {
+        alert('❌ Código inválido. Revisá que tenga el formato correcto.');
+        return;
+    }
 
-            if (monto > 0) {
-                plata += monto;
-                usados.push(codigo);
-                localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
-                alert(`✅ ¡Excelente! Se acreditaron $${monto} correctamente.`);
-                document.getElementById('clave-paquete').value = '';
-                guardar();
-            } else {
-                alert('❌ Prefijo de código no reconocido.');
-            }
-        }
+    let montoEnMiles = parseInt(coincidencia[1]);
+    let firma = coincidencia[2];
+
+    let d1 = parseInt(firma[0]);
+    let d2 = parseInt(firma[1]);
+    let d3 = parseInt(firma[2]);
+
+    if (isNaN(d1) || isNaN(d2) || isNaN(d3) || (d1 + d2 + d3 !== 9)) {
+        alert('❌ Código inválido. Firma incorrecta.');
+        return;
+    }
+
+    let monto = montoEnMiles * 1000;
+
+    if (monto <= 0) {
+        alert('❌ Monto inválido.');
+        return;
+    }
+
+    plata += monto;
+    usados.push(codigo);
+    localStorage.setItem('codigosUsadosHuayna', JSON.stringify(usados));
+
+    alert(`✅ ¡Excelente! Se acreditaron $${monto} correctamente.`);
+    document.getElementById('clave-paquete').value = '';
+    guardar();
+}
 
         function abrirPaquete() {
             let costo = 0;
@@ -1350,7 +991,7 @@ nav button.activo::after {
 
         function obtenerCantidadSeccionOro() {
             let contador = 0;
-            for(let i = 85; i <= 96; i++) {
+            for(let i = 131; i <= 156; i++) {
                 if(album[i] && album[i] > 0) contador++;
             }
             return contador;
@@ -1451,8 +1092,8 @@ nav button.activo::after {
                     primeros_pasos: { id: 'perm_primeros', titulo: '🪵 Primeros Pasos', desc: 'Pegá tu primera figurita en el álbum.', meta: 1, premio: 200, tipo: 'pegar' },
                     buscador_tesoros: { id: 'perm_buscador', titulo: '📦 Buscador de Tesoros', desc: 'Abrí tus primeros 5 paquetes en total.', meta: 5, premio: 500, tipo: 'abrir' },
                     devoto_fuego: { id: 'perm_devoto', titulo: '🔥 Devoto del Fuego', desc: 'Entregá 10 repetidas al fuego sagrado.', meta: 10, premio: 300, tipo: 'fuego_total' },
-                    mitad_camino: { id: 'perm_mitad', titulo: '🦅 Mitad del Camino', desc: 'Llegá a 48 figuritas únicas pegadas.', meta: 48, premio: 1500, tipo: 'progreso_album' },
-                    conquistador_oro: { id: 'perm_oro', titulo: '✨ Conquistador de Oro', desc: 'Completá la Sección V (Figuritas 85 a 96).', meta: 12, premio: 2500, tipo: 'seccion_oro' }
+                    mitad_camino: { id: 'perm_mitad', titulo: '🦅 Mitad del Camino', desc: 'Llegá a 78 figuritas únicas pegadas.', meta: 78, premio: 1500, tipo: 'progreso_album' },
+                    conquistador_oro: { id: 'perm_oro', titulo: '✨ Conquistador de Oro', desc: 'Completá la Sección VI (Figuritas 131 a 156).', meta: 26, premio: 2500, tipo: 'seccion_oro' }
                 }
             },
 
@@ -1638,54 +1279,9 @@ function centrarPestañaActiva() {
     }
 }
 
-// Hookearlo a tu función que cambia de sección
-// Buscá donde tengas algo tipo: function mostrarSeccion(nombre) { ... }
-// Y agregá esta línea al final de esa función:
-function mostrarSeccion(nombre) {
-    // ... tu código existente que activa el botón y muestra la sección ...
-    
-    // AGREGÁ ESTA LÍNEA AL FINAL:
-    setTimeout(centrarPestañaActiva, 100);
-}
-
 // Centrar al cargar la página por primera vez
 window.addEventListener('load', () => {
     setTimeout(centrarPestañaActiva, 300);
-});
-// ===== FIGU ÚNICA =====
-// Abrir modal
-function abrirModalFigu() {
-    document.getElementById('modalFiguUnica').style.display = 'flex';
-    if (navigator.vibrate) navigator.vibrate(10);
-}
-
-// Cerrar modal
-function cerrarModalFigu() {
-    document.getElementById('modalFiguUnica').style.display = 'none';
-}
-
-// Abrir WhatsApp con mensaje pre-cargado
-function abrirWhatsAppFigu() {
-    const numeroWhatsApp = '5491139277913'; 
-    const mensaje = encodeURIComponent('Hola! Quiero crear mi Figu Única ⭐ Adjunto mi foto:');
-    const link = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-    window.open(link, '_blank');
-    cerrarModalFigu();
-}
-
-// Cerrar modal tocando afuera
-window.addEventListener('click', function(event) {
-    const modal = document.getElementById('modalFiguUnica');
-    if (event.target == modal) {
-        cerrarModalFigu();
-    }
-});
-
-// Cerrar modal con tecla ESC
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        cerrarModalFigu();
-    }
 });
     </script>
 </body>
