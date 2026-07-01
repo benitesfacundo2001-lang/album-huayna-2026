@@ -976,14 +976,16 @@ nav button.activo::after {
 
         // ====== NOVEDADES DEL ÁLBUM ======
         // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
-        const VERSION_NOVEDADES = '2026-07-01-A';
-        const FECHA_NOVEDADES = 'Novedades de esta semana';
-        const NOVEDADES_HUAYNA = [
-            '📸 <strong>Ahora podés enviar tu foto</strong> para aparecer en futuras figuritas del álbum.',
-            '🔥 Se vienen nuevas activaciones, códigos sorpresa y dinámicas por WhatsApp.',
-            '👑 La sección <strong>El Consejo Huayna 2025</strong> queda sellada por ahora. Será revelada más adelante.',
-            '📖 Nuevas figuritas fueron agregadas a la colección.'
-        ];
+        const VERSION_NOVEDADES = '2026-07-01-NUEVA-TANDA-4';
+const FECHA_NOVEDADES = 'Nueva tanda disponible';
+
+const NOVEDADES_HUAYNA = [
+    '📸 <strong>Se agregaron nuevas figuritas</strong> al Álbum Oficial Tribu Huayna 2026.',
+    '🎟️ Ya podés abrir sobres y buscar las nuevas incorporaciones de esta tanda.',
+    '🔥 Entre las nuevas figuritas también hay una especial esperando aparecer.',
+    '📲 Si todavía no mandaste tu foto y querés aparecer en futuras tandas, usá el botón de WhatsApp dentro del álbum.',
+    '❤️ <strong>Sangre roja y corazón de oro.</strong>'
+];
 
         const CONSEJO_HUAYNA_ACTIVO = false;
 
@@ -1062,9 +1064,19 @@ nav button.activo::after {
             121: 'https://i.imgur.com/gbc7bKY.jpeg', 122: 'https://i.imgur.com/E3Dxufk.jpeg', 
             123: 'https://i.imgur.com/Y7MNRf7.jpeg', 124: 'https://i.imgur.com/Qc7upqr.jpeg',
             125: 'https://i.imgur.com/79ojBEm.jpeg', 126: 'https://i.imgur.com/oM4pZ8k.jpeg',
-            127: 'https://i.imgur.com/xdqEX4W.jpeg', 128: 'https://i.imgur.com/UO3Jjpz.jpeg',
-            157: 'https://i.imgur.com/5pMGufE.jpeg', 158: 'https://i.imgur.com/UkKPB5E.jpeg',
-            159: 'https://i.imgur.com/oylWm8z.jpeg', 160: 'https://i.imgur.com/7J1rHDI.jpeg'
+            127: 'https://i.imgur.com/xdqEX4W.jpeg', 128: 'https://i.imgur.com/UO3Jjpz.jpeg', 
+            129: 'https://i.imgur.com/HPJqG4O.jpeg', 130: 'https://i.imgur.com/qPMhN6b.jpeg',
+            131: 'https://i.imgur.com/Gs17Q49.jpeg', 132: 'https://i.imgur.com/zkDoAUN.jpeg',
+            133: 'https://i.imgur.com/gOJjxom.jpeg', 134: 'https://i.imgur.com/A2sUyVX.jpeg',
+            135: 'https://i.imgur.com/IWOYjiu.jpeg', 136: 'https://i.imgur.com/KkaaeZ2.jpeg',
+            137: 'https://i.imgur.com/ooO5A3B.jpeg', 138: 'https://i.imgur.com/LQOu5B6.jpeg',
+            139: 'https://i.imgur.com/fJHT91A.jpeg', 140: 'https://i.imgur.com/C0IGvMC.jpeg',
+            141: 'https://i.imgur.com/I0ElT4S.jpeg', 142: 'https://i.imgur.com/5lTb7vA.jpeg',
+            143: 'https://i.imgur.com/9OKsliN.jpeg', 144: 'https://i.imgur.com/62yijku.jpeg',
+            145: 'https://i.imgur.com/NHfO22q.jpeg', 146: 'https://i.imgur.com/MIVyBX6.jpeg',
+            147: 'https://i.imgur.com/470j98J.jpeg', 157: 'https://i.imgur.com/5pMGufE.jpeg', 
+            158: 'https://i.imgur.com/UkKPB5E.jpeg', 159: 'https://i.imgur.com/oylWm8z.jpeg', 
+            160: 'https://i.imgur.com/7J1rHDI.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
@@ -1192,7 +1204,7 @@ nav button.activo::after {
         FIGURITAS_REPRESENTANTES_2025.forEach(num => {
             if (!esRepresentanteDesbloqueado(num) && album[num]) {
                 delete album[num];
-                huboLimpiezaRepresentantes = true;
+                huboLimpiezaRepresentantes = tru
             }
         });
         if (huboLimpiezaRepresentantes) {
