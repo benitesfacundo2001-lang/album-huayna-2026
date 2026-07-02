@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htm lang="es">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -783,6 +783,193 @@ nav button.activo::after {
             margin: 0;
         }
 
+
+        /* ====== CINEMÁTICA DE PEGADO EN EL ÁLBUM ====== */
+        .pegado-cinematica-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1200;
+            background: rgba(0,0,0,0.78);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .pegado-cinematica-overlay.activa { opacity: 1; }
+        .pegado-mensaje {
+            position: fixed;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.82);
+            border: 2px solid var(--dorado);
+            color: var(--dorado);
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255,215,0,0.35);
+            text-align: center;
+            white-space: nowrap;
+        }
+        .carta-pegado-voladora {
+            position: fixed;
+            width: min(68vw, 280px);
+            aspect-ratio: 3 / 4;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            border: 5px solid var(--dorado);
+            border-radius: 18px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 65px rgba(0,0,0,0.9), 0 0 40px rgba(255,215,0,0.55);
+            overflow: hidden;
+            transition: left 1.15s cubic-bezier(0.22, 1, 0.36, 1), top 1.15s cubic-bezier(0.22, 1, 0.36, 1), width 1.15s cubic-bezier(0.22, 1, 0.36, 1), transform 1.15s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+        }
+        .carta-pegado-voladora::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.72));
+            pointer-events: none;
+        }
+        .carta-pegado-voladora .num-figu {
+            top: 12px;
+            left: 12px;
+            transform: none;
+            font-size: 16px;
+            background: rgba(0,0,0,0.82);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1.5px solid var(--dorado);
+            text-shadow: none;
+            z-index: 2;
+        }
+        .destino-pegado-resaltado {
+            animation: impactoPegadoAlbum 1.1s ease both !important;
+            z-index: 20;
+        }
+        @keyframes impactoPegadoAlbum {
+            0% { transform: scale(1.02); box-shadow: 0 0 20px rgba(212,175,55,0.4), var(--sombra); }
+            35% { transform: scale(1.14); box-shadow: 0 0 42px rgba(255,215,0,0.95), 0 0 22px rgba(196,30,58,0.85); }
+            100% { transform: scale(1.02); box-shadow: 0 0 20px rgba(212,175,55,0.4), var(--sombra); }
+        }
+
+
+        /* ====== PEGADO MANUAL DE FIGURITAS NUEVAS ====== */
+        .pegado-manual-banner {
+            position: fixed;
+            top: 186px;
+            left: 12px;
+            right: 12px;
+            z-index: 450;
+            background: rgba(0, 0, 0, 0.88);
+            border: 2px solid var(--dorado);
+            color: #fff;
+            border-radius: 16px;
+            padding: 12px 14px;
+            text-align: center;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.7), 0 0 22px rgba(212,175,55,0.28);
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.35;
+            pointer-events: none;
+            animation: aparecerBannerPegado 0.28s ease both;
+        }
+        .pegado-manual-banner strong { color: var(--dorado); }
+        @keyframes aparecerBannerPegado {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .figu.pendiente-pegado {
+            cursor: pointer;
+            border: 3px solid var(--dorado) !important;
+            border-style: dashed !important;
+            background:
+                radial-gradient(circle at center, rgba(255, 215, 0, 0.22), transparent 42%),
+                linear-gradient(135deg, rgba(70,0,0,0.95), rgba(0,0,0,0.92)) !important;
+            box-shadow: 0 0 28px rgba(255, 215, 0, 0.55), inset 0 0 24px rgba(255, 215, 0, 0.12) !important;
+            animation: pulsoLugarPegado 1.05s infinite ease-in-out;
+            z-index: 30;
+        }
+        .figu.pendiente-pegado::before {
+            content: '📍';
+            position: absolute;
+            top: 7px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            z-index: 4;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+            pointer-events: none;
+        }
+        .figu.pendiente-pegado .num-figu {
+            color: #fff;
+            top: 48%;
+            font-size: 30px;
+            text-shadow: 0 0 14px rgba(255, 215, 0, 0.85), 0 3px 10px rgba(0,0,0,0.9);
+        }
+        .label-pegado-pendiente {
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            bottom: 7px;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.78);
+            border: 1px solid rgba(255, 215, 0, 0.55);
+            color: var(--dorado);
+            border-radius: 8px;
+            padding: 5px 3px;
+            font-size: 9px;
+            font-weight: 950;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1.15;
+            pointer-events: none;
+        }
+        .figu.llamada-pegado {
+            outline: 4px solid rgba(255, 255, 255, 0.85);
+            outline-offset: 4px;
+        }
+        .figu.pegada-manual-ok {
+            animation: pegadoManualImpacto 0.9s cubic-bezier(0.2, 1, 0.3, 1) both !important;
+        }
+        .figu.pegada-manual-ok::before {
+            content: '';
+            position: absolute;
+            inset: -35%;
+            background: radial-gradient(circle, rgba(255,255,255,0.92), rgba(255,215,0,0.34) 24%, transparent 55%);
+            animation: flashPegadoManual 0.82s ease both;
+            z-index: 6;
+            pointer-events: none;
+        }
+        @keyframes pulsoLugarPegado {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.07); filter: brightness(1.25); }
+        }
+        @keyframes pegadoManualImpacto {
+            0% { transform: scale(0.82) rotate(-2deg); filter: brightness(1.55); }
+            55% { transform: scale(1.12) rotate(1deg); filter: brightness(1.18); box-shadow: 0 0 42px rgba(255,215,0,0.9), var(--sombra); }
+            100% { transform: scale(1.02) rotate(0deg); filter: brightness(1); }
+        }
+        @keyframes flashPegadoManual {
+            0% { opacity: 0; transform: scale(0.5); }
+            35% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.45); }
+        }
+        @media (max-width: 480px) {
+            .pegado-manual-banner {
+                top: 181px;
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -801,7 +988,7 @@ nav button.activo::after {
         <header>
             <h1>🔥 Tribu Huayna 2026 🔥</h1>
             <div class="header-badges">
-                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/156</span></div>
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/158</span></div>
                 <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
             </div>
         </header>
@@ -884,7 +1071,7 @@ nav button.activo::after {
                         <p>Figuritas Únicas</p>
                     </div>
                     <div class="stat-box">
-                        <h4 id="stat-faltan">160</h4>
+                        <h4 id="stat-faltan">158</h4>
                         <p>Te Faltan</p>
                     </div>
                     <div class="stat-box">
@@ -971,21 +1158,19 @@ nav button.activo::after {
     </div>
 
     <script>
-        const TOTAL_FIGUS = 156;
+        const TOTAL_FIGUS = 158;
         const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
         // ====== NOVEDADES DEL ÁLBUM ======
         // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
-        const VERSION_NOVEDADES = '2026-07-02-PROMO-REPES-250';
-const FECHA_NOVEDADES = 'Promo especial del día';
-
-const NOVEDADES_HUAYNA = [
-    '🔥 <strong>Hoy las repetidas valen más</strong> en el Álbum Oficial Tribu Huayna 2026.',
-    '💰 Solo por hoy, cada figurita repetida que entregues al <strong>Fuego Sagrado</strong> vale <strong>$250 de saldo</strong>.',
-    '🎟️ Eso significa que <strong>4 repetidas = 1 sobre nuevo</strong>.',
-    '📖 Entrá, abrí sobres y aprovechá la promo antes de que termine el día.',
-    '❤️ <strong>Sangre roja y corazón de oro.</strong>'
-];
+        const VERSION_NOVEDADES = '2026-07-01-NUEVA-TANDA-5-SIN-REPETIR';
+        const FECHA_NOVEDADES = 'Nueva tanda disponible';
+        const NOVEDADES_HUAYNA = [
+            '📸 <strong>Ahora podés enviar tu foto</strong> para aparecer en futuras figuritas del álbum.',
+            '🔥 Se vienen nuevas activaciones, códigos sorpresa y dinámicas por WhatsApp.',
+            '👑 La sección <strong>El Consejo Huayna 2025</strong> queda sellada por ahora. Será revelada más adelante.',
+            '📖 Nuevas figuritas fueron agregadas a la colección.'
+        ];
 
         const CONSEJO_HUAYNA_ACTIVO = false;
 
@@ -995,8 +1180,8 @@ const NOVEDADES_HUAYNA = [
             { titulo: "⭐ Sección III: Leyendas y Herencia", de: 53, hasta: 78 },
             { titulo: "🌙 Sección IV: Canciones y Pasión", de: 79, hasta: 104 },
             { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
-            { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 156 },
-            { titulo: "👑 Sección VII: El Consejo Huayna 2025", de: 157, hasta: 160, tipo: "consejo" }
+            { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 158 },
+            { titulo: "👑 Sección VII: El Consejo Huayna 2025", de: 159, hasta: 162, tipo: "consejo" }
         ];
 
         // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
@@ -1077,25 +1262,28 @@ const NOVEDADES_HUAYNA = [
             147: 'https://i.imgur.com/470j98J.jpeg', 148: 'https://i.imgur.com/XFB7Q0o.jpeg',
             149: 'https://i.imgur.com/UGzrGnA.jpeg', 150: 'https://i.imgur.com/Rmv9WrE.jpeg',
             151: 'https://i.imgur.com/huSS8fp.jpeg', 152: 'https://i.imgur.com/4tSz8gD.jpeg',
-            153: 'https://i.imgur.com/RA4MP3V.jpeg',
-            157: 'https://i.imgur.com/5pMGufE.jpeg', 158: 'https://i.imgur.com/UkKPB5E.jpeg',
-            159: 'https://i.imgur.com/oylWm8z.jpeg', 160: 'https://i.imgur.com/7J1rHDI.jpeg'
+            153: 'https://i.imgur.com/RA4MP3V.jpeg', 154: 'https://i.imgur.com/260ezOa.jpeg',
+            155: 'https://i.imgur.com/GAB1pr9.jpeg', 156: 'https://i.imgur.com/Nh27aYR.jpeg',
+            157: 'https://i.imgur.com/4ElhGWV.jpeg', 158: 'https://i.imgur.com/au5WrGK.jpeg',
+            159: 'https://i.imgur.com/5pMGufE.jpeg', 160: 'https://i.imgur.com/UkKPB5E.jpeg',
+            161: 'https://i.imgur.com/oylWm8z.jpeg', 162: 'https://i.imgur.com/7J1rHDI.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
         // Especiales = la 1, múltiplos de 12 y los 4 Representantes Camada 2025.
-        const FIGURITAS_REPRESENTANTES_2025 = [157, 158, 159, 160];
+        const FIGURITAS_REPRESENTANTES_2025 = [159, 160, 161, 162];
         const FIGURITAS_BLOQUEADAS_POR_CODIGO = [...FIGURITAS_REPRESENTANTES_2025];
-        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 157, 158, 159, 160];
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 159, 160, 161, 162];
         const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
+        const VALOR_REPE = 100; // Valor normal de cada figurita repetida
 
         // Códigos especiales para desbloquear los Representantes Camada 2025.
         // Estos códigos NO acreditan plata: desbloquean una figurita específica.
         const CODIGOS_REPRESENTANTES_2025 = {
-            "REP25-ROJA-157": 157,
-            "REP25-ORO-158": 158,
-            "REP25-HUAYNA-159": 159,
-            "REP25-CONSEJO-160": 160
+            "REP25-ROJA-159": 159,
+            "REP25-ORO-160": 160,
+            "REP25-HUAYNA-161": 161,
+            "REP25-CONSEJO-162": 162
         };
 
         // Estado separado de desbloqueo para que estas figuritas NO aparezcan solo por estar en el álbum anterior.
@@ -1252,6 +1440,12 @@ const NOVEDADES_HUAYNA = [
         let historicoTenidasAntesDeAbrir = []; 
         let indiceReveladoActual = 0;
         let sobreYaFueRasgado = false;
+        let figuritasParaPegarPendientes = [];
+        let pegadoManualEnCurso = false;
+
+        function estaPendienteDePegado(num) {
+            return figuritasParaPegarPendientes.includes(num);
+        }
 
         document.getElementById('sobre-mitad-arriba').style.backgroundImage = `url('${IMAGEN_PAQUETE}')`;
         document.getElementById('sobre-mitad-abajo').style.backgroundImage = `url('${IMAGEN_PAQUETE}')`;
@@ -1299,7 +1493,7 @@ const NOVEDADES_HUAYNA = [
                 return;
             }
 
-            let ganancia = totalRepesNetas * 250;
+            let ganancia = totalRepesNetas * VALOR_REPE;
             if (confirm(`🔥 ¿Querés entregar tus ${totalRepesNetas} repetidas totales al fuego sagrado?\nRecibirás $${ganancia} de saldo inmediato.`)) {
                 for (let i = 1; i <= TOTAL_FIGUS; i++) {
                     let cant = album[i] || 0;
@@ -1509,7 +1703,12 @@ const NOVEDADES_HUAYNA = [
                 renderizarFiguritaSecuencial();
             } else {
                 document.getElementById('modal-paquete').classList.remove('activo');
-                mostrarResultadoPaquete(figuritasPendientes);
+                const figusNuevas = figuritasPendientes.filter((num, index) => !historicoTenidasAntesDeAbrir[index]);
+                if (figusNuevas.length > 0) {
+                    iniciarPegadoManual(figusNuevas);
+                } else {
+                    mostrarResultadoPaquete(figuritasPendientes);
+                }
             }
         }
 
@@ -1522,6 +1721,154 @@ const NOVEDADES_HUAYNA = [
                     div.innerHTML += `<div class="figu-mini" ${imgStyle}><span class="num-figu">${n}</span></div>`;
                 }, index * 100);
             });
+        }
+
+        function mostrarBannerPegadoManual(numActual, totalPendientes) {
+            let banner = document.getElementById('pegado-manual-banner');
+            if (!banner) {
+                banner = document.createElement('div');
+                banner.id = 'pegado-manual-banner';
+                banner.className = 'pegado-manual-banner';
+                document.body.appendChild(banner);
+            }
+            banner.innerHTML = `📖 Figurita nueva <strong>N°${numActual}</strong> encontrada. Tocá el lugar marcado para pegarla. <br>Te quedan <strong>${totalPendientes}</strong> por pegar.`;
+        }
+
+        function ocultarBannerPegadoManual() {
+            const banner = document.getElementById('pegado-manual-banner');
+            if (banner) banner.remove();
+        }
+
+        function enfocarFiguritaPendiente() {
+            if (!figuritasParaPegarPendientes.length) return;
+            const num = figuritasParaPegarPendientes[0];
+            const destino = document.querySelector(`[data-figu="${num}"]`);
+            if (!destino) return;
+
+            destino.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+
+            setTimeout(() => {
+                document.querySelectorAll('.figu.llamada-pegado').forEach(el => el.classList.remove('llamada-pegado'));
+                const destinoActualizado = document.querySelector(`[data-figu="${num}"]`);
+                if (destinoActualizado) destinoActualizado.classList.add('llamada-pegado');
+            }, 450);
+        }
+
+        async function iniciarPegadoManual(figusNuevas) {
+            figuritasParaPegarPendientes = [...new Set(figusNuevas)];
+
+            if (figuritasParaPegarPendientes.length === 0) {
+                mostrarResultadoPaquete(figuritasPendientes);
+                return;
+            }
+
+            pegadoManualEnCurso = true;
+            activarAlbumParaPegado();
+            actualizarVista();
+            await esperar(220);
+
+            const numActual = figuritasParaPegarPendientes[0];
+            mostrarBannerPegadoManual(numActual, figuritasParaPegarPendientes.length);
+            enfocarFiguritaPendiente();
+        }
+
+        function pegarFiguritaPendiente(num) {
+            if (!estaPendienteDePegado(num)) return;
+
+            const destino = document.querySelector(`[data-figu="${num}"]`);
+            figuritasParaPegarPendientes = figuritasParaPegarPendientes.filter(n => n !== num);
+
+            if (destino) {
+                destino.classList.remove('bloqueada', 'pendiente-pegado', 'llamada-pegado');
+                destino.classList.add('tenida', 'pegada-manual-ok');
+                destino.style.backgroundImage = IMAGENES_FIGUS[num] ? `url('${IMAGENES_FIGUS[num]}')` : '';
+                destino.setAttribute('onclick', `zoomFigu(${num})`);
+                destino.innerHTML = '';
+            }
+
+            if (figuritasParaPegarPendientes.length > 0) {
+                setTimeout(() => {
+                    actualizarVista();
+                    const siguiente = figuritasParaPegarPendientes[0];
+                    mostrarBannerPegadoManual(siguiente, figuritasParaPegarPendientes.length);
+                    enfocarFiguritaPendiente();
+                }, 850);
+            } else {
+                setTimeout(() => {
+                    pegadoManualEnCurso = false;
+                    ocultarBannerPegadoManual();
+                    actualizarVista();
+                    mostrarResultadoPaquete(figuritasPendientes);
+                }, 950);
+            }
+        }
+
+
+        function activarAlbumParaPegado() {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('activo'));
+
+            const albumSeccion = document.getElementById('album');
+            const botonAlbum = document.querySelector('nav button[data-seccion="album"]');
+            if (albumSeccion) albumSeccion.classList.add('activa');
+            if (botonAlbum) botonAlbum.classList.add('activo');
+        }
+
+        function esperar(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function iniciarCinematicaPegado(figusNuevas) {
+            activarAlbumParaPegado();
+            actualizarVista();
+            await esperar(180);
+
+            const overlay = document.createElement('div');
+            overlay.className = 'pegado-cinematica-overlay';
+            overlay.innerHTML = `<div class="pegado-mensaje">✨ Pegando figurita nueva en el álbum...</div>`;
+            document.body.appendChild(overlay);
+            requestAnimationFrame(() => overlay.classList.add('activa'));
+
+            for (const num of figusNuevas) {
+                await animarPegadoDeFigurita(num, overlay);
+                await esperar(250);
+            }
+
+            overlay.classList.remove('activa');
+            await esperar(280);
+            overlay.remove();
+            mostrarResultadoPaquete(figuritasPendientes);
+        }
+
+        async function animarPegadoDeFigurita(num, overlay) {
+            const destino = document.querySelector(`[data-figu="${num}"]`);
+            if (!destino) return;
+
+            destino.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            await esperar(650);
+
+            const rect = destino.getBoundingClientRect();
+            const carta = document.createElement('div');
+            carta.className = 'carta-pegado-voladora';
+            carta.style.backgroundImage = IMAGENES_FIGUS[num] ? `url('${IMAGENES_FIGUS[num]}')` : '';
+            carta.innerHTML = `<span class="num-figu">${num}</span>`;
+            overlay.appendChild(carta);
+
+            await esperar(120);
+
+            carta.style.left = `${rect.left + rect.width / 2}px`;
+            carta.style.top = `${rect.top + rect.height / 2}px`;
+            carta.style.width = `${rect.width}px`;
+            carta.style.transform = 'translate(-50%, -50%) scale(1) rotate(-1deg)';
+
+            await esperar(1150);
+            destino.classList.add('destino-pegado-resaltado');
+            carta.style.opacity = '0';
+
+            await esperar(420);
+            carta.remove();
+            await esperar(650);
+            destino.classList.remove('destino-pegado-resaltado');
         }
 
         function zoomFigu(num) {
@@ -1562,6 +1909,7 @@ const NOVEDADES_HUAYNA = [
             return Object.keys(album).filter(n => {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (estaPendienteDePegado(num)) return false;
                 if (FIGURITAS_REPRESENTANTES_2025.includes(num) && (!CONSEJO_HUAYNA_ACTIVO || !esRepresentanteDesbloqueado(num))) return false;
                 return album[num] && album[num] > 0;
             }).length;
@@ -1569,8 +1917,8 @@ const NOVEDADES_HUAYNA = [
 
         function obtenerCantidadSeccionOro() {
             let contador = 0;
-            for(let i = 131; i <= 156; i++) {
-                if(album[i] && album[i] > 0) contador++;
+            for(let i = 131; i <= 158; i++) {
+                if(!estaPendienteDePegado(i) && album[i] && album[i] > 0) contador++;
             }
             return contador;
         }
@@ -1584,6 +1932,7 @@ const NOVEDADES_HUAYNA = [
             let totalRepes = Object.keys(album).filter(n => {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (estaPendienteDePegado(num)) return false;
                 if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
                 return true;
             }).reduce((acc, n) => acc + album[n], 0) - tenidas;
@@ -1607,6 +1956,7 @@ const NOVEDADES_HUAYNA = [
             let totalRepes = Object.keys(album).filter(n => {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
+                if (estaPendienteDePegado(num)) return false;
                 if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
                 return true;
             }).reduce((acc, n) => acc + album[n], 0) - tenidas;
@@ -1617,7 +1967,7 @@ const NOVEDADES_HUAYNA = [
 
             let btnQuemar = document.getElementById('btn-quemar-repes');
             if(totalRepes > 0) {
-                btnQuemar.textContent = `Entregar ${totalRepes} Figuritas al Fuego (+$${totalRepes * 250})`;
+                btnQuemar.textContent = `Entregar ${totalRepes} Figuritas al Fuego (+$${totalRepes * VALOR_REPE})`;
                 btnQuemar.disabled = false;
             } else {
                 btnQuemar.textContent = `Sin repetidas para canjear`;
@@ -1669,24 +2019,29 @@ const NOVEDADES_HUAYNA = [
                 for(let i = seccion.de; i <= seccion.hasta; i++) {
                     let esRepresentante = FIGURITAS_REPRESENTANTES_2025.includes(i);
                     let desbloqueadaPorCodigo = !esRepresentante || esRepresentanteDesbloqueado(i);
-                    let cant = desbloqueadaPorCodigo ? (album[i] || 0) : 0;
-                    let onClickAlbum = cant ? `zoomFigu(${i})` : '';
+                    let pendientePegado = estaPendienteDePegado(i);
+                    let cantReal = desbloqueadaPorCodigo ? (album[i] || 0) : 0;
+                    let cant = pendientePegado ? 0 : cantReal;
+                    let onClickAlbum = pendientePegado ? `pegarFiguritaPendiente(${i})` : (cant ? `zoomFigu(${i})` : '');
                     let imgStyle = cant && IMAGENES_FIGUS[i] ? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
                     let claseBloqueada = !cant ? 'bloqueada' : '';
+                    let clasePendientePegado = pendientePegado ? 'pendiente-pegado' : '';
                     let esEspecial = FIGURITAS_ESPECIALES.includes(i) ? 'especial' : '';
                     let esDestacada = (FIGURITAS_ESPECIALES.includes(i) && !esRepresentante) ? 'destacada' : '';
                     let claseRepresentante = esRepresentante ? 'representante' : '';
                     let badgeRepe = cant > 1 ? `<span class="repe">${cant}</span>` : '';
                     let mostrarNum = !cant ? `<span class="num-figu">${i}</span>` : '';
                     let labelBloqueada = (!cant && esRepresentante) ? `<span class="label-bloqueada">Código especial</span>` : '';
+                    let labelPegadoPendiente = pendientePegado ? `<span class="label-pegado-pendiente">Tocá acá<br>para pegar</span>` : '';
 
-                    gridDiv.innerHTML += `<div class="figu ${cant? 'tenida':''} ${claseBloqueada} ${esEspecial} ${esDestacada} ${claseRepresentante}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}${labelBloqueada}</div>`;
+                    gridDiv.innerHTML += `<div class="figu ${cant? 'tenida':''} ${claseBloqueada} ${clasePendientePegado} ${esEspecial} ${esDestacada} ${claseRepresentante}" data-figu="${i}" onclick="${onClickAlbum}" ${imgStyle}>${mostrarNum}${badgeRepe}${labelBloqueada}${labelPegadoPendiente}</div>`;
                 }
                 paginaDiv.appendChild(gridDiv);
                 contenedorAlbum.appendChild(paginaDiv);
             });
 
             for(let i = 1; i <= TOTAL_FIGUS; i++) {
+                if (estaPendienteDePegado(i)) continue;
                 let cant = album[i] || 0;
                 if(cant > 1) {
                     let imgStyle = IMAGENES_FIGUS[i] ? `style="background-image: url('${IMAGENES_FIGUS[i]}')"` : '';
@@ -1710,7 +2065,7 @@ const NOVEDADES_HUAYNA = [
                     buscador_tesoros: { id: 'perm_buscador', titulo: '📦 Buscador de Tesoros', desc: 'Abrí tus primeros 5 paquetes en total.', meta: 5, premio: 500, tipo: 'abrir' },
                     devoto_fuego: { id: 'perm_devoto', titulo: '🔥 Devoto del Fuego', desc: 'Entregá 10 repetidas al fuego sagrado.', meta: 10, premio: 300, tipo: 'fuego_total' },
                     mitad_camino: { id: 'perm_mitad', titulo: '🦅 Mitad del Camino', desc: 'Llegá a 78 figuritas únicas pegadas.', meta: 78, premio: 1500, tipo: 'progreso_album' },
-                    conquistador_oro: { id: 'perm_oro', titulo: '✨ Conquistador de Oro', desc: 'Completá la Sección VI (Figuritas 131 a 156).', meta: 26, premio: 2500, tipo: 'seccion_oro' }
+                    conquistador_oro: { id: 'perm_oro', titulo: '✨ Conquistador de Oro', desc: 'Completá la Sección VI (Figuritas 131 a 158).', meta: 28, premio: 2500, tipo: 'seccion_oro' }
                 }
             },
 
@@ -2107,4 +2462,4 @@ window.addEventListener('load', () => {
 
 </script>
 </body>
-</htm
+</html>
