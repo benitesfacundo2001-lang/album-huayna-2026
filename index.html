@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<htm lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -976,14 +976,16 @@ nav button.activo::after {
 
         // ====== NOVEDADES DEL ÁLBUM ======
         // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
-        const VERSION_NOVEDADES = '2026-07-01-NUEVA-TANDA-5-SIN-REPETIR';
-        const FECHA_NOVEDADES = 'Nueva tanda disponible';
-        const NOVEDADES_HUAYNA = [
-            '📸 <strong>Ahora podés enviar tu foto</strong> para aparecer en futuras figuritas del álbum.',
-            '🔥 Se vienen nuevas activaciones, códigos sorpresa y dinámicas por WhatsApp.',
-            '👑 La sección <strong>El Consejo Huayna 2025</strong> queda sellada por ahora. Será revelada más adelante.',
-            '📖 Nuevas figuritas fueron agregadas a la colección.'
-        ];
+        const VERSION_NOVEDADES = '2026-07-02-PROMO-REPES-250';
+const FECHA_NOVEDADES = 'Promo especial del día';
+
+const NOVEDADES_HUAYNA = [
+    '🔥 <strong>Hoy las repetidas valen más</strong> en el Álbum Oficial Tribu Huayna 2026.',
+    '💰 Solo por hoy, cada figurita repetida que entregues al <strong>Fuego Sagrado</strong> vale <strong>$250 de saldo</strong>.',
+    '🎟️ Eso significa que <strong>4 repetidas = 1 sobre nuevo</strong>.',
+    '📖 Entrá, abrí sobres y aprovechá la promo antes de que termine el día.',
+    '❤️ <strong>Sangre roja y corazón de oro.</strong>'
+];
 
         const CONSEJO_HUAYNA_ACTIVO = false;
 
@@ -1294,7 +1296,7 @@ nav button.activo::after {
                 return;
             }
 
-            let ganancia = totalRepesNetas * 100;
+            let ganancia = totalRepesNetas * 250;
             if (confirm(`🔥 ¿Querés entregar tus ${totalRepesNetas} repetidas totales al fuego sagrado?\nRecibirás $${ganancia} de saldo inmediato.`)) {
                 for (let i = 1; i <= TOTAL_FIGUS; i++) {
                     let cant = album[i] || 0;
@@ -1612,7 +1614,7 @@ nav button.activo::after {
 
             let btnQuemar = document.getElementById('btn-quemar-repes');
             if(totalRepes > 0) {
-                btnQuemar.textContent = `Entregar ${totalRepes} Figuritas al Fuego (+$${totalRepes * 100})`;
+                btnQuemar.textContent = `Entregar ${totalRepes} Figuritas al Fuego (+$${totalRepes * 250})`;
                 btnQuemar.disabled = false;
             } else {
                 btnQuemar.textContent = `Sin repetidas para canjear`;
@@ -2102,4 +2104,4 @@ window.addEventListener('load', () => {
 
 </script>
 </body>
-</html>
+</htm
