@@ -1158,7 +1158,7 @@ nav button.activo::after {
     </div>
 
     <script>
-        const TOTAL_FIGUS = 173;
+        const TOTAL_FIGUS = 186;
         const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
         // ====== NOVEDADES DEL ÁLBUM ======
@@ -1182,8 +1182,8 @@ nav button.activo::after {
             { titulo: "🌙 Sección IV: Canciones y Pasión", de: 79, hasta: 104 },
             { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
             { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 161 },
-            { titulo: "🕰️ Sección VII: Old School", de: 162, hasta: 173 },
-            { titulo: "👑 Sección VIII: El Consejo Huayna 2025", de: 174, hasta: 177, tipo: "consejo" }
+            { titulo: "🕰️ Sección VII: Old School", de: 162, hasta: 186 },
+            { titulo: "👑 Sección VIII: El Consejo Huayna 2025", de: 187, hasta: 190, tipo: "consejo" }
         ];
 
         // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
@@ -1274,26 +1274,32 @@ nav button.activo::after {
             167: 'https://i.imgur.com/AAW8trT.jpeg', 168: 'https://i.imgur.com/IWLLXkq.jpeg',
             169: 'https://i.imgur.com/PjZDTrA.jpeg', 170: 'https://i.imgur.com/O9PX6Ke.jpeg',
             171: 'https://i.imgur.com/5QWs81q.jpeg', 172: 'https://i.imgur.com/OkH6pXK.jpeg',
-            173: 'https://i.imgur.com/0xYYps8.jpeg',
-            174: 'https://i.imgur.com/5pMGufE.jpeg', 175: 'https://i.imgur.com/UkKPB5E.jpeg',
-            176: 'https://i.imgur.com/oylWm8z.jpeg', 177: 'https://i.imgur.com/7J1rHDI.jpeg'
+            173: 'https://i.imgur.com/0xYYps8.jpeg', 174: 'https://i.imgur.com/q6EVVkP.jpeg',
+            175: 'https://i.imgur.com/cYlwCc9.jpeg', 176: 'https://i.imgur.com/ZdxQMmK.jpeg',
+            177: 'https://i.imgur.com/ixLTNZ0.jpeg', 178: 'https://i.imgur.com/c1RivGI.jpeg',
+            179: 'https://i.imgur.com/a4CFXvR.jpeg', 180: 'https://i.imgur.com/p5nl2T5.jpeg',
+            181: 'https://i.imgur.com/Zh5OZ2o.jpeg', 182: 'https://i.imgur.com/sLREEm3.jpeg',
+            183: 'https://i.imgur.com/sc8NM24.jpeg', 184: 'https://i.imgur.com/E9eO9CX.jpeg',
+            185: 'https://i.imgur.com/Gko9453.jpeg', 186: 'https://i.imgur.com/VO0nNWs.jpeg',
+            187: 'https://i.imgur.com/5pMGufE.jpeg', 188: 'https://i.imgur.com/UkKPB5E.jpeg',
+            189: 'https://i.imgur.com/oylWm8z.jpeg', 190: 'https://i.imgur.com/7J1rHDI.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
         // Especiales = la 1, múltiplos de 12 y los 4 Representantes Camada 2025.
-        const FIGURITAS_REPRESENTANTES_2025 = [174, 175, 176, 177];
+        const FIGURITAS_REPRESENTANTES_2025 = [187, 188, 189, 190];
         const FIGURITAS_BLOQUEADAS_POR_CODIGO = [...FIGURITAS_REPRESENTANTES_2025];
-        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 174, 175, 176, 177];
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 187, 188, 189, 190];
         const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
         const VALOR_REPE = 100; // Valor normal de cada figurita repetida
 
         // Códigos especiales para desbloquear los Representantes Camada 2025.
         // Estos códigos NO acreditan plata: desbloquean una figurita específica.
         const CODIGOS_REPRESENTANTES_2025 = {
-            "REP25-ROJA-174": 174,
-            "REP25-ORO-175": 175,
-            "REP25-HUAYNA-176": 176,
-            "REP25-CONSEJO-177": 177
+            "REP25-ROJA-187": 187,
+            "REP25-ORO-188": 188,
+            "REP25-HUAYNA-189": 189,
+            "REP25-CONSEJO-190": 190
         };
 
         // Estado separado de desbloqueo para que estas figuritas NO aparezcan solo por estar en el álbum anterior.
