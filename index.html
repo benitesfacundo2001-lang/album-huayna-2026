@@ -988,7 +988,7 @@ nav button.activo::after {
         <header>
             <h1>🔥 Tribu Huayna 2026 🔥</h1>
             <div class="header-badges">
-                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/173</span></div>
+                <div class="badge-header">🏆 Progreso: <span id="progreso-header">0/218</span></div>
                 <div class="badge-header">💰 Saldo: <span id="plata">$0</span></div>
             </div>
         </header>
@@ -1071,7 +1071,7 @@ nav button.activo::after {
                         <p>Figuritas Únicas</p>
                     </div>
                     <div class="stat-box">
-                        <h4 id="stat-faltan">173</h4>
+                        <h4 id="stat-faltan">218</h4>
                         <p>Te Faltan</p>
                     </div>
                     <div class="stat-box">
@@ -1158,22 +1158,22 @@ nav button.activo::after {
     </div>
 
     <script>
-        const TOTAL_FIGUS = 186;
+        const TOTAL_FIGUS = 218;
         const IMAGEN_PAQUETE = 'https://i.imgur.com/F3oNmtK.jpeg';
 
         // ====== NOVEDADES DEL ÁLBUM ======
         // Cada vez que cambies VERSION_NOVEDADES, el cartel vuelve a aparecer una vez.
-        const VERSION_NOVEDADES = '2026-07-02-OLD-SCHOOL-173';
-        const FECHA_NOVEDADES = 'Nueva sección disponible';
+        const VERSION_NOVEDADES = '2026-07-17-BIENVENIDA-2026-REPRESENTANTES';
+        const FECHA_NOVEDADES = 'Bienvenida 2026';
         const NOVEDADES_HUAYNA = [
-            '📸 <strong>Se agregaron nuevas figuritas</strong> al Álbum Oficial Tribu Huayna 2026.',
-            '✨ La sección <strong>Destellos de Oro</strong> ahora suma nuevas incorporaciones.',
-            '🕰️ Llega una nueva sección especial: <strong>Old School</strong>, con recuerdos y momentos históricos de la Tribu.',
-            '🎟️ Ya podés abrir sobres y buscar las nuevas figuritas disponibles.',
+            '🎉 Se suma una nueva sección al álbum: <strong>Bienvenida 2026</strong>.',
+            '👑 Los <strong>Representantes 2026</strong> fueron desbloqueados y ya pueden aparecer en los sobres.',
+            '📸 Se incorporaron <strong>28 nuevas figuritas</strong> para seguir completando la historia de la Tribu.',
+            '🎟️ Abrí sobres, encontralas y pegalas manualmente en su lugar.',
             '❤️ <strong>Sangre roja y corazón de oro.</strong>'
         ];
 
-        const CONSEJO_HUAYNA_ACTIVO = false;
+        const CONSEJO_HUAYNA_ACTIVO = true;
 
         const SECCIONES_ALBUM = [
             { titulo: "🔥 Sección I: El Origen y la Identidad", de: 1, hasta: 26 },
@@ -1183,7 +1183,8 @@ nav button.activo::after {
             { titulo: "📸 Sección V: Eventos y Momentos Épicos", de: 105, hasta: 130 },
             { titulo: "✨ Sección VI: Destellos de Oro", de: 131, hasta: 161 },
             { titulo: "🕰️ Sección VII: Old School", de: 162, hasta: 186 },
-            { titulo: "👑 Sección VIII: El Consejo Huayna 2025", de: 187, hasta: 190, tipo: "consejo" }
+            { titulo: "👑 Sección VIII: Representantes 2026", de: 187, hasta: 190 },
+            { titulo: "🎉 Sección IX: Bienvenida 2026", de: 191, hasta: 218 }
         ];
 
         // NOTA: las figuritas 16 y 48 intercambiaron su imagen (la posición 48 sigue siendo la "especial")
@@ -1282,35 +1283,50 @@ nav button.activo::after {
             183: 'https://i.imgur.com/sc8NM24.jpeg', 184: 'https://i.imgur.com/E9eO9CX.jpeg',
             185: 'https://i.imgur.com/Gko9453.jpeg', 186: 'https://i.imgur.com/VO0nNWs.jpeg',
             187: 'https://i.imgur.com/5pMGufE.jpeg', 188: 'https://i.imgur.com/UkKPB5E.jpeg',
-            189: 'https://i.imgur.com/oylWm8z.jpeg', 190: 'https://i.imgur.com/7J1rHDI.jpeg'
+            189: 'https://i.imgur.com/oylWm8z.jpeg', 190: 'https://i.imgur.com/7J1rHDI.jpeg',
+            191: 'https://i.imgur.com/h7CDMXp.jpeg', 192: 'https://i.imgur.com/1B41Mrp.jpeg',
+            193: 'https://i.imgur.com/zqGUPGY.jpeg', 194: 'https://i.imgur.com/maEzWUs.jpeg',
+            195: 'https://i.imgur.com/vdxxXyY.jpeg', 196: 'https://i.imgur.com/pIGJGgV.jpeg',
+            197: 'https://i.imgur.com/jJY7F5w.jpeg', 198: 'https://i.imgur.com/zWsTfyd.jpeg',
+            199: 'https://i.imgur.com/ntxEOit.jpeg', 200: 'https://i.imgur.com/TdWmb94.jpeg',
+            201: 'https://i.imgur.com/OKGmT9l.jpeg', 202: 'https://i.imgur.com/QB7Mrar.jpeg',
+            203: 'https://i.imgur.com/q1OuKqV.jpeg', 204: 'https://i.imgur.com/Egq5wWA.jpeg',
+            205: 'https://i.imgur.com/Lfjwu4s.jpeg', 206: 'https://i.imgur.com/1An5P8c.jpeg',
+            207: 'https://i.imgur.com/vaJvlyy.jpeg', 208: 'https://i.imgur.com/48fkUIp.jpeg',
+            209: 'https://i.imgur.com/20idOTP.jpeg', 210: 'https://i.imgur.com/1XADnRd.jpeg',
+            211: 'https://i.imgur.com/iFO8T2d.jpeg', 212: 'https://i.imgur.com/z2bfcUu.jpeg',
+            213: 'https://i.imgur.com/9hSdJAY.jpeg', 214: 'https://i.imgur.com/EGBhR5M.jpeg',
+            215: 'https://i.imgur.com/GMmjjUC.jpeg', 216: 'https://i.imgur.com/C883807.jpeg',
+            217: 'https://i.imgur.com/RbqGhm8.jpeg', 218: 'https://i.imgur.com/x5KNqVZ.jpeg'
         };
 
         // ====== SISTEMA DE RAREZA ======
-        // Especiales = la 1, múltiplos de 12 y los 4 Representantes Camada 2025.
-        const FIGURITAS_REPRESENTANTES_2025 = [187, 188, 189, 190];
-        const FIGURITAS_BLOQUEADAS_POR_CODIGO = [...FIGURITAS_REPRESENTANTES_2025];
-        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 187, 188, 189, 190];
+        // Especiales = la 1, múltiplos de 12 y los 4 Representantes 2026.
+        const FIGURITAS_REPRESENTANTES_2026 = [187, 188, 189, 190];
+        const FIGURITAS_BLOQUEADAS_POR_CODIGO = [];
+        const FIGURITAS_ESPECIALES = [1, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 187, 188, 189, 190, 192, 204, 216];
         const PROBABILIDAD_ESPECIALES = 0.10; // 10% de que salga una especial, 90% una común
         const VALOR_REPE = 100; // Valor normal de cada figurita repetida
 
-        // Códigos especiales para desbloquear los Representantes Camada 2025.
+        // Códigos especiales para desbloquear los Representantes 2026.
         // Estos códigos NO acreditan plata: desbloquean una figurita específica.
-        const CODIGOS_REPRESENTANTES_2025 = {
-            "REP25-ROJA-187": 187,
-            "REP25-ORO-188": 188,
-            "REP25-HUAYNA-189": 189,
-            "REP25-CONSEJO-190": 190
+        const CODIGOS_REPRESENTANTES_2026 = {
+            "REP26-ROJA-187": 187,
+            "REP26-ORO-188": 188,
+            "REP26-HUAYNA-189": 189,
+            "REP26-CONSEJO-190": 190
         };
 
         // Estado separado de desbloqueo para que estas figuritas NO aparezcan solo por estar en el álbum anterior.
-        let representantesDesbloqueados = JSON.parse(localStorage.getItem('representantes2025Desbloqueados')) || [];
+        let representantesDesbloqueados = [187, 188, 189, 190];
+        localStorage.setItem('representantes2026Desbloqueados', JSON.stringify(representantesDesbloqueados));
 
         function esRepresentanteDesbloqueado(num) {
             return representantesDesbloqueados.includes(num);
         }
 
         function guardarRepresentantesDesbloqueados() {
-            localStorage.setItem('representantes2025Desbloqueados', JSON.stringify(representantesDesbloqueados));
+            localStorage.setItem('representantes2026Desbloqueados', JSON.stringify(representantesDesbloqueados));
         }
 
         // IMPORTANTE PARA ACTUALIZAR SIN ROMPER:
@@ -1435,10 +1451,10 @@ nav button.activo::after {
             if(n >= 1 && n <= TOTAL_FIGUS) album[n] = albumCrudo[n];
         }
 
-        // Las figuritas 157 a 160 solo se consideran obtenidas si fueron desbloqueadas por código.
-        // Esto corrige el caso en que hayan quedado guardadas por una versión anterior o de prueba.
+        // Los Representantes 2026 están desbloqueados y disponibles para aparecer en sobres.
+        // Se conserva la limpieza preventiva de datos de versiones anteriores.
         let huboLimpiezaRepresentantes = false;
-        FIGURITAS_REPRESENTANTES_2025.forEach(num => {
+        FIGURITAS_REPRESENTANTES_2026.forEach(num => {
             if (!esRepresentanteDesbloqueado(num) && album[num]) {
                 delete album[num];
                 huboLimpiezaRepresentantes = true;
@@ -1540,14 +1556,14 @@ nav button.activo::after {
             }
 
             // ====== CÓDIGOS ESPECIALES: REPRESENTANTES CAMADA 2025 ======
-            if (CODIGOS_REPRESENTANTES_2025[codigo]) {
+            if (CODIGOS_REPRESENTANTES_2026[codigo]) {
                 if (!CONSEJO_HUAYNA_ACTIVO) {
-                    alert('👑 La sección El Consejo Huayna 2025 todavía no fue revelada. Este código se activará más adelante.');
+                    alert('👑 Los Representantes 2026 ya están desbloqueados y disponibles en los sobres.');
                     document.getElementById('clave-paquete').value = '';
                     return;
                 }
 
-                const numFigu = CODIGOS_REPRESENTANTES_2025[codigo];
+                const numFigu = CODIGOS_REPRESENTANTES_2026[codigo];
 
                 if (esRepresentanteDesbloqueado(numFigu)) {
                     usados.push(codigo);
@@ -1914,7 +1930,7 @@ nav button.activo::after {
                 localStorage.removeItem('plataHuayna');
                 localStorage.removeItem('albumHuayna');
                 localStorage.removeItem('album_logros');
-                localStorage.removeItem('representantes2025Desbloqueados');
+                localStorage.removeItem('representantes2026Desbloqueados');
                 localStorage.setItem('paquetesAbiertosHuayna', 0);
                 guardar();
                 location.reload();
@@ -1926,7 +1942,7 @@ nav button.activo::after {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
                 if (estaPendienteDePegado(num)) return false;
-                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && (!CONSEJO_HUAYNA_ACTIVO || !esRepresentanteDesbloqueado(num))) return false;
+                if (FIGURITAS_REPRESENTANTES_2026.includes(num) && (!CONSEJO_HUAYNA_ACTIVO || !esRepresentanteDesbloqueado(num))) return false;
                 return album[num] && album[num] > 0;
             }).length;
         }
@@ -1940,7 +1956,7 @@ nav button.activo::after {
         }
 
         function obtenerConsejoCompleto() {
-            return FIGURITAS_REPRESENTANTES_2025.every(num => esRepresentanteDesbloqueado(num));
+            return FIGURITAS_REPRESENTANTES_2026.every(num => esRepresentanteDesbloqueado(num));
         }
 
         function actualizarProgreso() {
@@ -1949,7 +1965,7 @@ nav button.activo::after {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
                 if (estaPendienteDePegado(num)) return false;
-                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
+                if (FIGURITAS_REPRESENTANTES_2026.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
                 return true;
             }).reduce((acc, n) => acc + album[n], 0) - tenidas;
             let faltan = TOTAL_FIGUS - tenidas;
@@ -1973,7 +1989,7 @@ nav button.activo::after {
                 let num = parseInt(n);
                 if (num < 1 || num > TOTAL_FIGUS) return false;
                 if (estaPendienteDePegado(num)) return false;
-                if (FIGURITAS_REPRESENTANTES_2025.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
+                if (FIGURITAS_REPRESENTANTES_2026.includes(num) && !CONSEJO_HUAYNA_ACTIVO) return false;
                 return true;
             }).reduce((acc, n) => acc + album[n], 0) - tenidas;
 
@@ -2012,7 +2028,7 @@ nav button.activo::after {
                 if (seccion.tipo === 'consejo') {
                     paginaDiv.innerHTML = `
                         <div class="consejo-intro">
-                            <h3>👑 El Consejo Huayna 2025</h3>
+                            <h3>👑 Representantes 2026</h3>
                             <p>Representantes de la Camada 2025.</p>
                         </div>
                         <div class="consejo-proximamente">
@@ -2033,7 +2049,7 @@ nav button.activo::after {
                 gridDiv.className = 'grid-figuritas';
 
                 for(let i = seccion.de; i <= seccion.hasta; i++) {
-                    let esRepresentante = FIGURITAS_REPRESENTANTES_2025.includes(i);
+                    let esRepresentante = FIGURITAS_REPRESENTANTES_2026.includes(i);
                     let desbloqueadaPorCodigo = !esRepresentante || esRepresentanteDesbloqueado(i);
                     let pendientePegado = estaPendienteDePegado(i);
                     let cantReal = desbloqueadaPorCodigo ? (album[i] || 0) : 0;
